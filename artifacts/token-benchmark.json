@@ -1,0 +1,308 @@
+{
+  "method": "Exact source-text encoding only; no chat wrappers, system guide, tool schemas, reasoning or retries included. Equal compiled Lottie output checked for every packing candidate. Distributed examples select the least o200k_base tokens among tested lossless profiles, not a global optimum. Token counts do not establish task success or performance on other tokenizers.",
+  "tiktokenVersion": "0.14.0",
+  "encodings": [
+    "cl100k_base",
+    "o200k_base"
+  ],
+  "examples": [
+    {
+      "example": "aurelia",
+      "sourceBytes": 17564,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 8034,
+          "trimmedLegacyTokens": 7382,
+          "defaultCompactTokens": 2126,
+          "bestProfileTokens": 2122,
+          "distributedCompactTokens": 2122,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 73.59
+        },
+        "o200k_base": {
+          "originalTokens": 8056,
+          "trimmedLegacyTokens": 7404,
+          "defaultCompactTokens": 2123,
+          "bestProfileTokens": 2119,
+          "distributedCompactTokens": 2119,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 73.7
+        }
+      }
+    },
+    {
+      "example": "bounce",
+      "sourceBytes": 375,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 157,
+          "trimmedLegacyTokens": 141,
+          "defaultCompactTokens": 104,
+          "bestProfileTokens": 104,
+          "distributedCompactTokens": 104,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 33.76
+        },
+        "o200k_base": {
+          "originalTokens": 157,
+          "trimmedLegacyTokens": 141,
+          "defaultCompactTokens": 106,
+          "bestProfileTokens": 106,
+          "distributedCompactTokens": 106,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 32.48
+        }
+      }
+    },
+    {
+      "example": "milo",
+      "sourceBytes": 8051,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 3486,
+          "trimmedLegacyTokens": 3160,
+          "defaultCompactTokens": 2104,
+          "bestProfileTokens": 2104,
+          "distributedCompactTokens": 2104,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": true,
+            "constants": true
+          },
+          "distributedReductionPercent": 39.64
+        },
+        "o200k_base": {
+          "originalTokens": 3493,
+          "trimmedLegacyTokens": 3167,
+          "defaultCompactTokens": 2102,
+          "bestProfileTokens": 2102,
+          "distributedCompactTokens": 2102,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": true,
+            "constants": true
+          },
+          "distributedReductionPercent": 39.82
+        }
+      }
+    },
+    {
+      "example": "orbit",
+      "sourceBytes": 360,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 139,
+          "trimmedLegacyTokens": 126,
+          "defaultCompactTokens": 95,
+          "bestProfileTokens": 95,
+          "distributedCompactTokens": 95,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 31.65
+        },
+        "o200k_base": {
+          "originalTokens": 138,
+          "trimmedLegacyTokens": 125,
+          "defaultCompactTokens": 94,
+          "bestProfileTokens": 94,
+          "distributedCompactTokens": 94,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 31.88
+        }
+      }
+    },
+    {
+      "example": "orchard",
+      "sourceBytes": 18888,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 8192,
+          "trimmedLegacyTokens": 7323,
+          "defaultCompactTokens": 5306,
+          "bestProfileTokens": 5306,
+          "distributedCompactTokens": 5306,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": true,
+            "constants": true
+          },
+          "distributedReductionPercent": 35.23
+        },
+        "o200k_base": {
+          "originalTokens": 8200,
+          "trimmedLegacyTokens": 7331,
+          "defaultCompactTokens": 5296,
+          "bestProfileTokens": 5296,
+          "distributedCompactTokens": 5296,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": true,
+            "constants": true
+          },
+          "distributedReductionPercent": 35.41
+        }
+      }
+    },
+    {
+      "example": "reveal",
+      "sourceBytes": 513,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 210,
+          "trimmedLegacyTokens": 191,
+          "defaultCompactTokens": 154,
+          "bestProfileTokens": 154,
+          "distributedCompactTokens": 154,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 26.67
+        },
+        "o200k_base": {
+          "originalTokens": 209,
+          "trimmedLegacyTokens": 190,
+          "defaultCompactTokens": 157,
+          "bestProfileTokens": 157,
+          "distributedCompactTokens": 157,
+          "bestOptions": {
+            "reuse": false,
+            "batch": false,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 24.88
+        }
+      }
+    },
+    {
+      "example": "solstice",
+      "sourceBytes": 4920,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 2327,
+          "trimmedLegacyTokens": 2196,
+          "defaultCompactTokens": 1028,
+          "bestProfileTokens": 1028,
+          "distributedCompactTokens": 1028,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 55.82
+        },
+        "o200k_base": {
+          "originalTokens": 2330,
+          "trimmedLegacyTokens": 2199,
+          "defaultCompactTokens": 1026,
+          "bestProfileTokens": 1026,
+          "distributedCompactTokens": 1026,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": false,
+            "constants": false
+          },
+          "distributedReductionPercent": 55.97
+        }
+      }
+    },
+    {
+      "example": "tidal",
+      "sourceBytes": 7661,
+      "encodings": {
+        "cl100k_base": {
+          "originalTokens": 3280,
+          "trimmedLegacyTokens": 2950,
+          "defaultCompactTokens": 1776,
+          "bestProfileTokens": 1776,
+          "distributedCompactTokens": 1776,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": false,
+            "constants": true
+          },
+          "distributedReductionPercent": 45.85
+        },
+        "o200k_base": {
+          "originalTokens": 3286,
+          "trimmedLegacyTokens": 2956,
+          "defaultCompactTokens": 1744,
+          "bestProfileTokens": 1744,
+          "distributedCompactTokens": 1744,
+          "bestOptions": {
+            "reuse": true,
+            "batch": true,
+            "styles": false,
+            "constants": true
+          },
+          "distributedReductionPercent": 46.93
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "cl100k_base": {
+      "originalTokens": 25825,
+      "compactTokens": 12689,
+      "reductionPercent": 50.87
+    },
+    "o200k_base": {
+      "originalTokens": 25869,
+      "compactTokens": 12644,
+      "reductionPercent": 51.12
+    }
+  },
+  "guideTokens": {
+    "cl100k_base": 446,
+    "o200k_base": 446
+  },
+  "editProtocolExample": {
+    "cl100k_base": {
+      "editTokens": 5,
+      "receiptTokens": 17
+    },
+    "o200k_base": {
+      "editTokens": 5,
+      "receiptTokens": 17
+    }
+  }
+}

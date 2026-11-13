@@ -1,0 +1,18 @@
+scene "First Light" {
+  size: [640, 480]
+  duration: 2
+  fps: 60
+  background: "#10131d"
+  rect "platform" {
+    position: [320, 392]
+    size: [320, 8]
+    radius: 4
+    fill: "#30374c"
+  }
+  circle "orb" {
+    size: [90, 90]
+    fill: "#c4f76b"
+    animate position [320, 100] -> [320, 340] over 1.2s ease_in
+    animate scale [0.6, 0.6] -> [1, 1] over 0.8s ease_out
+  }
+}

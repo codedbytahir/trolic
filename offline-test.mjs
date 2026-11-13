@@ -1,0 +1,7 @@
+import {chromium} from '@playwright/test';import assert from 'node:assert/strict';import {resolve} from 'node:path';
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});const page=await browser.newPage({viewport:{width:1440,height:1180}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.route(/^https?:/,route=>route.abort());await page.goto('file://'+resolve('trolic-studio.html'));await page.waitForSelector('#preview svg path');
+await page.selectOption('#example','milo');await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('43 shapes'));await page.locator('#play').click();await page.locator('#scrub').fill('3');await page.screenshot({path:'artifacts/studio-v03.png',fullPage:true});
+await page.locator('#editor').fill('invalid');await page.locator('#build').click();assert.match(await page.locator('#status').textContent(),/TROLIC_INVALID_SOURCE/);
+await page.selectOption('#renderer','trolic');await page.waitForSelector('#preview svg path');await page.selectOption('#renderer','lottie');await page.waitForSelector('#preview svg path');
+await page.locator('#file').setInputFiles(resolve('examples/orchard.trolic'));await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('124 shapes'));
+assert.deepEqual(errors,[]);console.log('PASS: offline illustration rendering, retained valid preview after error, renderer switch, and project import');await browser.close();

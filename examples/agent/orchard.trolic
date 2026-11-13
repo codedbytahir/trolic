@@ -1,0 +1,129 @@
+canvas 800 680 bg=#eee9dc dur=6 name="Orchard — shaded pear study"
+let a "M -4 -153 C -39 -153 -43 -111 -54 -69 C -67 -21 -125 13 -126 83 C -129 159 -63 190 1 189 C 76 188 137 157 133 85 C 128 20 73 -19 55 -68 C 41 -112 35 -154 -4 -153 Z"
+let b #6d7130
+let c [1.28,1.28]
+style s0 ink=#a5b775 parent=pear sw=0.65
+circle paper-light p=[365,280] s=[780,710] g=["r",[0,-80],[380,0],[[0,"#fffdf6",0.85],[1,"#fffdf6",0]]]
+circle soft-shadow p=[420,542] s=[370,76] g=["r",[0,0],[185,0],[[0,"#393a21",0.28],[0.45,"#393a21",0.14],[1,"#393a21",0]]]
+circle contact-shadow p=[407,540] s=[205,25] g=["r",[0,0],[102,0],[[0,"#41412d",0.33],[1,"#41412d",0]]]
+group pear p=[397,356]
+path skin p=[0,0] d=$a g=["l",[-64,-70],[130,120],[[0,"#e4d762"],[0.32,"#b8bb45"],[0.68,"#8c9c30"],[1,"#556926"]]] parent=pear
+path warm-shoulder p=[0,0] d=$a g=["r",[-65,45],[105,55],[[0,"#fff3a0",0.58],[0.6,"#ead360",0.14],[1,"#ead360",0]]] parent=pear
+path lower-shade p=[0,0] d=$a g=["l",[0,65],[0,190],[[0,"#435322",0],[0.72,"#435322",0.05],[1,"#435322",0.42]]] parent=pear
+path edge-shade p=[0,0] d=$a g=["l",[42,0],[138,20],[[0,"#355629",0],[1,"#355629",0.4]]] parent=pear
+path soft-highlight p=[0,0] d="M -18 -126 C -33 -99 -27 -64 -47 -30 C -76 12 -101 44 -92 85 C -84 99 -73 80 -66 48 C -52 0 -18 -27 -13 -69 C -8 -94 -8 -119 -18 -126 Z" g=["r",[-44,-30],[40,-30],[[0,"#ffffcb",0.35],[1,"#ffffcb",0]]] parent=pear
+circle lenticel-0 p=[0.28,-38.05] s=[1.73,1.73] f=$b o=0.22 parent=pear
+circle lenticel-1 p=[-2.55,46.35] s=[1.67,1.67] f=$b o=0.16 parent=pear
+circle lenticel-2 p=[-14.69,-84.64] s=[2.01,2.01] f=$b o=0.13 parent=pear
+circle lenticel-3 p=[-10.09,-18.15] s=[1.72,1.72] f=$b o=0.22 parent=pear
+circle lenticel-4 p=[83.43,120.24] s=[1.74,1.74] f=$b o=0.16 parent=pear
+circle lenticel-5 p=[66.42,125.64] s=[1.6,1.6] f=$b o=0.3 parent=pear
+circle lenticel-6 p=[83.26,128.21] s=[1.3,1.3] f=$b o=0.17 parent=pear
+circle lenticel-7 p=[-45.62,105.75] s=[1.36,1.36] f=$b o=0.13 parent=pear
+circle lenticel-8 p=[-53.47,94.61] s=[1.22,1.22] f=$b o=0.25 parent=pear
+circle lenticel-9 p=[17.06,-91.82] s=[1.11,1.11] f=$b o=0.33 parent=pear
+circle lenticel-10 p=[-21.45,-78.73] s=[1.6,1.6] f=$b o=0.29 parent=pear
+circle lenticel-11 p=[38,18.95] s=[1.31,1.31] f=$b o=0.31 parent=pear
+circle lenticel-12 p=[-5.39,-59.21] s=[2.04,2.04] f=$b o=0.21 parent=pear
+circle lenticel-13 p=[13.14,-98.78] s=[1.12,1.12] f=$b o=0.21 parent=pear
+circle lenticel-14 p=[-1.39,-20.63] s=[1.18,1.18] f=$b o=0.32 parent=pear
+circle lenticel-15 p=[9.54,108.47] s=[1.39,1.39] f=$b o=0.2 parent=pear
+circle lenticel-16 p=[-12.02,-43.8] s=[1.64,1.64] f=$b o=0.28 parent=pear
+circle lenticel-17 p=[25.98,-88.75] s=[2.17,2.17] f=$b o=0.24 parent=pear
+circle lenticel-18 p=[-79.69,35.59] s=$c f=$b o=0.13 parent=pear
+circle lenticel-19 p=[13.35,-84.91] s=[1.26,1.26] f=$b o=0.27 parent=pear
+circle lenticel-20 p=[-17.1,99.06] s=[1.88,1.88] f=$b o=0.25 parent=pear
+circle lenticel-21 p=[18.44,55.21] s=[1.84,1.84] f=$b o=0.15 parent=pear
+circle lenticel-22 p=[-43.48,158.66] s=[1.17,1.17] f=$b o=0.17 parent=pear
+circle lenticel-23 p=[94.18,109.86] s=[2.29,2.29] f=$b o=0.15 parent=pear
+circle lenticel-24 p=[32.94,-9.49] s=[1.14,1.14] f=$b o=0.21 parent=pear
+circle lenticel-25 p=[-44.89,40.7] s=[1.39,1.39] f=$b o=0.22 parent=pear
+circle lenticel-26 p=[23.61,-78.05] s=[1.61,1.61] f=$b o=0.16 parent=pear
+circle lenticel-27 p=[-25.06,21.3] s=[1.83,1.83] f=$b o=0.13 parent=pear
+circle lenticel-28 p=[-55.95,-14] s=[1.77,1.77] f=$b o=0.23 parent=pear
+circle lenticel-29 p=[26.49,103.16] s=[1.67,1.67] f=$b o=0.26 parent=pear
+circle lenticel-30 p=[3.48,-27.14] s=[1.5,1.5] f=$b o=0.22 parent=pear
+circle lenticel-31 p=[-64.89,-1.5] s=[1.26,1.26] f=$b o=0.25 parent=pear
+circle lenticel-32 p=[-7.76,-81.64] s=[2.05,2.05] f=$b o=0.23 parent=pear
+circle lenticel-33 p=[-34.81,97.75] s=[1,1] f=$b o=0.22 parent=pear
+circle lenticel-34 p=[-3.48,93.42] s=[1.47,1.47] f=$b o=0.31 parent=pear
+circle lenticel-35 p=[56.31,-14.15] s=[1.94,1.94] f=$b o=0.16 parent=pear
+circle lenticel-36 p=[30.46,60.28] s=[1.77,1.77] f=$b o=0.27 parent=pear
+circle lenticel-37 p=[31.85,-6.64] s=[1.78,1.78] f=$b o=0.29 parent=pear
+circle lenticel-38 p=[21.05,94.38] s=[1.69,1.69] f=$b o=0.17 parent=pear
+circle lenticel-39 p=[-0.64,-89.12] s=[1.64,1.64] f=$b o=0.2 parent=pear
+circle lenticel-40 p=[66.54,21.57] s=[2.12,2.12] f=$b o=0.32 parent=pear
+circle lenticel-41 p=[-17.27,-78.19] s=[2.12,2.12] f=$b o=0.3 parent=pear
+circle lenticel-42 p=[16.75,-57.9] s=[1.04,1.04] f=$b o=0.21 parent=pear
+circle lenticel-43 p=[-21.12,57.99] s=[2.11,2.11] f=$b o=0.17 parent=pear
+circle lenticel-44 p=[-3.76,-73.27] s=[1.35,1.35] f=$b o=0.28 parent=pear
+circle lenticel-45 p=[-79.86,73.88] s=[1.23,1.23] f=$b o=0.13 parent=pear
+circle lenticel-46 p=[-41.82,148.5] s=[1.23,1.23] f=$b o=0.18 parent=pear
+circle lenticel-47 p=[-56.68,4.11] s=[1.92,1.92] f=$b o=0.23 parent=pear
+circle lenticel-48 p=[60.27,-20.66] s=[1.71,1.71] f=$b o=0.27 parent=pear
+circle lenticel-49 p=[-11.54,-25.93] s=[2.2,2.2] f=$b o=0.16 parent=pear
+circle lenticel-50 p=[-34.48,149.57] s=[1.02,1.02] f=$b o=0.21 parent=pear
+circle lenticel-51 p=[20.45,114.97] s=[1.6,1.6] f=$b o=0.13 parent=pear
+circle lenticel-52 p=[95.59,31.15] s=[2.07,2.07] f=$b o=0.31 parent=pear
+circle lenticel-53 p=[-19.72,-100.06] s=[1.4,1.4] f=$b o=0.29 parent=pear
+circle lenticel-54 p=[-37.78,41.44] s=[1.08,1.08] f=$b o=0.19 parent=pear
+circle lenticel-55 p=[23.24,63.09] s=[2.2,2.2] f=$b o=0.25 parent=pear
+circle lenticel-56 p=[-102.68,77.44] s=[1.41,1.41] f=$b o=0.15 parent=pear
+circle lenticel-57 p=[35.85,-35.73] s=[1.69,1.69] f=$b o=0.28 parent=pear
+circle lenticel-58 p=[-20.83,130.78] s=[1.54,1.54] f=$b o=0.12 parent=pear
+circle lenticel-59 p=[27.12,42.59] s=[2.27,2.27] f=$b o=0.19 parent=pear
+circle lenticel-60 p=[64.73,-45.13] s=[1.06,1.06] f=$b o=0.18 parent=pear
+circle lenticel-61 p=[93.74,57.41] s=[1.32,1.32] f=$b o=0.21 parent=pear
+circle lenticel-62 p=[-72.51,98.73] s=[1.05,1.05] f=$b o=0.18 parent=pear
+circle lenticel-63 p=[1.07,90.71] s=[2.13,2.13] f=$b o=0.18 parent=pear
+circle lenticel-64 p=[21.38,91.27] s=[2.28,2.28] f=$b o=0.29 parent=pear
+circle lenticel-65 p=[-54.15,52.82] s=[1.56,1.56] f=$b o=0.14 parent=pear
+circle lenticel-66 p=[8.19,-86.12] s=[2.25,2.25] f=$b o=0.24 parent=pear
+circle lenticel-67 p=[30.6,-36.88] s=[2.04,2.04] f=$b o=0.33 parent=pear
+circle lenticel-68 p=[-67.39,139.17] s=[1.5,1.5] f=$b o=0.17 parent=pear
+circle lenticel-69 p=[-80.03,145.49] s=$c f=$b o=0.23 parent=pear
+circle lenticel-70 p=[50.49,-24.06] s=[1.17,1.17] f=$b o=0.24 parent=pear
+circle lenticel-71 p=[-21.7,130.62] s=[1.51,1.51] f=$b o=0.3 parent=pear
+circle lenticel-72 p=[1.78,135.2] s=[1.94,1.94] f=$b o=0.25 parent=pear
+circle lenticel-73 p=[-18.57,-20.46] s=[1.27,1.27] f=$b o=0.28 parent=pear
+circle lenticel-74 p=[50.84,129.24] s=[1.8,1.8] f=$b o=0.19 parent=pear
+circle lenticel-75 p=[-75.09,152.7] s=[1.85,1.85] f=$b o=0.16 parent=pear
+circle lenticel-76 p=[60.82,27.19] s=[2.17,2.17] f=$b o=0.25 parent=pear
+circle lenticel-77 p=[-6.02,150.15] s=[1.68,1.68] f=$b o=0.13 parent=pear
+circle lenticel-78 p=[-1.32,-77.3] s=[2.02,2.02] f=$b o=0.29 parent=pear
+circle lenticel-79 p=[57.32,-6.98] s=[1.1,1.1] f=$b o=0.23 parent=pear
+circle lenticel-80 p=[-43.31,-41.58] s=[1.47,1.47] f=$b o=0.28 parent=pear
+circle lenticel-81 p=[8.47,-75.81] s=[1.89,1.89] f=$b o=0.23 parent=pear
+circle lenticel-82 p=[-42.77,48.65] s=[1.46,1.46] f=$b o=0.14 parent=pear
+circle lenticel-83 p=[-32.76,35.51] s=[1.96,1.96] f=$b o=0.28 parent=pear
+circle lenticel-84 p=[-72.13,60.11] s=[1.89,1.89] f=$b o=0.24 parent=pear
+circle lenticel-85 p=[-18.27,31.56] s=[1.82,1.82] f=$b o=0.14 parent=pear
+circle lenticel-86 p=[-55.86,133.23] s=[1.93,1.93] f=$b o=0.14 parent=pear
+circle lenticel-87 p=[24.65,31.29] s=[1.79,1.79] f=$b o=0.27 parent=pear
+circle lenticel-88 p=[1.7,-27.35] s=[2.19,2.19] f=$b o=0.21 parent=pear
+circle lenticel-89 p=[-82.58,102.35] s=[1.43,1.43] f=$b o=0.14 parent=pear
+circle lenticel-90 p=[21.16,-86.94] s=[1.65,1.65] f=$b o=0.23 parent=pear
+circle lenticel-91 p=[12.27,70.83] s=[1.88,1.88] f=$b o=0.3 parent=pear
+circle lenticel-92 p=[44.28,63.47] s=[1.29,1.29] f=$b o=0.27 parent=pear
+circle lenticel-93 p=[55.74,-2.12] s=[2.1,2.1] f=$b o=0.18 parent=pear
+circle lenticel-94 p=[-46.61,-22.31] s=[1.36,1.36] f=$b o=0.14 parent=pear
+circle lenticel-95 p=[62.81,73.86] s=[1.93,1.93] f=$b o=0.23 parent=pear
+circle lenticel-96 p=[-22.71,117.19] s=[1.38,1.38] f=$b o=0.12 parent=pear
+circle lenticel-97 p=[61.21,119.06] s=[2.25,2.25] f=$b o=0.25 parent=pear
+circle lenticel-98 p=[26.73,-108.98] s=[1.87,1.87] f=$b o=0.32 parent=pear
+circle lenticel-99 p=[28.43,-108.21] s=[1.13,1.13] f=$b o=0.18 parent=pear
+circle lenticel-100 p=[-28.9,-87.8] s=[1.35,1.35] f=$b o=0.23 parent=pear
+circle lenticel-101 p=[67.58,10.54] s=$c f=$b o=0.23 parent=pear
+circle lenticel-102 p=[36.69,-47.43] s=[1.13,1.13] f=$b o=0.29 parent=pear
+circle lenticel-103 p=[8.49,131.37] s=[2.18,2.18] f=$b o=0.28 parent=pear
+circle lenticel-104 p=[100.83,98.34] s=[2.22,2.22] f=$b o=0.18 parent=pear
+path bottom-dimple p=[0,0] f=#596426 o=0.6 d="M -11 180 Q 0 174 13 180 Q 0 182 -11 180 Z" parent=pear
+path stem p=[0,0] d="M -6 -148 C -11 -171 -4 -187 9 -204 Q 15 -209 20 -201 C 8 -181 6 -168 8 -150 Z" g=["l",[-5,-175],[13,-175],[[0,"#51412b"],[0.5,"#887047"],[1,"#3f3725"]]] parent=pear
+path stem-ridge p=[0,0] f=none o=0.7 d="M 0 -156 Q -2 -182 13 -201" ink=#b1a06d sw=1.2 parent=pear
+path leaf p=[0,0] d="M 7 -168 C 48 -227 106 -236 145 -219 C 123 -177 68 -142 7 -168 Z" g=["l",[25,-180],[114,-214],[[0,"#304b28"],[0.48,"#597b36"],[1,"#a2b557"]]] parent=pear
+path leaf-vein p=[0,0] f=none o=0.7 d="M 10 -169 Q 79 -192 139 -217" ink=#c5cf88 sw=1.2 parent=pear
+path leaf-vein-0 p=[0,0] f=none o=0.45 d="M 38 -179 q 4 -11 6 -22 M 38 -179 q 13 4 22 0" @s0
+path leaf-vein-1 p=[0,0] f=none o=0.45 d="M 54 -185 q 4 -11 6 -22 M 54 -185 q 13 4 22 0" @s0
+path leaf-vein-2 p=[0,0] f=none o=0.45 d="M 70 -191 q 4 -11 6 -22 M 70 -191 q 13 4 22 0" @s0
+path leaf-vein-3 p=[0,0] f=none o=0.45 d="M 86 -197 q 4 -11 6 -22 M 86 -197 q 13 4 22 0" @s0
+path leaf-vein-4 p=[0,0] f=none o=0.45 d="M 102 -203 q 4 -11 6 -22 M 102 -203 q 13 4 22 0" @s0

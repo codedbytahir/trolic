@@ -1,0 +1,21 @@
+scene "Color Reveal" {
+  size: [640, 480]
+  duration: 2
+  background: "#10131d"
+  rect "violet" {
+    position: [220, 240]
+    size: [140, 180]
+    radius: 24
+    fill: "#a898ff"
+    animate scale [0.1, 0.1] -> [1, 1] over 1s ease_out
+    animate rotation -35 -> 0 over 1s ease_out
+  }
+  rect "lime" {
+    position: [380, 240]
+    size: [140, 180]
+    radius: 24
+    fill: "#c4f76b"
+    animate scale [0.1, 0.1] -> [1, 1] over 1s delay 0.3s ease_out
+    animate rotation 35 -> 0 over 1s delay 0.3s ease_out
+  }
+}

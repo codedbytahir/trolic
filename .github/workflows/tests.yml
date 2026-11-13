@@ -1,0 +1,28 @@
+name: Compiler and offline studio tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: python3 bundle.py
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:offline
+      - run: npm run test:agent-browser
+      - name: Test launch website
+        run: |
+          python3 -m http.server 8002 --bind 0.0.0.0 --directory docs &
+          SERVER=$!
+          trap 'kill $SERVER' EXIT
+          node site-test.mjs

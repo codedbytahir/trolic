@@ -1,0 +1,132 @@
+
+> trolic-prototype@0.4.0 test
+> node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs
+
+PASS parse original example
+PASS deterministic compilation
+PASS position endpoint
+PASS position start
+PASS lottie scene dimensions
+PASS SVG export
+PASS unknown property rejected
+PASS invalid color rejected
+PASS unclosed scene rejected
+PASS time budget enforced
+PASS duplicate IDs rejected
+PASS constant tracks folded
+PASS unknown target rejected
+13 tests passed
+PASS cubic tangent conversion
+PASS quadratic converts exactly to cubic
+PASS unsupported arc rejected
+PASS relative paths normalized
+PASS multiple contours rejected
+PASS malformed number rejected
+PASS incomplete path rejected
+PASS SVG path safely emitted
+PASS Lottie path exported
+PASS stroke and no fill exported
+PASS radial gradient exported
+PASS SVG gradient exported
+PASS unsorted gradient rejected
+PASS bad gradient radius rejected
+PASS parent index exported
+PASS SVG hierarchy exported
+PASS unknown parent rejected
+PASS parent cycle rejected
+PASS nonportable group opacity rejected
+PASS aurelia deterministic compilation
+PASS tidal deterministic compilation
+PASS solstice deterministic compilation
+PASS animated scalar keyframes use arrays
+23 vector tests passed
+PASS relative H/V and implicit lines
+PASS smooth cubic reflected handle
+PASS smooth quadratic reflection
+PASS closed endpoint deduplicated preserving tangent
+PASS compound contours export
+PASS relative moveto after close
+PASS stray numeric after close rejected
+PASS empty contour rejected
+PASS gradient alpha encoded
+PASS invalid alpha rejected
+PASS multi keyframe sampling
+PASS multi keyframe Lottie export
+PASS non-increasing frame time rejected
+PASS missing frame pair rejected
+PASS wrong keyframe value type rejected
+PASS out of bounds keyframes rejected
+PASS duplicate property line reported
+PASS semantic error reports node line
+PASS malformed scene string yields structured error
+PASS invalid node ID yields structured error
+PASS invalid IR track rejected explicitly
+PASS invalid root IR rejected explicitly
+PASS source length bounded
+PASS oversized path coordinate rejected
+PASS unknown line join rejected
+PASS old examples still compile
+PASS new illustrations compile deterministically
+PASS bounded generated corpus is deterministic
+PASS stroke remains above fill in export paint order
+PASS invalid source corpus yields only structured diagnostics
+30 stability tests passed
+PASS check mode structured success
+PASS check mode no file side effect
+PASS unknown CLI options rejected
+PASS missing flag value rejected
+PASS source overwrite blocked
+PASS invalid timestamp rejected
+PASS SVG output written
+PASS bad source check reports failure
+PASS help succeeds
+9 CLI tests passed
+PASS agent syntax compiles
+PASS JSON strings and arrays lexed as single fields
+PASS JSON object fields accepted
+PASS compact gradient shorthand
+PASS constants resolved
+PASS styles resolved
+PASS definition overrides
+PASS bounded repeat transforms
+PASS batches expand stable IDs
+PASS batch explicit IDs
+PASS edits affect node only
+PASS unknown field rejected
+PASS prototype key rejected
+PASS inherited property name rejected
+PASS unknown constants rejected
+PASS duplicate constants rejected
+PASS duplicate fields rejected
+PASS duplicate IDs rejected
+PASS negative repeat rejected
+PASS repeat expansion bounded
+PASS malformed batch rejected
+PASS unknown edit rejected
+PASS JSON nesting limited
+PASS reference growth limited
+PASS mapped source line on semantic failure
+PASS session atomic edits
+PASS session small receipt
+PASS stale revision rejected
+PASS session prevents instruction injection
+PASS inspection bounded
+PASS dollar scene name preserved
+PASS lossless packing aurelia.trolic
+PASS lossless packing bounce.trolic
+PASS lossless packing milo.trolic
+PASS lossless packing orbit.trolic
+PASS lossless packing orchard.trolic
+PASS lossless packing reveal.trolic
+PASS lossless packing solstice.trolic
+PASS lossless packing tidal.trolic
+PASS distributed compact fixtures preserve exact export
+PASS agent export target roundtrips
+PASS readable export target roundtrips
+PASS repeat recipe produces bounded scene
+PASS numeric IDs survive batch conversion
+PASS quoted parent IDs survive style factoring
+PASS dollar parent IDs remain literal
+PASS inspection returns only requested fields
+PASS inspection rejects unknown fields
+48 agent tests passed

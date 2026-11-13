@@ -1,0 +1,15 @@
+scene "Passing Signals" {
+  size: [640, 480]
+  duration: 3
+  background: "#10131d"
+  circle "signal-a" {
+    size: [100, 100]
+    fill: "#c4f76b"
+    animate position [120, 180] -> [520, 180] over 2s ease_in_out
+  }
+  circle "signal-b" {
+    size: [70, 70]
+    fill: "#a898ff"
+    animate position [520, 300] -> [120, 300] over 2s delay 0.3s ease_in_out
+  }
+}

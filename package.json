@@ -1,0 +1,19 @@
+{
+  "name": "trolic-prototype",
+  "version": "0.4.0",
+  "type": "module",
+  "scripts": {
+    "test": "node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs",
+    "build": "node cli.mjs examples/bounce.trolic --target lottie --output artifacts/bounce.json",
+    "test:browser": "node browser-test.mjs",
+    "test:compare": "node compare-renderers.mjs",
+    "test:offline": "node offline-test.mjs",
+    "bench:tokens": "python token-benchmark.py",
+    "test:agent-browser": "node agent-browser-test.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "lottie-web": "^5.13.0"
+  }
+}

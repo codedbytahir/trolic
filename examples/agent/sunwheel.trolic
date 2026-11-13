@@ -1,0 +1,8 @@
+// Original compact procedural recipe; no arbitrary code execution.
+canvas 640 640 bg=#111f2b dur=4 name="Sunwheel"
+let gold #edcc88
+group bloom p=[320,320] t=[["r",[[0,-10],[2,10],[4,-10]]]]
+def petal path p=[0,0] parent=bloom d="M 0 0 C -62 -60 -40 -153 0 -210 C 40 -153 62 -60 0 0 Z" g=["l",[0,0],[0,-210],[[0,"#255b69"],[0.55,"#67b5a9"],[1,"#ecdfaa"]]]
+repeat petal leaf- 16 p=[0,0] turn=22.5
+circle heart parent=bloom p=[0,0] s=[65,65] f=$gold
+circle rim p=[320,320] s=[500,500] f=none ink=$gold sw=1 o=0.3

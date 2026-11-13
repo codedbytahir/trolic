@@ -1,0 +1,65 @@
+{
+  "environment": "Node v20.20.2, sandbox; 20 warmups, 100 measurements per scene; parse+validate+Lottie export; not playback timing",
+  "results": [
+    {
+      "name": "bounce",
+      "sourceBytes": 375,
+      "outputBytes": 1351,
+      "gzipOutputBytes": 451,
+      "nodes": 2,
+      "tracks": 2,
+      "medianCompileMs": 0.075,
+      "p95CompileMs": 0.232
+    },
+    {
+      "name": "aurelia",
+      "sourceBytes": 17564,
+      "outputBytes": 50386,
+      "gzipOutputBytes": 2526,
+      "nodes": 86,
+      "tracks": 23,
+      "medianCompileMs": 2.443,
+      "p95CompileMs": 3.201
+    },
+    {
+      "name": "tidal",
+      "sourceBytes": 7661,
+      "outputBytes": 24064,
+      "gzipOutputBytes": 1954,
+      "nodes": 46,
+      "tracks": 2,
+      "medianCompileMs": 1.049,
+      "p95CompileMs": 1.697
+    },
+    {
+      "name": "solstice",
+      "sourceBytes": 4920,
+      "outputBytes": 15717,
+      "gzipOutputBytes": 1438,
+      "nodes": 24,
+      "tracks": 1,
+      "medianCompileMs": 0.819,
+      "p95CompileMs": 1.186
+    },
+    {
+      "name": "orchard",
+      "sourceBytes": 18888,
+      "outputBytes": 58114,
+      "gzipOutputBytes": 4377,
+      "nodes": 124,
+      "tracks": 0,
+      "medianCompileMs": 2.522,
+      "p95CompileMs": 5.137
+    },
+    {
+      "name": "milo",
+      "sourceBytes": 8051,
+      "outputBytes": 27968,
+      "gzipOutputBytes": 2936,
+      "nodes": 43,
+      "tracks": 2,
+      "medianCompileMs": 1.419,
+      "p95CompileMs": 2.024
+    }
+  ]
+}

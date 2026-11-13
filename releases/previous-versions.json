@@ -1,0 +1,27 @@
+[
+  {
+    "version": "0.1",
+    "archive": "trolic-v0.1.zip",
+    "bytes": 13088,
+    "sha256": "6c452bcdbac4d121b240f9110a0bd9e5bc72fafab823f18dbfcb6f72b9e2d73c"
+  },
+  {
+    "version": "0.2",
+    "archive": "trolic-v0.2.zip",
+    "bytes": 2037094,
+    "sha256": "fa6fbb924b2eb0788a5ec5d524b71833244c97ce0336d4288e9f9211777060ce"
+  },
+  {
+    "version": "0.3",
+    "archive": "trolic-v0.3.zip",
+    "bytes": 4677454,
+    "sha256": "5733af569bc97fba0708bcbf67331178c19d34b17fd906137bfe33652753e774"
+  },
+  {
+    "version": "0.3-pre-v0.4",
+    "archive": "trolic-v0.3.zip",
+    "bytes": 4677454,
+    "sha256": "5733af569bc97fba0708bcbf67331178c19d34b17fd906137bfe33652753e774",
+    "note": "Exact pre-v0.4 snapshot matched the v0.3 archive byte-for-byte."
+  }
+]

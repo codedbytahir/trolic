@@ -1,0 +1,654 @@
+scene "Aurelia \u2014 botanical study" {
+  size: [800, 640]
+  fps: 60
+  duration: 6
+  background: "#101e27"
+  circle "halo" {
+    position: [400,315]
+    size: [510,510]
+    fill: "none"
+    stroke: "#29414a"
+    stroke_width: 1
+  }
+  circle "halo-inner" {
+    position: [400,315]
+    size: [430,430]
+    fill: "none"
+    stroke: "#203940"
+    stroke_width: 1
+  }
+  group "flower" {
+    position: [400,315]
+    animate rotation -12 -> 12 over 6s ease_in_out
+  }
+  path "petal-0-0" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 0.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.0s ease_out
+  }
+  path "vein-0-0" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 0.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-1" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 30.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.065s ease_out
+  }
+  path "vein-0-1" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 30.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-2" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 60.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.13s ease_out
+  }
+  path "vein-0-2" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 60.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-3" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 90.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.195s ease_out
+  }
+  path "vein-0-3" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 90.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-4" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 120.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.26s ease_out
+  }
+  path "vein-0-4" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 120.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-5" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 150.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.325s ease_out
+  }
+  path "vein-0-5" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 150.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-6" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 180.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.39s ease_out
+  }
+  path "vein-0-6" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 180.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-7" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 210.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.455s ease_out
+  }
+  path "vein-0-7" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 210.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-8" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 240.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.52s ease_out
+  }
+  path "vein-0-8" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 240.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-9" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 270.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.585s ease_out
+  }
+  path "vein-0-9" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 270.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-10" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 300.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.65s ease_out
+  }
+  path "vein-0-10" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 300.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-0-11" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -67 -81.7 -50.25 -193.5 0 -215 C 50.25 -193.5 67 -81.7 0 0 Z"
+    rotation: 330.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-215],"stops":[[0,"#154d55"],[0.5,"#4bafa1"],[1,"#d4f0a2"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.715s ease_out
+  }
+  path "vein-0-11" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -107.5 0 -189.2"
+    rotation: 330.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-0" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 15.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.4s ease_out
+  }
+  path "vein-1-0" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 15.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-1" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 51.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.465s ease_out
+  }
+  path "vein-1-1" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 51.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-2" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 87.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.53s ease_out
+  }
+  path "vein-1-2" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 87.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-3" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 123.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.595s ease_out
+  }
+  path "vein-1-3" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 123.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-4" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 159.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.66s ease_out
+  }
+  path "vein-1-4" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 159.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-5" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 195.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.725s ease_out
+  }
+  path "vein-1-5" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 195.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-6" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 231.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.79s ease_out
+  }
+  path "vein-1-6" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 231.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-7" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 267.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.855s ease_out
+  }
+  path "vein-1-7" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 267.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-8" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 303.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.92s ease_out
+  }
+  path "vein-1-8" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 303.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  path "petal-1-9" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 0 C -54 -59.660000000000004 -40.5 -141.3 0 -157 C 40.5 -141.3 54 -59.660000000000004 0 0 Z"
+    rotation: 339.0
+    gradient: {"type":"linear","from":[0,0],"to":[0,-157],"stops":[[0,"#24766c"],[0.55,"#9ed69d"],[1,"#f5edbb"]]}
+    animate scale [0.55,0.55] -> [1,1] over 2s delay 0.985s ease_out
+  }
+  path "vein-1-9" {
+    parent: "flower"
+    position: [0,0]
+    path: "M 0 -12 Q 8 -78.5 0 -138.16"
+    rotation: 339.0
+    fill: "none"
+    stroke: "#b8e3b1"
+    stroke_width: 0.65
+    opacity: 0.5
+  }
+  circle "heart" {
+    parent: "flower"
+    position: [0,0]
+    size: [75,75]
+    gradient: {"type":"radial","from":[-12,-15],"to":[36,20],"stops":[[0,"#fff0be"],[0.5,"#deb85d"],[1,"#836035"]]}
+  }
+  circle "seed-0" {
+    parent: "flower"
+    position: [0.0,0.0]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-1" {
+    parent: "flower"
+    position: [-3.69,3.38]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-2" {
+    parent: "flower"
+    position: [0.62,-7.04]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-3" {
+    parent: "flower"
+    position: [5.27,6.87]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-4" {
+    parent: "flower"
+    position: [-9.85,-1.74]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-5" {
+    parent: "flower"
+    position: [9.43,-6.0]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-6" {
+    parent: "flower"
+    position: [-3.18,11.83]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-7" {
+    parent: "flower"
+    position: [-6.1,-11.74]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-8" {
+    parent: "flower"
+    position: [13.28,4.85]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-9" {
+    parent: "flower"
+    position: [-13.87,5.72]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-10" {
+    parent: "flower"
+    position: [6.7,-14.32]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-11" {
+    parent: "flower"
+    position: [4.96,15.82]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-12" {
+    parent: "flower"
+    position: [-14.99,-8.68]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-13" {
+    parent: "flower"
+    position: [17.61,-3.87]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-14" {
+    parent: "flower"
+    position: [-10.76,15.31]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-15" {
+    parent: "flower"
+    position: [-2.49,-19.2]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-16" {
+    parent: "flower"
+    position: [15.29,12.89]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-17" {
+    parent: "flower"
+    position: [-20.6,0.85]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-18" {
+    parent: "flower"
+    position: [15.04,-14.96]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-19" {
+    parent: "flower"
+    position: [-1.01,21.77]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-20" {
+    parent: "flower"
+    position: [-14.33,-17.17]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  circle "seed-21" {
+    parent: "flower"
+    position: [22.71,3.05]
+    size: [3,3]
+    fill: "#674d30"
+  }
+  path "spark-0" {
+    position: [690.0,315.0]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-1" {
+    position: [667.93,418.32]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-2" {
+    position: [605.06,505.92]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-3" {
+    position: [510.98,564.45]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-4" {
+    position: [400.0,585.0]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-5" {
+    position: [289.02,564.45]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-6" {
+    position: [194.94,505.92]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-7" {
+    position: [132.07,418.32]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-8" {
+    position: [110.0,315.0]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-9" {
+    position: [132.07,211.68]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-10" {
+    position: [194.94,124.08]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-11" {
+    position: [289.02,65.55]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-12" {
+    position: [400.0,45.0]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-13" {
+    position: [510.98,65.55]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-14" {
+    position: [605.06,124.08]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+  path "spark-15" {
+    position: [667.93,211.68]
+    path: "M 0 -5 L 2 0 L 0 5 L -2 0 Z"
+    fill: "#e1c481"
+    opacity: 0.65
+  }
+}

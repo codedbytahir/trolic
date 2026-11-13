@@ -1,0 +1,332 @@
+scene "Tidal \u2014 koi in a quiet pond" {
+  size: [800, 640]
+  fps: 60
+  duration: 6
+  background: "#071d2b"
+  circle "water-ring-0" {
+    position: [400,325]
+    size: [210,120]
+    fill: "none"
+    stroke: "#174051"
+    stroke_width: 1
+    rotation: -18
+  }
+  circle "water-ring-1" {
+    position: [400,325]
+    size: [315,188]
+    fill: "none"
+    stroke: "#174051"
+    stroke_width: 1
+    rotation: -18
+  }
+  circle "water-ring-2" {
+    position: [400,325]
+    size: [420,256]
+    fill: "none"
+    stroke: "#174051"
+    stroke_width: 1
+    rotation: -18
+  }
+  circle "water-ring-3" {
+    position: [400,325]
+    size: [525,324]
+    fill: "none"
+    stroke: "#174051"
+    stroke_width: 1
+    rotation: -18
+  }
+  circle "water-ring-4" {
+    position: [400,325]
+    size: [630,392]
+    fill: "none"
+    stroke: "#174051"
+    stroke_width: 1
+    rotation: -18
+  }
+  circle "water-ring-5" {
+    position: [400,325]
+    size: [735,460]
+    fill: "none"
+    stroke: "#174051"
+    stroke_width: 1
+    rotation: -18
+  }
+  path "lily-0" {
+    position: [145,145]
+    path: "M 0 0 L 60 -12.0 C 36.0 -84.0 -78.0 -42.0 -60 12.0 C -30.0 78.0 72.0 60 60 5 Z"
+    gradient: {"type":"linear","from":[-60,-60],"to":[60,60],"stops":[[0,"#367c69"],[1,"#123f43"]]}
+  }
+  path "lily-vein-0" {
+    position: [145,145]
+    path: "M -42.0 24.0 Q 0 18.0 36.0 0"
+    fill: "none"
+    stroke: "#6fa483"
+    stroke_width: 1
+  }
+  path "lily-1" {
+    position: [645,455]
+    path: "M 0 0 L 72 -14.4 C 43.199999999999996 -100.8 -93.60000000000001 -50.4 -72 14.4 C -36.0 93.60000000000001 86.39999999999999 72 72 5 Z"
+    gradient: {"type":"linear","from":[-72,-72],"to":[72,72],"stops":[[0,"#367c69"],[1,"#123f43"]]}
+  }
+  path "lily-vein-1" {
+    position: [645,455]
+    path: "M -50.4 28.8 Q 0 21.599999999999998 43.199999999999996 0"
+    fill: "none"
+    stroke: "#6fa483"
+    stroke_width: 1
+  }
+  path "lily-2" {
+    position: [620,125]
+    path: "M 0 0 L 35 -7.0 C 21.0 -49.0 -45.5 -24.5 -35 7.0 C -17.5 45.5 42.0 35 35 5 Z"
+    gradient: {"type":"linear","from":[-35,-35],"to":[35,35],"stops":[[0,"#367c69"],[1,"#123f43"]]}
+  }
+  path "lily-vein-2" {
+    position: [620,125]
+    path: "M -24.5 14.0 Q 0 10.5 21.0 0"
+    fill: "none"
+    stroke: "#6fa483"
+    stroke_width: 1
+  }
+  group "fish-0" {
+    position: [330,290]
+    rotation: -35
+    animate position [330, 290] -> [305, 310] over 6s ease_in_out
+  }
+  path "fish-0-tail" {
+    parent: "fish-0"
+    position: [0,0]
+    path: "M 0 58 C -18 80 -38 84 -48 108 Q -10 100 0 85 Q 15 102 44 106 C 30 76 14 78 0 58 Z"
+    gradient: {"type":"linear","from":[0,60],"to":[0,110],"stops":[[0,"#d65b39"],[1,"#fff1d4"]]}
+  }
+  path "fish-0-fin--1" {
+    parent: "fish-0"
+    position: [0,0]
+    path: "M -17 -15 Q -66 0 -42 35 Q -23 25 -15 16 Z"
+    fill: "#fff1d4"
+    opacity: 0.7
+  }
+  path "fish-0-fin-1" {
+    parent: "fish-0"
+    position: [0,0]
+    path: "M 17 -15 Q 66 0 42 35 Q 23 25 15 16 Z"
+    fill: "#fff1d4"
+    opacity: 0.7
+  }
+  path "fish-0-body" {
+    parent: "fish-0"
+    position: [0,0]
+    path: "M 0 -77 C -46 -65 -40 21 0 75 C 39 20 46 -65 0 -77 Z"
+    gradient: {"type":"linear","from":[-30,-10],"to":[34,10],"stops":[[0,"#d65b39"],[0.47,"#fff1d4"],[1,"#d65b39"]]}
+  }
+  path "fish-0-mark-0" {
+    parent: "fish-0"
+    position: [0,-44]
+    path: "M -15 -8 Q 4 -19 21 -4 Q 7 16 -15 8 Z"
+    fill: "#d65b39"
+    opacity: 0.9
+  }
+  path "fish-0-mark-1" {
+    parent: "fish-0"
+    position: [0,-15]
+    path: "M -15 -8 Q 4 -19 21 -4 Q 7 16 -15 8 Z"
+    fill: "#d65b39"
+    opacity: 0.9
+  }
+  path "fish-0-mark-2" {
+    parent: "fish-0"
+    position: [0,14]
+    path: "M -15 -8 Q 4 -19 21 -4 Q 7 16 -15 8 Z"
+    fill: "#d65b39"
+    opacity: 0.9
+  }
+  circle "fish-0-eye--15" {
+    parent: "fish-0"
+    position: [-15,-53]
+    size: [5,5]
+    fill: "#0b2530"
+  }
+  circle "fish-0-eye-15" {
+    parent: "fish-0"
+    position: [15,-53]
+    size: [5,5]
+    fill: "#0b2530"
+  }
+  path "fish-0-spine" {
+    parent: "fish-0"
+    position: [0,0]
+    path: "M 0 -57 Q -6 6 0 59"
+    fill: "none"
+    stroke: "#fff1d4"
+    stroke_width: 1.3
+    opacity: 0.7
+  }
+  group "fish-1" {
+    position: [505,355]
+    rotation: 145
+    animate position [505, 355] -> [480, 375] over 6s ease_in_out
+  }
+  path "fish-1-tail" {
+    parent: "fish-1"
+    position: [0,0]
+    path: "M 0 58 C -18 80 -38 84 -48 108 Q -10 100 0 85 Q 15 102 44 106 C 30 76 14 78 0 58 Z"
+    gradient: {"type":"linear","from":[0,60],"to":[0,110],"stops":[[0,"#dc7135"],[1,"#f6c46e"]]}
+  }
+  path "fish-1-fin--1" {
+    parent: "fish-1"
+    position: [0,0]
+    path: "M -17 -15 Q -66 0 -42 35 Q -23 25 -15 16 Z"
+    fill: "#f6c46e"
+    opacity: 0.7
+  }
+  path "fish-1-fin-1" {
+    parent: "fish-1"
+    position: [0,0]
+    path: "M 17 -15 Q 66 0 42 35 Q 23 25 15 16 Z"
+    fill: "#f6c46e"
+    opacity: 0.7
+  }
+  path "fish-1-body" {
+    parent: "fish-1"
+    position: [0,0]
+    path: "M 0 -77 C -46 -65 -40 21 0 75 C 39 20 46 -65 0 -77 Z"
+    gradient: {"type":"linear","from":[-30,-10],"to":[34,10],"stops":[[0,"#dc7135"],[0.47,"#f6c46e"],[1,"#dc7135"]]}
+  }
+  path "fish-1-mark-0" {
+    parent: "fish-1"
+    position: [0,-44]
+    path: "M -15 -8 Q 4 -19 21 -4 Q 7 16 -15 8 Z"
+    fill: "#dc7135"
+    opacity: 0.9
+  }
+  path "fish-1-mark-1" {
+    parent: "fish-1"
+    position: [0,-15]
+    path: "M -15 -8 Q 4 -19 21 -4 Q 7 16 -15 8 Z"
+    fill: "#dc7135"
+    opacity: 0.9
+  }
+  path "fish-1-mark-2" {
+    parent: "fish-1"
+    position: [0,14]
+    path: "M -15 -8 Q 4 -19 21 -4 Q 7 16 -15 8 Z"
+    fill: "#dc7135"
+    opacity: 0.9
+  }
+  circle "fish-1-eye--15" {
+    parent: "fish-1"
+    position: [-15,-53]
+    size: [5,5]
+    fill: "#0b2530"
+  }
+  circle "fish-1-eye-15" {
+    parent: "fish-1"
+    position: [15,-53]
+    size: [5,5]
+    fill: "#0b2530"
+  }
+  path "fish-1-spine" {
+    parent: "fish-1"
+    position: [0,0]
+    path: "M 0 -57 Q -6 6 0 59"
+    fill: "none"
+    stroke: "#f6c46e"
+    stroke_width: 1.3
+    opacity: 0.7
+  }
+  circle "bubble-0" {
+    position: [70,80]
+    size: [4,4]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-1" {
+    position: [207,163]
+    size: [7,7]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-2" {
+    position: [344,246]
+    size: [10,10]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-3" {
+    position: [481,329]
+    size: [4,4]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-4" {
+    position: [618,412]
+    size: [7,7]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-5" {
+    position: [85,495]
+    size: [10,10]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-6" {
+    position: [222,103]
+    size: [4,4]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-7" {
+    position: [359,186]
+    size: [7,7]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-8" {
+    position: [496,269]
+    size: [10,10]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-9" {
+    position: [633,352]
+    size: [4,4]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-10" {
+    position: [100,435]
+    size: [7,7]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+  circle "bubble-11" {
+    position: [237,518]
+    size: [10,10]
+    fill: "none"
+    stroke: "#548b98"
+    stroke_width: 1
+    opacity: 0.55
+  }
+}

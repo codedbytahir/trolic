@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+.cache/
+.env
+.env.*
+*.log
+artifacts/compare-*.png
+artifacts/cli-test-*/
+artifacts/launch-*.png

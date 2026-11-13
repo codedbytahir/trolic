@@ -1,0 +1,871 @@
+scene "Orchard \u2014 shaded pear study" {
+  size: [800, 680]
+  duration: 6
+  fps: 60
+  background: "#eee9dc"
+  circle "paper-light" {
+    position: [365,280]
+    size: [780,710]
+    gradient: {"type":"radial","from":[0,-80],"to":[380,0],"stops":[[0,"#fffdf6",0.85],[1,"#fffdf6",0]]}
+  }
+  circle "soft-shadow" {
+    position: [420,542]
+    size: [370,76]
+    gradient: {"type":"radial","from":[0,0],"to":[185,0],"stops":[[0,"#393a21",0.28],[0.45,"#393a21",0.14],[1,"#393a21",0]]}
+  }
+  circle "contact-shadow" {
+    position: [407,540]
+    size: [205,25]
+    gradient: {"type":"radial","from":[0,0],"to":[102,0],"stops":[[0,"#41412d",0.33],[1,"#41412d",0]]}
+  }
+  group "pear" {
+    position: [397,356]
+  }
+  path "skin" {
+    parent: "pear"
+    position: [0,0]
+    path: "M -4 -153 C -39 -153 -43 -111 -54 -69 C -67 -21 -125 13 -126 83 C -129 159 -63 190 1 189 C 76 188 137 157 133 85 C 128 20 73 -19 55 -68 C 41 -112 35 -154 -4 -153 Z"
+    gradient: {"type":"linear","from":[-64,-70],"to":[130,120],"stops":[[0,"#e4d762"],[0.32,"#b8bb45"],[0.68,"#8c9c30"],[1,"#556926"]]}
+  }
+  path "warm-shoulder" {
+    parent: "pear"
+    position: [0,0]
+    path: "M -4 -153 C -39 -153 -43 -111 -54 -69 C -67 -21 -125 13 -126 83 C -129 159 -63 190 1 189 C 76 188 137 157 133 85 C 128 20 73 -19 55 -68 C 41 -112 35 -154 -4 -153 Z"
+    gradient: {"type":"radial","from":[-65,45],"to":[105,55],"stops":[[0,"#fff3a0",0.58],[0.6,"#ead360",0.14],[1,"#ead360",0]]}
+  }
+  path "lower-shade" {
+    parent: "pear"
+    position: [0,0]
+    path: "M -4 -153 C -39 -153 -43 -111 -54 -69 C -67 -21 -125 13 -126 83 C -129 159 -63 190 1 189 C 76 188 137 157 133 85 C 128 20 73 -19 55 -68 C 41 -112 35 -154 -4 -153 Z"
+    gradient: {"type":"linear","from":[0,65],"to":[0,190],"stops":[[0,"#435322",0],[0.72,"#435322",0.05],[1,"#435322",0.42]]}
+  }
+  path "edge-shade" {
+    parent: "pear"
+    position: [0,0]
+    path: "M -4 -153 C -39 -153 -43 -111 -54 -69 C -67 -21 -125 13 -126 83 C -129 159 -63 190 1 189 C 76 188 137 157 133 85 C 128 20 73 -19 55 -68 C 41 -112 35 -154 -4 -153 Z"
+    gradient: {"type":"linear","from":[42,0],"to":[138,20],"stops":[[0,"#355629",0],[1,"#355629",0.4]]}
+  }
+  path "soft-highlight" {
+    parent: "pear"
+    position: [0,0]
+    path: "M -18 -126 C -33 -99 -27 -64 -47 -30 C -76 12 -101 44 -92 85 C -84 99 -73 80 -66 48 C -52 0 -18 -27 -13 -69 C -8 -94 -8 -119 -18 -126 Z"
+    gradient: {"type":"radial","from":[-44,-30],"to":[40,-30],"stops":[[0,"#ffffcb",0.35],[1,"#ffffcb",0]]}
+  }
+  circle "lenticel-0" {
+    parent: "pear"
+    position: [0.28,-38.05]
+    size: [1.73,1.73]
+    fill: "#6d7130"
+    opacity: 0.22
+  }
+  circle "lenticel-1" {
+    parent: "pear"
+    position: [-2.55,46.35]
+    size: [1.67,1.67]
+    fill: "#6d7130"
+    opacity: 0.16
+  }
+  circle "lenticel-2" {
+    parent: "pear"
+    position: [-14.69,-84.64]
+    size: [2.01,2.01]
+    fill: "#6d7130"
+    opacity: 0.13
+  }
+  circle "lenticel-3" {
+    parent: "pear"
+    position: [-10.09,-18.15]
+    size: [1.72,1.72]
+    fill: "#6d7130"
+    opacity: 0.22
+  }
+  circle "lenticel-4" {
+    parent: "pear"
+    position: [83.43,120.24]
+    size: [1.74,1.74]
+    fill: "#6d7130"
+    opacity: 0.16
+  }
+  circle "lenticel-5" {
+    parent: "pear"
+    position: [66.42,125.64]
+    size: [1.6,1.6]
+    fill: "#6d7130"
+    opacity: 0.3
+  }
+  circle "lenticel-6" {
+    parent: "pear"
+    position: [83.26,128.21]
+    size: [1.3,1.3]
+    fill: "#6d7130"
+    opacity: 0.17
+  }
+  circle "lenticel-7" {
+    parent: "pear"
+    position: [-45.62,105.75]
+    size: [1.36,1.36]
+    fill: "#6d7130"
+    opacity: 0.13
+  }
+  circle "lenticel-8" {
+    parent: "pear"
+    position: [-53.47,94.61]
+    size: [1.22,1.22]
+    fill: "#6d7130"
+    opacity: 0.25
+  }
+  circle "lenticel-9" {
+    parent: "pear"
+    position: [17.06,-91.82]
+    size: [1.11,1.11]
+    fill: "#6d7130"
+    opacity: 0.33
+  }
+  circle "lenticel-10" {
+    parent: "pear"
+    position: [-21.45,-78.73]
+    size: [1.6,1.6]
+    fill: "#6d7130"
+    opacity: 0.29
+  }
+  circle "lenticel-11" {
+    parent: "pear"
+    position: [38.0,18.95]
+    size: [1.31,1.31]
+    fill: "#6d7130"
+    opacity: 0.31
+  }
+  circle "lenticel-12" {
+    parent: "pear"
+    position: [-5.39,-59.21]
+    size: [2.04,2.04]
+    fill: "#6d7130"
+    opacity: 0.21
+  }
+  circle "lenticel-13" {
+    parent: "pear"
+    position: [13.14,-98.78]
+    size: [1.12,1.12]
+    fill: "#6d7130"
+    opacity: 0.21
+  }
+  circle "lenticel-14" {
+    parent: "pear"
+    position: [-1.39,-20.63]
+    size: [1.18,1.18]
+    fill: "#6d7130"
+    opacity: 0.32
+  }
+  circle "lenticel-15" {
+    parent: "pear"
+    position: [9.54,108.47]
+    size: [1.39,1.39]
+    fill: "#6d7130"
+    opacity: 0.2
+  }
+  circle "lenticel-16" {
+    parent: "pear"
+    position: [-12.02,-43.8]
+    size: [1.64,1.64]
+    fill: "#6d7130"
+    opacity: 0.28
+  }
+  circle "lenticel-17" {
+    parent: "pear"
+    position: [25.98,-88.75]
+    size: [2.17,2.17]
+    fill: "#6d7130"
+    opacity: 0.24
+  }
+  circle "lenticel-18" {
+    parent: "pear"
+    position: [-79.69,35.59]
+    size: [1.28,1.28]
+    fill: "#6d7130"
+    opacity: 0.13
+  }
+  circle "lenticel-19" {
+    parent: "pear"
+    position: [13.35,-84.91]
+    size: [1.26,1.26]
+    fill: "#6d7130"
+    opacity: 0.27
+  }
+  circle "lenticel-20" {
+    parent: "pear"
+    position: [-17.1,99.06]
+    size: [1.88,1.88]
+    fill: "#6d7130"
+    opacity: 0.25
+  }
+  circle "lenticel-21" {
+    parent: "pear"
+    position: [18.44,55.21]
+    size: [1.84,1.84]
+    fill: "#6d7130"
+    opacity: 0.15
+  }
+  circle "lenticel-22" {
+    parent: "pear"
+    position: [-43.48,158.66]
+    size: [1.17,1.17]
+    fill: "#6d7130"
+    opacity: 0.17
+  }
+  circle "lenticel-23" {
+    parent: "pear"
+    position: [94.18,109.86]
+    size: [2.29,2.29]
+    fill: "#6d7130"
+    opacity: 0.15
+  }
+  circle "lenticel-24" {
+    parent: "pear"
+    position: [32.94,-9.49]
+    size: [1.14,1.14]
+    fill: "#6d7130"
+    opacity: 0.21
+  }
+  circle "lenticel-25" {
+    parent: "pear"
+    position: [-44.89,40.7]
+    size: [1.39,1.39]
+    fill: "#6d7130"
+    opacity: 0.22
+  }
+  circle "lenticel-26" {
+    parent: "pear"
+    position: [23.61,-78.05]
+    size: [1.61,1.61]
+    fill: "#6d7130"
+    opacity: 0.16
+  }
+  circle "lenticel-27" {
+    parent: "pear"
+    position: [-25.06,21.3]
+    size: [1.83,1.83]
+    fill: "#6d7130"
+    opacity: 0.13
+  }
+  circle "lenticel-28" {
+    parent: "pear"
+    position: [-55.95,-14.0]
+    size: [1.77,1.77]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-29" {
+    parent: "pear"
+    position: [26.49,103.16]
+    size: [1.67,1.67]
+    fill: "#6d7130"
+    opacity: 0.26
+  }
+  circle "lenticel-30" {
+    parent: "pear"
+    position: [3.48,-27.14]
+    size: [1.5,1.5]
+    fill: "#6d7130"
+    opacity: 0.22
+  }
+  circle "lenticel-31" {
+    parent: "pear"
+    position: [-64.89,-1.5]
+    size: [1.26,1.26]
+    fill: "#6d7130"
+    opacity: 0.25
+  }
+  circle "lenticel-32" {
+    parent: "pear"
+    position: [-7.76,-81.64]
+    size: [2.05,2.05]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-33" {
+    parent: "pear"
+    position: [-34.81,97.75]
+    size: [1.0,1.0]
+    fill: "#6d7130"
+    opacity: 0.22
+  }
+  circle "lenticel-34" {
+    parent: "pear"
+    position: [-3.48,93.42]
+    size: [1.47,1.47]
+    fill: "#6d7130"
+    opacity: 0.31
+  }
+  circle "lenticel-35" {
+    parent: "pear"
+    position: [56.31,-14.15]
+    size: [1.94,1.94]
+    fill: "#6d7130"
+    opacity: 0.16
+  }
+  circle "lenticel-36" {
+    parent: "pear"
+    position: [30.46,60.28]
+    size: [1.77,1.77]
+    fill: "#6d7130"
+    opacity: 0.27
+  }
+  circle "lenticel-37" {
+    parent: "pear"
+    position: [31.85,-6.64]
+    size: [1.78,1.78]
+    fill: "#6d7130"
+    opacity: 0.29
+  }
+  circle "lenticel-38" {
+    parent: "pear"
+    position: [21.05,94.38]
+    size: [1.69,1.69]
+    fill: "#6d7130"
+    opacity: 0.17
+  }
+  circle "lenticel-39" {
+    parent: "pear"
+    position: [-0.64,-89.12]
+    size: [1.64,1.64]
+    fill: "#6d7130"
+    opacity: 0.2
+  }
+  circle "lenticel-40" {
+    parent: "pear"
+    position: [66.54,21.57]
+    size: [2.12,2.12]
+    fill: "#6d7130"
+    opacity: 0.32
+  }
+  circle "lenticel-41" {
+    parent: "pear"
+    position: [-17.27,-78.19]
+    size: [2.12,2.12]
+    fill: "#6d7130"
+    opacity: 0.3
+  }
+  circle "lenticel-42" {
+    parent: "pear"
+    position: [16.75,-57.9]
+    size: [1.04,1.04]
+    fill: "#6d7130"
+    opacity: 0.21
+  }
+  circle "lenticel-43" {
+    parent: "pear"
+    position: [-21.12,57.99]
+    size: [2.11,2.11]
+    fill: "#6d7130"
+    opacity: 0.17
+  }
+  circle "lenticel-44" {
+    parent: "pear"
+    position: [-3.76,-73.27]
+    size: [1.35,1.35]
+    fill: "#6d7130"
+    opacity: 0.28
+  }
+  circle "lenticel-45" {
+    parent: "pear"
+    position: [-79.86,73.88]
+    size: [1.23,1.23]
+    fill: "#6d7130"
+    opacity: 0.13
+  }
+  circle "lenticel-46" {
+    parent: "pear"
+    position: [-41.82,148.5]
+    size: [1.23,1.23]
+    fill: "#6d7130"
+    opacity: 0.18
+  }
+  circle "lenticel-47" {
+    parent: "pear"
+    position: [-56.68,4.11]
+    size: [1.92,1.92]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-48" {
+    parent: "pear"
+    position: [60.27,-20.66]
+    size: [1.71,1.71]
+    fill: "#6d7130"
+    opacity: 0.27
+  }
+  circle "lenticel-49" {
+    parent: "pear"
+    position: [-11.54,-25.93]
+    size: [2.2,2.2]
+    fill: "#6d7130"
+    opacity: 0.16
+  }
+  circle "lenticel-50" {
+    parent: "pear"
+    position: [-34.48,149.57]
+    size: [1.02,1.02]
+    fill: "#6d7130"
+    opacity: 0.21
+  }
+  circle "lenticel-51" {
+    parent: "pear"
+    position: [20.45,114.97]
+    size: [1.6,1.6]
+    fill: "#6d7130"
+    opacity: 0.13
+  }
+  circle "lenticel-52" {
+    parent: "pear"
+    position: [95.59,31.15]
+    size: [2.07,2.07]
+    fill: "#6d7130"
+    opacity: 0.31
+  }
+  circle "lenticel-53" {
+    parent: "pear"
+    position: [-19.72,-100.06]
+    size: [1.4,1.4]
+    fill: "#6d7130"
+    opacity: 0.29
+  }
+  circle "lenticel-54" {
+    parent: "pear"
+    position: [-37.78,41.44]
+    size: [1.08,1.08]
+    fill: "#6d7130"
+    opacity: 0.19
+  }
+  circle "lenticel-55" {
+    parent: "pear"
+    position: [23.24,63.09]
+    size: [2.2,2.2]
+    fill: "#6d7130"
+    opacity: 0.25
+  }
+  circle "lenticel-56" {
+    parent: "pear"
+    position: [-102.68,77.44]
+    size: [1.41,1.41]
+    fill: "#6d7130"
+    opacity: 0.15
+  }
+  circle "lenticel-57" {
+    parent: "pear"
+    position: [35.85,-35.73]
+    size: [1.69,1.69]
+    fill: "#6d7130"
+    opacity: 0.28
+  }
+  circle "lenticel-58" {
+    parent: "pear"
+    position: [-20.83,130.78]
+    size: [1.54,1.54]
+    fill: "#6d7130"
+    opacity: 0.12
+  }
+  circle "lenticel-59" {
+    parent: "pear"
+    position: [27.12,42.59]
+    size: [2.27,2.27]
+    fill: "#6d7130"
+    opacity: 0.19
+  }
+  circle "lenticel-60" {
+    parent: "pear"
+    position: [64.73,-45.13]
+    size: [1.06,1.06]
+    fill: "#6d7130"
+    opacity: 0.18
+  }
+  circle "lenticel-61" {
+    parent: "pear"
+    position: [93.74,57.41]
+    size: [1.32,1.32]
+    fill: "#6d7130"
+    opacity: 0.21
+  }
+  circle "lenticel-62" {
+    parent: "pear"
+    position: [-72.51,98.73]
+    size: [1.05,1.05]
+    fill: "#6d7130"
+    opacity: 0.18
+  }
+  circle "lenticel-63" {
+    parent: "pear"
+    position: [1.07,90.71]
+    size: [2.13,2.13]
+    fill: "#6d7130"
+    opacity: 0.18
+  }
+  circle "lenticel-64" {
+    parent: "pear"
+    position: [21.38,91.27]
+    size: [2.28,2.28]
+    fill: "#6d7130"
+    opacity: 0.29
+  }
+  circle "lenticel-65" {
+    parent: "pear"
+    position: [-54.15,52.82]
+    size: [1.56,1.56]
+    fill: "#6d7130"
+    opacity: 0.14
+  }
+  circle "lenticel-66" {
+    parent: "pear"
+    position: [8.19,-86.12]
+    size: [2.25,2.25]
+    fill: "#6d7130"
+    opacity: 0.24
+  }
+  circle "lenticel-67" {
+    parent: "pear"
+    position: [30.6,-36.88]
+    size: [2.04,2.04]
+    fill: "#6d7130"
+    opacity: 0.33
+  }
+  circle "lenticel-68" {
+    parent: "pear"
+    position: [-67.39,139.17]
+    size: [1.5,1.5]
+    fill: "#6d7130"
+    opacity: 0.17
+  }
+  circle "lenticel-69" {
+    parent: "pear"
+    position: [-80.03,145.49]
+    size: [1.28,1.28]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-70" {
+    parent: "pear"
+    position: [50.49,-24.06]
+    size: [1.17,1.17]
+    fill: "#6d7130"
+    opacity: 0.24
+  }
+  circle "lenticel-71" {
+    parent: "pear"
+    position: [-21.7,130.62]
+    size: [1.51,1.51]
+    fill: "#6d7130"
+    opacity: 0.3
+  }
+  circle "lenticel-72" {
+    parent: "pear"
+    position: [1.78,135.2]
+    size: [1.94,1.94]
+    fill: "#6d7130"
+    opacity: 0.25
+  }
+  circle "lenticel-73" {
+    parent: "pear"
+    position: [-18.57,-20.46]
+    size: [1.27,1.27]
+    fill: "#6d7130"
+    opacity: 0.28
+  }
+  circle "lenticel-74" {
+    parent: "pear"
+    position: [50.84,129.24]
+    size: [1.8,1.8]
+    fill: "#6d7130"
+    opacity: 0.19
+  }
+  circle "lenticel-75" {
+    parent: "pear"
+    position: [-75.09,152.7]
+    size: [1.85,1.85]
+    fill: "#6d7130"
+    opacity: 0.16
+  }
+  circle "lenticel-76" {
+    parent: "pear"
+    position: [60.82,27.19]
+    size: [2.17,2.17]
+    fill: "#6d7130"
+    opacity: 0.25
+  }
+  circle "lenticel-77" {
+    parent: "pear"
+    position: [-6.02,150.15]
+    size: [1.68,1.68]
+    fill: "#6d7130"
+    opacity: 0.13
+  }
+  circle "lenticel-78" {
+    parent: "pear"
+    position: [-1.32,-77.3]
+    size: [2.02,2.02]
+    fill: "#6d7130"
+    opacity: 0.29
+  }
+  circle "lenticel-79" {
+    parent: "pear"
+    position: [57.32,-6.98]
+    size: [1.1,1.1]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-80" {
+    parent: "pear"
+    position: [-43.31,-41.58]
+    size: [1.47,1.47]
+    fill: "#6d7130"
+    opacity: 0.28
+  }
+  circle "lenticel-81" {
+    parent: "pear"
+    position: [8.47,-75.81]
+    size: [1.89,1.89]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-82" {
+    parent: "pear"
+    position: [-42.77,48.65]
+    size: [1.46,1.46]
+    fill: "#6d7130"
+    opacity: 0.14
+  }
+  circle "lenticel-83" {
+    parent: "pear"
+    position: [-32.76,35.51]
+    size: [1.96,1.96]
+    fill: "#6d7130"
+    opacity: 0.28
+  }
+  circle "lenticel-84" {
+    parent: "pear"
+    position: [-72.13,60.11]
+    size: [1.89,1.89]
+    fill: "#6d7130"
+    opacity: 0.24
+  }
+  circle "lenticel-85" {
+    parent: "pear"
+    position: [-18.27,31.56]
+    size: [1.82,1.82]
+    fill: "#6d7130"
+    opacity: 0.14
+  }
+  circle "lenticel-86" {
+    parent: "pear"
+    position: [-55.86,133.23]
+    size: [1.93,1.93]
+    fill: "#6d7130"
+    opacity: 0.14
+  }
+  circle "lenticel-87" {
+    parent: "pear"
+    position: [24.65,31.29]
+    size: [1.79,1.79]
+    fill: "#6d7130"
+    opacity: 0.27
+  }
+  circle "lenticel-88" {
+    parent: "pear"
+    position: [1.7,-27.35]
+    size: [2.19,2.19]
+    fill: "#6d7130"
+    opacity: 0.21
+  }
+  circle "lenticel-89" {
+    parent: "pear"
+    position: [-82.58,102.35]
+    size: [1.43,1.43]
+    fill: "#6d7130"
+    opacity: 0.14
+  }
+  circle "lenticel-90" {
+    parent: "pear"
+    position: [21.16,-86.94]
+    size: [1.65,1.65]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-91" {
+    parent: "pear"
+    position: [12.27,70.83]
+    size: [1.88,1.88]
+    fill: "#6d7130"
+    opacity: 0.3
+  }
+  circle "lenticel-92" {
+    parent: "pear"
+    position: [44.28,63.47]
+    size: [1.29,1.29]
+    fill: "#6d7130"
+    opacity: 0.27
+  }
+  circle "lenticel-93" {
+    parent: "pear"
+    position: [55.74,-2.12]
+    size: [2.1,2.1]
+    fill: "#6d7130"
+    opacity: 0.18
+  }
+  circle "lenticel-94" {
+    parent: "pear"
+    position: [-46.61,-22.31]
+    size: [1.36,1.36]
+    fill: "#6d7130"
+    opacity: 0.14
+  }
+  circle "lenticel-95" {
+    parent: "pear"
+    position: [62.81,73.86]
+    size: [1.93,1.93]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-96" {
+    parent: "pear"
+    position: [-22.71,117.19]
+    size: [1.38,1.38]
+    fill: "#6d7130"
+    opacity: 0.12
+  }
+  circle "lenticel-97" {
+    parent: "pear"
+    position: [61.21,119.06]
+    size: [2.25,2.25]
+    fill: "#6d7130"
+    opacity: 0.25
+  }
+  circle "lenticel-98" {
+    parent: "pear"
+    position: [26.73,-108.98]
+    size: [1.87,1.87]
+    fill: "#6d7130"
+    opacity: 0.32
+  }
+  circle "lenticel-99" {
+    parent: "pear"
+    position: [28.43,-108.21]
+    size: [1.13,1.13]
+    fill: "#6d7130"
+    opacity: 0.18
+  }
+  circle "lenticel-100" {
+    parent: "pear"
+    position: [-28.9,-87.8]
+    size: [1.35,1.35]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-101" {
+    parent: "pear"
+    position: [67.58,10.54]
+    size: [1.28,1.28]
+    fill: "#6d7130"
+    opacity: 0.23
+  }
+  circle "lenticel-102" {
+    parent: "pear"
+    position: [36.69,-47.43]
+    size: [1.13,1.13]
+    fill: "#6d7130"
+    opacity: 0.29
+  }
+  circle "lenticel-103" {
+    parent: "pear"
+    position: [8.49,131.37]
+    size: [2.18,2.18]
+    fill: "#6d7130"
+    opacity: 0.28
+  }
+  circle "lenticel-104" {
+    parent: "pear"
+    position: [100.83,98.34]
+    size: [2.22,2.22]
+    fill: "#6d7130"
+    opacity: 0.18
+  }
+  path "bottom-dimple" {
+    parent: "pear"
+    position: [0,0]
+    path: "M -11 180 Q 0 174 13 180 Q 0 182 -11 180 Z"
+    fill: "#596426"
+    opacity: 0.6
+  }
+  path "stem" {
+    parent: "pear"
+    position: [0,0]
+    path: "M -6 -148 C -11 -171 -4 -187 9 -204 Q 15 -209 20 -201 C 8 -181 6 -168 8 -150 Z"
+    gradient: {"type":"linear","from":[-5,-175],"to":[13,-175],"stops":[[0,"#51412b"],[0.5,"#887047"],[1,"#3f3725"]]}
+  }
+  path "stem-ridge" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 0 -156 Q -2 -182 13 -201"
+    fill: "none"
+    stroke: "#b1a06d"
+    stroke_width: 1.2
+    opacity: 0.7
+  }
+  path "leaf" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 7 -168 C 48 -227 106 -236 145 -219 C 123 -177 68 -142 7 -168 Z"
+    gradient: {"type":"linear","from":[25,-180],"to":[114,-214],"stops":[[0,"#304b28"],[0.48,"#597b36"],[1,"#a2b557"]]}
+  }
+  path "leaf-vein" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 10 -169 Q 79 -192 139 -217"
+    fill: "none"
+    stroke: "#c5cf88"
+    stroke_width: 1.2
+    opacity: 0.7
+  }
+  path "leaf-vein-0" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 38 -179 q 4 -11 6 -22 M 38 -179 q 13 4 22 0"
+    fill: "none"
+    stroke: "#a5b775"
+    stroke_width: 0.65
+    opacity: 0.45
+  }
+  path "leaf-vein-1" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 54 -185 q 4 -11 6 -22 M 54 -185 q 13 4 22 0"
+    fill: "none"
+    stroke: "#a5b775"
+    stroke_width: 0.65
+    opacity: 0.45
+  }
+  path "leaf-vein-2" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 70 -191 q 4 -11 6 -22 M 70 -191 q 13 4 22 0"
+    fill: "none"
+    stroke: "#a5b775"
+    stroke_width: 0.65
+    opacity: 0.45
+  }
+  path "leaf-vein-3" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 86 -197 q 4 -11 6 -22 M 86 -197 q 13 4 22 0"
+    fill: "none"
+    stroke: "#a5b775"
+    stroke_width: 0.65
+    opacity: 0.45
+  }
+  path "leaf-vein-4" {
+    parent: "pear"
+    position: [0,0]
+    path: "M 102 -203 q 4 -11 6 -22 M 102 -203 q 13 4 22 0"
+    fill: "none"
+    stroke: "#a5b775"
+    stroke_width: 0.65
+    opacity: 0.45
+  }
+}

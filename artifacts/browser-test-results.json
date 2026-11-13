@@ -1,0 +1,278 @@
+{
+  "renderer": "lottie-web 5.13.0 SVG",
+  "cases": [
+    {
+      "name": "bounce",
+      "bytes": 1351,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1388
+        },
+        {
+          "seconds": 0.5,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1401
+        },
+        {
+          "seconds": 1.5,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1354
+        },
+        {
+          "seconds": 3,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1354
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "bytes": 1538,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1599
+        },
+        {
+          "seconds": 0.5,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1595
+        },
+        {
+          "seconds": 1.5,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1453
+        },
+        {
+          "seconds": 3,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1453
+        }
+      ]
+    },
+    {
+      "name": "orbit",
+      "bytes": 1331,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1271
+        },
+        {
+          "seconds": 0.5,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1300
+        },
+        {
+          "seconds": 1.5,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1300
+        },
+        {
+          "seconds": 3,
+          "paths": 2,
+          "gradients": 0,
+          "invalid": false,
+          "length": 1271
+        }
+      ]
+    },
+    {
+      "name": "aurelia",
+      "bytes": 50384,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 85,
+          "gradients": 23,
+          "invalid": false,
+          "length": 38686
+        },
+        {
+          "seconds": 0.5,
+          "paths": 85,
+          "gradients": 23,
+          "invalid": false,
+          "length": 38731
+        },
+        {
+          "seconds": 1.5,
+          "paths": 85,
+          "gradients": 23,
+          "invalid": false,
+          "length": 38739
+        },
+        {
+          "seconds": 3,
+          "paths": 85,
+          "gradients": 23,
+          "invalid": false,
+          "length": 36003
+        }
+      ]
+    },
+    {
+      "name": "tidal",
+      "bytes": 24062,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 44,
+          "gradients": 7,
+          "invalid": false,
+          "length": 20403
+        },
+        {
+          "seconds": 0.5,
+          "paths": 44,
+          "gradients": 7,
+          "invalid": false,
+          "length": 20671
+        },
+        {
+          "seconds": 1.5,
+          "paths": 44,
+          "gradients": 7,
+          "invalid": false,
+          "length": 20665
+        },
+        {
+          "seconds": 3,
+          "paths": 44,
+          "gradients": 7,
+          "invalid": false,
+          "length": 20421
+        }
+      ]
+    },
+    {
+      "name": "solstice",
+      "bytes": 15715,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 24,
+          "gradients": 3,
+          "invalid": false,
+          "length": 14431
+        },
+        {
+          "seconds": 0.5,
+          "paths": 24,
+          "gradients": 3,
+          "invalid": false,
+          "length": 14444
+        },
+        {
+          "seconds": 1.5,
+          "paths": 24,
+          "gradients": 3,
+          "invalid": false,
+          "length": 14446
+        },
+        {
+          "seconds": 3,
+          "paths": 24,
+          "gradients": 3,
+          "invalid": false,
+          "length": 14431
+        }
+      ]
+    },
+    {
+      "name": "orchard",
+      "bytes": 58112,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 123,
+          "gradients": 10,
+          "invalid": false,
+          "length": 71382
+        },
+        {
+          "seconds": 0.5,
+          "paths": 123,
+          "gradients": 10,
+          "invalid": false,
+          "length": 71382
+        },
+        {
+          "seconds": 1.5,
+          "paths": 123,
+          "gradients": 10,
+          "invalid": false,
+          "length": 71382
+        },
+        {
+          "seconds": 3,
+          "paths": 123,
+          "gradients": 10,
+          "invalid": false,
+          "length": 71382
+        }
+      ]
+    },
+    {
+      "name": "milo",
+      "bytes": 27966,
+      "frames": [
+        {
+          "seconds": 0,
+          "paths": 61,
+          "gradients": 5,
+          "invalid": false,
+          "length": 26587
+        },
+        {
+          "seconds": 0.5,
+          "paths": 61,
+          "gradients": 5,
+          "invalid": false,
+          "length": 26650
+        },
+        {
+          "seconds": 1.5,
+          "paths": 61,
+          "gradients": 5,
+          "invalid": false,
+          "length": 26662
+        },
+        {
+          "seconds": 3,
+          "paths": 61,
+          "gradients": 5,
+          "invalid": false,
+          "length": 26591
+        }
+      ]
+    }
+  ],
+  "pageErrors": []
+}

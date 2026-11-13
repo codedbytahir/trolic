@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {parse,compile,lottie,svg} from './compiler.js';
+import {pathData} from './geometry.js';
+let count=0;const test=(name,f)=>{f();count++;console.log('PASS',name)};
+const minimal=extra=>`scene "Test" {\npath "p" {\nposition: [0,0]\npath: "M 0 0 C 10 0 20 30 40 50 Z"\n${extra}\n}\n}`;
+test('cubic tangent conversion',()=>{const p=pathData('M 0 0 C 10 0 20 30 40 50 Z');assert.deepEqual(p.o[0],[10,0]);assert.deepEqual(p.i[1],[-20,-20]);assert.equal(p.c,true)});
+test('quadratic converts exactly to cubic',()=>{const p=pathData('M 0 0 Q 30 30 60 0');assert.deepEqual(p.o[0],[20,20]);assert.deepEqual(p.i[1],[-20,20]);});
+test('unsupported arc rejected',()=>assert.throws(()=>pathData('M 0 0 A 20 20 0 0 0 40 40')));
+test('relative paths normalized',()=>assert.deepEqual(pathData('m 2 3 l 4 5').v,[[2,3],[6,8]]));
+test('multiple contours rejected',()=>assert.throws(()=>pathData('M 0 0 L 1 1 M 2 2 L 3 3')));
+test('malformed number rejected',()=>assert.throws(()=>pathData('M 0 0 L 1e999 2')));
+test('incomplete path rejected',()=>assert.throws(()=>pathData('M 0 0 C 1 2')));
+test('SVG path safely emitted',()=>assert.match(compile(minimal(''),'svg').output,/<path d=/));
+test('Lottie path exported',()=>assert.equal(lottie(parse(minimal(''))).layers[0].shapes[0].ty,'sh'));
+test('stroke and no fill exported',()=>{const items=lottie(parse(minimal('fill: "none"\nstroke: "#ffffff"\nstroke_width: 3'))).layers[0].shapes;assert.equal(items.at(-1).ty,'st');assert.equal(items.some(x=>x.ty==='fl'),false)});
+const gradient='gradient: {"type":"radial","from":[0,0],"to":[10,0],"stops":[[0,"#ffffff"],[1,"#000000"]]}';
+test('radial gradient exported',()=>assert.equal(lottie(parse(minimal(gradient))).layers[0].shapes[1].t,2));
+test('SVG gradient exported',()=>assert.match(svg(parse(minimal(gradient))),/<radialGradient/));
+test('unsorted gradient rejected',()=>assert.throws(()=>parse(minimal(gradient.replace('[[0,','[[0.8,')))));
+test('bad gradient radius rejected',()=>assert.throws(()=>parse(minimal(gradient.replace('[10,0]','[0,0]')))));
+const grouped='scene "Groups" {\ngroup "g" {\nposition: [100,100]\n}\ncircle "c" {\nparent: "g"\nposition: [0,0]\n}\n}';
+test('parent index exported',()=>assert.equal(lottie(parse(grouped)).layers.find(n=>n.nm==='c').parent,1));
+test('SVG hierarchy exported',()=>assert.match(svg(parse(grouped)),/id="g".*id="c"/));
+test('unknown parent rejected',()=>assert.throws(()=>parse(grouped.replace('parent: "g"','parent: "absent"'))));
+test('parent cycle rejected',()=>assert.throws(()=>parse(grouped.replace('position: [100,100]','position: [100,100]\nparent: "g"'))));
+test('nonportable group opacity rejected',()=>assert.throws(()=>parse(grouped.replace('position: [100,100]','opacity: 0.5'))));
+for(const name of ['aurelia','tidal','solstice'])test(name+' deterministic compilation',()=>{const s=readFileSync(`examples/${name}.trolic`,'utf8');assert.equal(compile(s).output,compile(s).output)});
+
+test('animated scalar keyframes use arrays',()=>{const s=readFileSync('examples/reveal.trolic','utf8');const data=lottie(parse(s));assert.ok(Array.isArray(data.layers.find(n=>n.nm==='violet').ks.r.k[0].s));});
+
+console.log(`${count} vector tests passed`);

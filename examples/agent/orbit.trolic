@@ -1,0 +1,3 @@
+canvas 640 480 bg=#10131d dur=3 name="Passing Signals"
+circle signal-a s=[100,100] f=#c4f76b t=[["p",[[0,[120,180]],[2,[520,180]]]]]
+circle signal-b s=[70,70] f=#a898ff t=[["p",[[0.3,[520,300]],[2.3,[120,300]]]]]
