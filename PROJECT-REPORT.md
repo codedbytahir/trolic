@@ -1,10 +1,14 @@
 # Trolic project report
 
+## v0.6 update
+
+The current milestone adds compatible path morphing, solid fill/stroke color animation, stroke width, geometry dimensions and corner radius. The studio adds PNG stills, source history and a node-motion inspector. Validation: 249 automated tests, byte-identical Lottie export for 21 preserved earlier fixtures and 21 paired new renderer frames (maximum whole-image mean RGB difference 0.25662/255). See RELEASE-v0.6.md for contracts, research and limits. These are local test results, not production certification.
+
 ## Executive summary
 
 Trolic is an original experimental vector-motion language and toolchain. It translates readable or compact agent-authored text into a validated scene model, Lottie JSON and static SVG. A self-contained browser studio works offline; a dependency-free JavaScript compiler also runs under Node.
 
-The most recent language milestone, v0.5, adds portable effects, stroke drawing, duration units, repeats/yoyo, pivots, visibility windows, aspect presets, reframing and retiming. v0.4 introduced compact source and measured source-token savings. The public launch adds a showcase, embedded studio, documentation, benchmark explorer, testing workflow and preserved prior-version downloads.
+The v0.5 language milestone, adds portable effects, stroke drawing, duration units, repeats/yoyo, pivots, visibility windows, aspect presets, reframing and retiming. v0.4 introduced compact source and measured source-token savings. The public launch adds a showcase, embedded studio, documentation, benchmark explorer, testing workflow and preserved prior-version downloads.
 
 ## v0.5 validation and human workflow
 

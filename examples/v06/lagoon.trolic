@@ -1,0 +1,19 @@
+// Original Trolic v0.6 illustration. Matching four-cubic silhouettes, no topology guessing.
+canvas landscape w=960 bg=#0c2330 dur=6 name="Lagoon / living silhouette"
+let wingA "M 0 -35 C 90 -115 155 -80 245 -110 C 180 -10 100 55 0 65 C -100 55 -180 -10 -245 -110 C -155 -80 -90 -115 0 -35 Z"
+let wingB "M 0 -35 C 80 -5 165 5 230 75 C 145 55 95 90 0 65 C -95 90 -145 55 -230 75 C -165 5 -80 -5 0 -35 Z"
+circle water p=[480,270] s=[1100,1100] g=["r",[0,0],[550,0],[[0,"#1d5360"],[1,"#0c2330"]]]
+path ripple-1 p=[480,280] d="M -355 0 C -355 -110 355 -110 355 0 C 355 110 -355 110 -355 0 Z" f=none ink=#569493 sw=1 o=0.3 fx=[["pulse",3,0,2,0.08]]
+path ripple-2 p=[480,280] d="M -405 0 C -405 -150 405 -150 405 0 C 405 150 -405 150 -405 0 Z" f=none ink=#569493 sw=1 o=0.2
+def speck circle s=[3,3] f=#b4d8ce o=0.4 fx=[["float",3,0,2,[8,-15]]]
+repeat speck dust- 12 p=[100,430] step=[68,-26] stagger=0ms
+group ray p=[480,240] r=-8 fx=[["float",3,0,2,[0,-16]]]
+path tail parent=ray p=[0,0] d="M 0 40 C 30 120 -45 190 10 245" f=none ink=#74bab2 sw=7 t=[["d",[[0,"M 0 40 C 30 120 -45 190 10 245"],[1.5,"M 0 40 C -30 120 45 190 -10 245"],[3,"M 0 40 C 30 120 -45 190 10 245"]],"ease_in_out",{"repeat":2}]]
+path wings parent=ray p=[0,0] d=$wingA g=["l",[-210,-95],[155,100],[[0,"#93d7c5"],[0.5,"#378c91"],[1,"#173f56"]]] t=[["d",[[0,"$wingA"],[1.5,"$wingB"],[3,"$wingA"]],"ease_in_out",{"repeat":2}]]
+path leading-edge parent=ray p=[0,0] d="M -245 -110 C -155 -80 -90 -115 0 -35 C 90 -115 155 -80 245 -110" f=none ink=#c3e9d6 sw=1 o=0.4 t=[["d",[[0,"M -245 -110 C -155 -80 -90 -115 0 -35 C 90 -115 155 -80 245 -110"],[1.5,"M -230 75 C -165 5 -80 -5 0 -35 C 80 -5 165 5 230 75"],[3,"M -245 -110 C -155 -80 -90 -115 0 -35 C 90 -115 155 -80 245 -110"]],"ease_in_out",{"repeat":2}]]
+path body parent=ray p=[0,0] d="M 0 -38 C 40 -20 32 44 0 76 C -32 44 -40 -20 0 -38 Z" g=["l",[-24,0],[30,0],[[0,"#9fd1bd"],[1,"#2f7782"]]]
+circle eye-left parent=ray p=[-19,-12] s=[7,7] f=#102f3d
+circle eye-right parent=ray p=[19,-12] s=[7,7] f=#102f3d
+path cheek-left parent=ray p=[0,0] d="M -16 21 Q -8 27 -3 25" f=none ink=#d0e5c9 sw=1 o=0.5
+path cheek-right parent=ray p=[0,0] d="M 16 21 Q 8 27 3 25" f=none ink=#d0e5c9 sw=1 o=0.5
+path current p=[0,0] d="M 55 480 C 240 420 340 510 510 455 S 775 405 905 460" f=none ink=#73b3ab sw=1 o=0.4 fx=[["draw",2]]

@@ -5,11 +5,11 @@ Trolic is a small, experimental text-based language for vector illustration and 
 ## Try it in five minutes
 
 1. Open the [web studio](https://codedbytahir.github.io/trolic/studio.html), or download `trolic-studio.html` from this repository and open it in a browser. The downloaded studio works offline.
-2. Choose an example. Orbital shows a rocket entrance; Prism demonstrates stroke drawing; Affirm is a vertical interface card.
+2. Choose an example. Lagoon, Chroma and Atelier show v0.6 path, color and geometry motion. Orbital shows a rocket entrance; Prism demonstrates stroke drawing; Affirm is a vertical interface card.
 3. Pause, scrub, then change a color such as `#9ee6d4`. Click **Compile scene**. The preview retains the last valid scene if an edit is invalid.
 4. Change an effect duration, for example `"700ms"` to `"1200ms"`. Use **Duration → Retime motion** to scale the entire timeline instead.
 5. Choose a canvas preset, select **Contain artwork** or **Cover canvas**, and click **Apply frame**. Merely editing the canvas declaration does not reposition existing art.
-6. Download **Lottie JSON**, **SVG frame**, and **Source**. Keep source for later edits.
+6. Download **Lottie JSON**, **SVG frame**, **PNG frame**, and **Source**. Keep source for later edits.
 
 ## A first scene
 
@@ -65,7 +65,7 @@ It is **not proven best overall**. A graphical timeline editor is often better f
 
 Historical v0.4 measurements found roughly 51% fewer source tokens across eight fixtures under two specific encodings. That does not prove better visual quality, faster playback, improved agent reliability or lower end-to-end API costs. Expanded source still becomes expanded animation layers.
 
-## v0.5 controls and limits
+## v0.6 controls and limits
 
 - Effects: fade_in, fade_out, pop, spring_in, pulse, float, shake, spin, draw.
 - Track properties: position, scale, rotation, opacity and trim end.
@@ -75,4 +75,8 @@ Historical v0.4 measurements found roughly 51% fewer source tokens across eight 
 - Spring entrance is sampled keyframes, not a physics engine. Only one track/effect may target a property on a given node. Group opacity remains unsupported.
 - Limits include 500 nodes, 256 expanded keys per track and a 120-second scene maximum. Budgets do not make untrusted workloads safe to execute without isolation.
 
-See [the v0.5 reference and research](RELEASE-v0.5.md), [the agent card](AGENT-CARD.md), and [the project report](PROJECT-REPORT.md).
+See [the v0.5 reference and research](RELEASE-v0.6.md), [the agent card](AGENT-CARD.md), and [the project report](PROJECT-REPORT.md).
+
+### Expressive motion
+
+v0.6 adds path, solid fill, stroke color, stroke width, size and corner-radius tracks. Morphs require a single contour with matching normalized vertex counts and closure; correspondence is your responsibility. Use the inspector to see source motion, Ctrl/Cmd+Enter to compile and Undo edit / Redo edit for the last 20 successful source snapshots. PNG is a still export, not video.

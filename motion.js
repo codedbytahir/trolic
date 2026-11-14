@@ -6,7 +6,7 @@ export function timeSeconds(value,fps=60){
  throw Error('Time must be finite seconds or a string such as 600ms, 2s or 30f');
 }
 export function curveFor(easing){if(easing==='step')return null;if(typeof easing==='string'&&Object.hasOwn(standardCurves,easing))return standardCurves[easing];if(Array.isArray(easing)&&easing.length===4&&easing.every(Number.isFinite)&&easing[0]>=0&&easing[0]<=1&&easing[2]>=0&&easing[2]<=1&&Math.abs(easing[1])<=3&&Math.abs(easing[3])<=3)return easing;throw Error('Invalid easing; use a named curve, step, or [x1,y1,x2,y2]');}
-export function motionProgress(t,easing){if(t<=0)return 0;if(t>=1)return 1;const c=curveFor(easing);if(!c)return 0;const [x1,y1,x2,y2]=c,b=(u,a,d)=>3*(1-u)**2*u*a+3*(1-u)*u*u*d+u**3;let lo=0,hi=1;for(let i=0;i<24;i++){const m=(lo+hi)/2;if(b(m,x1,x2)<t)lo=m;else hi=m;}return b((lo+hi)/2,y1,y2);}
+export function motionProgress(t,easing){if(t<=0)return 0;if(t>=1)return 1;if(easing==='linear')return t;const c=curveFor(easing);if(!c)return 0;const [x1,y1,x2,y2]=c,b=(u,a,d)=>3*(1-u)**2*u*a+3*(1-u)*u*u*d+u**3;let lo=0,hi=1;for(let i=0;i<24;i++){const m=(lo+hi)/2;if(b(m,x1,x2)<t)lo=m;else hi=m;}return b((lo+hi)/2,y1,y2);}
 export function lowerTrack(track,fps){
  if(!track||typeof track!=='object')throw Error('Invalid track');const easing=track.ease??'ease_in_out';curveFor(easing);
  const raw=Object.hasOwn(track,'frames')?track.frames:[[0,track.from],[track.duration,track.to]];

@@ -1,0 +1,111 @@
+{
+  "renderer": "lottie-web 5.13.0 SVG",
+  "cases": [
+    {
+      "scene": "lagoon",
+      "time": 0,
+      "bytes": 20654
+    },
+    {
+      "scene": "lagoon",
+      "time": 0.25,
+      "bytes": 20654
+    },
+    {
+      "scene": "lagoon",
+      "time": 0.75,
+      "bytes": 20654
+    },
+    {
+      "scene": "lagoon",
+      "time": 1.5,
+      "bytes": 20654
+    },
+    {
+      "scene": "lagoon",
+      "time": 2.75,
+      "bytes": 20654
+    },
+    {
+      "scene": "lagoon",
+      "time": 4.25,
+      "bytes": 20654
+    },
+    {
+      "scene": "lagoon",
+      "time": 5.9,
+      "bytes": 20654
+    },
+    {
+      "scene": "chroma",
+      "time": 0,
+      "bytes": 8303
+    },
+    {
+      "scene": "chroma",
+      "time": 0.25,
+      "bytes": 8303
+    },
+    {
+      "scene": "chroma",
+      "time": 0.75,
+      "bytes": 8303
+    },
+    {
+      "scene": "chroma",
+      "time": 1.5,
+      "bytes": 8303
+    },
+    {
+      "scene": "chroma",
+      "time": 2.75,
+      "bytes": 8303
+    },
+    {
+      "scene": "chroma",
+      "time": 4.25,
+      "bytes": 8303
+    },
+    {
+      "scene": "chroma",
+      "time": 5.9,
+      "bytes": 8303
+    },
+    {
+      "scene": "atelier",
+      "time": 0,
+      "bytes": 7367
+    },
+    {
+      "scene": "atelier",
+      "time": 0.25,
+      "bytes": 7367
+    },
+    {
+      "scene": "atelier",
+      "time": 0.75,
+      "bytes": 7367
+    },
+    {
+      "scene": "atelier",
+      "time": 1.5,
+      "bytes": 7367
+    },
+    {
+      "scene": "atelier",
+      "time": 2.75,
+      "bytes": 7367
+    },
+    {
+      "scene": "atelier",
+      "time": 4.25,
+      "bytes": 7367
+    },
+    {
+      "scene": "atelier",
+      "time": 5.9,
+      "bytes": 7367
+    }
+  ],
+  "pageErrors": []
+}

@@ -20,6 +20,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:offline
       - run: npm run test:agent-browser
+      - run: node expressive-browser-test.mjs
       - name: Test launch website
         run: |
           python3 -m http.server 8002 --bind 0.0.0.0 --directory docs &

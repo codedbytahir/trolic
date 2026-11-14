@@ -1,13 +1,13 @@
 import {timeSeconds,curveFor,motionProgress,lowerTrack,lowerEffects} from './motion.js';
 import {expandAgent,packScene} from './agent.js';
-import {pathContours,shapeItems} from './geometry.js';
-// Trolic v0.5: independent, dependency-free compiler shared by browser and Node.
+import {pathContours,shapeItems,contourSVG,mixContour} from './geometry.js';
+// Trolic v0.6: independent, dependency-free compiler shared by browser and Node.
 export class TrolicError extends Error { constructor(message,line=1){super(message);this.line=line;this.code='TROLIC_INVALID_SOURCE';} }
 const locations=new WeakMap(),preparedTracks=new WeakMap(),visibleWindows=new WeakMap();
 const tracksFor=n=>preparedTracks.get(n)||n.tracks;
 function parseLegacy(source){
  if(typeof source!=='string'||source.length>1000000)throw new TrolicError('Source exceeds 1 million character budget');
- const lines=source.split(/\r?\n/), scene={version:'0.5',name:'Untitled',size:[512,512],fps:60,duration:2,background:'transparent',nodes:[]};let current=null,depth=0,header=false;
+ const lines=source.split(/\r?\n/), scene={version:'0.6',name:'Untitled',size:[512,512],fps:60,duration:2,background:'transparent',nodes:[]};let current=null,depth=0,header=false;
  for(let i=0;i<lines.length;i++){
   const s=lines[i].trim();if(!s||s.startsWith('//'))continue;
   const fail=m=>{throw new TrolicError(m,i+1)};
@@ -18,9 +18,9 @@ function parseLegacy(source){
   if(shape){if(depth!==1)fail('Use parent references instead of nested declarations');let nodeId;try{nodeId=JSON.parse(shape[2]);}catch{fail('Invalid JSON node ID');}current={kind:shape[1],parent:null,id:nodeId,position:[256,256],size:shape[1]==='circle'?[80,80]:[120,80],fill:'#6366f1',radius:0,stroke:'none',stroke_width:1,line_cap:'round',line_join:'round',fill_rule:'nonzero',gradient:null,path:'',opacity:1,scale:[1,1],rotation:0,anchor:[0,0],effects:[],trim_start:0,trim_end:1,in_time:0,out_time:null,tracks:[]};locations.set(current,{line:i+1,properties:new Set()});scene.nodes.push(current);if(scene.nodes.length>500)fail('Maximum 500 nodes');depth=2;continue;}
   const track=s.match(/^track\s+(\w+)\s+(.+)$/);
   if(track){if(!current)fail('Track must be inside a node');let config;try{config=JSON.parse(track[2]);}catch{fail('Track config must be JSON');}if(!config||typeof config!=='object'||Array.isArray(config)||Object.keys(config).some(k=>!['frames','ease','options'].includes(k)))fail('Track config: frames, ease, options');current.tracks.push({property:track[1],ease:'ease_in_out',...config});continue;}
-  const sequence=s.match(/^keyframes\s+(position|scale|opacity|rotation|trim_end)\s+(.+?)(?:\s+(linear|ease_in|ease_out|ease_in_out|step))?$/);
+  const sequence=s.match(/^keyframes\s+(position|scale|opacity|rotation|trim_end|fill|stroke|stroke_width|size|radius|path)\s+(.+?)(?:\s+(linear|ease_in|ease_out|ease_in_out|step))?$/);
   if(sequence){if(!current)fail('Keyframes must be inside a node');let frames;try{frames=JSON.parse(sequence[2]);}catch{fail('Keyframes must be JSON [[seconds,value], ...]');}current.tracks.push({property:sequence[1],frames,ease:sequence[3]||'ease_in_out'});continue;}
-  const anim=s.match(/^animate\s+(position|scale|opacity|rotation|trim_end)\s+(.+?)\s*->\s*(.+?)\s+over\s+([\d.]+)s(?:\s+delay\s+([\d.]+)s)?(?:\s+(linear|ease_in|ease_out|ease_in_out|step))?$/);
+  const anim=s.match(/^animate\s+(position|scale|opacity|rotation|trim_end|fill|stroke|stroke_width|size|radius|path)\s+(.+?)\s*->\s*(.+?)\s+over\s+([\d.]+)s(?:\s+delay\s+([\d.]+)s)?(?:\s+(linear|ease_in|ease_out|ease_in_out|step))?$/);
   if(anim){if(!current)fail('Animation must be inside a shape');try{current.tracks.push({property:anim[1],from:JSON.parse(anim[2]),to:JSON.parse(anim[3]),duration:Number(anim[4]),delay:Number(anim[5]||0),ease:anim[6]||'ease_in_out'});}catch{fail('Animation values must be JSON numbers or arrays');}continue;}
   const prop=s.match(/^(\w+):\s*(.+)$/);if(!prop)fail('Expected property: JSON-value, shape block, or animate statement');
   const allowed=current?['parent','position','size','fill','radius','stroke','stroke_width','line_cap','line_join','fill_rule','gradient','path','opacity','scale','rotation','anchor','effects','trim_start','trim_end','in_time','out_time']:['size','fps','duration','background'];if(!allowed.includes(prop[1]))fail(`Unknown property "${prop[1]}"`);
@@ -38,11 +38,11 @@ export function validate(s){
  if(!s||typeof s!=='object'||!Array.isArray(s.nodes))bad('Invalid scene IR');
  if(!vector(s.size)||s.size.some(x=>x<=0||x>8192))bad('Scene size must be two positive numbers up to 8192');
  if(!finite(s.fps)||s.fps<1||s.fps>120)bad('fps must be 1..120');
- const autoDuration=s.duration==='auto';let furthest=0;try{if(!autoDuration)s.duration=timeSeconds(s.duration,s.fps);}catch(e){bad(e.message)}
+ const autoDuration=s.duration==='auto';let morphVertices=0,furthest=0;try{if(!autoDuration)s.duration=timeSeconds(s.duration,s.fps);}catch(e){bad(e.message)}
  if(!autoDuration&&(!finite(s.duration)||s.duration<=0||s.duration>120))bad('duration must be >0 and <=120 seconds');
  if(s.background!=='transparent'&&!color(s.background))bad('background must be transparent or #RRGGBB');
  if(s.nodes.length>500)bad('Maximum 500 shapes');const ids=new Set();
- for(const n of s.nodes){context=n;if(!n||!['circle','rect','path','group'].includes(n.kind)||typeof n.id!=='string'||!n.id.length||n.id.length>128||!Array.isArray(n.tracks))bad('Invalid node IR');if(ids.has(n.id))bad(`Duplicate shape ID: ${n.id}`);ids.add(n.id);
+ for(const n of s.nodes){context=n;if(!n||!['circle','rect','path','group'].includes(n.kind)||typeof n.id!=='string'||!n.id.length||n.id.length>128||(!Array.isArray(n.tracks)||n.tracks.length>16))bad('Invalid node IR or more than 16 source tracks');if(ids.has(n.id))bad(`Duplicate shape ID: ${n.id}`);ids.add(n.id);
  for(const p of ['position','size','scale','anchor'])if(!vector(n[p]))bad(`${n.id}.${p} must be a two-number vector`);
  if(n.size.some(x=>x<=0)||(n.fill!=='none'&&!color(n.fill))||!finite(n.radius)||n.radius<0||!finite(n.rotation)||!finite(n.opacity)||n.opacity<0||n.opacity>1)bad(`Invalid geometry or appearance on ${n.id}`);
  if(n.stroke!=='none'&&!color(n.stroke))bad(`Invalid stroke on ${n.id}`);
@@ -54,11 +54,21 @@ export function validate(s){
  if(n.kind==='group'&&(n.opacity!==1||tracks.some(t=>t.property==='opacity')))bad('Group opacity is not portable; animate child opacity instead');
  if(!finite(n.trim_start)||!finite(n.trim_end)||n.trim_start<0||n.trim_end>1||n.trim_start>n.trim_end)bad('Trim range must satisfy 0 <= start <= end <= 1');
  const props=new Set();for(const t of tracks){if(props.has(t.property))bad(`Only one track per property: ${n.id}.${t.property}`);props.add(t.property);
- if(!['position','scale','opacity','rotation','trim_end'].includes(t.property))bad('Invalid animation property');
+ if(!['position','scale','opacity','rotation','trim_end','fill','stroke','stroke_width','size','radius','path'].includes(t.property))bad('Invalid animation property');
  const frames=t.frames;if(frames.length>256)bad('Expanded track exceeds 256 keys');
- const check=['position','scale'].includes(t.property)?vector:finite;
+ const check=['position','scale','size'].includes(t.property)?vector:['fill','stroke'].includes(t.property)?color:t.property==='path'?x=>typeof x==='string':finite;
  for(const frame of frames){if(!check(frame[1]))bad(`Invalid keyframe value: ${n.id}.${t.property}`);if(['opacity','trim_end'].includes(t.property)&&(frame[1]<0||frame[1]>1))bad('Opacity/trim keyframes must stay between 0 and 1');}
- if(['opacity','trim_end'].includes(t.property)){for(const e of t.segmentEases){const c=curveFor(e);if(c&&(c[1]<0||c[1]>1||c[3]<0||c[3]>1))bad('Overshooting easing is not supported for opacity or trim');}}
+ if(['opacity','trim_end','fill','stroke','stroke_width','size','radius','path'].includes(t.property)){for(const e of t.segmentEases){const c=curveFor(e);if(c&&(c[1]<0||c[1]>1||c[3]<0||c[3]>1))bad('Overshooting easing is not supported for opacity or trim');}}
+ if(['fill','stroke','stroke_width','size','radius','path'].includes(t.property)&&n.kind==='group')bad('Appearance and geometry tracks cannot target groups');
+ if(t.property==='fill'&&(n.gradient!==null||n.fill==='none'))bad('Animated fill requires a solid non-none base fill');
+ if(['stroke','stroke_width'].includes(t.property)&&n.stroke==='none')bad('Animated stroke requires a non-none base stroke');
+ if(t.property==='size'&&(!['circle','rect'].includes(n.kind)||frames.some(f=>f[1].some(x=>x<=0))))bad('Size tracks require positive dimensions on circle or rect');
+ if(t.property==='radius'&&(n.kind!=='rect'||frames.some(f=>f[1]<0)))bad('Radius tracks require nonnegative values on a rectangle');
+ if(t.property==='stroke_width'&&frames.some(f=>f[1]<0||f[1]>1e5))bad('Stroke width keyframes must be 0..100000');
+ if(t.property==='path'){
+  if(n.kind!=='path')bad('Path animation requires a path node');
+  try{const base=pathContours(n.path);if(base.length!==1)bad('Morphing requires a single contour');t.contours=frames.map(f=>{const cs=pathContours(f[1]);if(cs.length!==1||cs[0].v.length!==base[0].v.length||cs[0].c!==base[0].c)bad('Morph topology must match: one contour, same vertex count and closure');morphVertices+=cs[0].v.length;if(morphVertices>65536)bad('Scene morph budget exceeded: 65536 normalized keyframe vertices');return cs[0];});}catch(e){bad(e.message)}
+ }
  if(t.property==='trim_end'&&frames.some(f=>f[1]<n.trim_start))bad('Trim end must not precede static trim start');furthest=Math.max(furthest,frames.at(-1)[0]);
  }
  const trimming=n.trim_start!==0||n.trim_end!==1||props.has('trim_end');
@@ -78,7 +88,7 @@ export function validate(s){
 const curves={linear:[0,0,1,1],ease_in:[.42,0,1,1],ease_out:[0,0,.58,1],ease_in_out:[.42,0,.58,1]};
 const ease=motionProgress;
 const framesOf=t=>Object.hasOwn(t,'frames')?t.frames:[[t.delay,t.from],[t.delay+t.duration,t.to]];
-export function sample(node,time){const result={...node};for(const t of tracksFor(node)){const f=t.frames;if(time<=f[0][0]){result[t.property]=f[0][1];continue;}if(time>=f.at(-1)[0]){result[t.property]=f.at(-1)[1];continue;}let index=0;while(f[index+1][0]<time)index++;const [start,from]=f[index],[end,to]=f[index+1];const p=ease((time-start)/(end-start),t.segmentEases?.[index]??t.ease);result[t.property]=Array.isArray(from)?from.map((x,i)=>x+(to[i]-x)*p):from+(to-from)*p;}return result;}
+export function sample(node,time){const result={...node};for(const t of tracksFor(node)){const f=t.frames;if(time<=f[0][0]){result[t.property]=f[0][1];continue;}if(time>=f.at(-1)[0]){result[t.property]=f.at(-1)[1];continue;}let index=0;while(f[index+1][0]<time)index++;const [start,from]=f[index],[end,to]=f[index+1];const p=ease((time-start)/(end-start),t.segmentEases?.[index]??t.ease);result[t.property]=t.property==='path'?contourSVG(mixContour(t.contours[index],t.contours[index+1],p)):['fill','stroke'].includes(t.property)?'#'+[1,3,5].map(i=>Math.round(parseInt(from.slice(i,i+2),16)+(parseInt(to.slice(i,i+2),16)-parseInt(from.slice(i,i+2),16))*p).toString(16).padStart(2,'0')).join(''):Array.isArray(from)?from.map((x,i)=>x+(to[i]-x)*p):from+(to-from)*p;}return result;}
 
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 export function svg(scene,time=0){validate(scene);return svgFrame(scene,time);}
@@ -97,7 +107,7 @@ export function lottie(scene){validate(scene);const fps=scene.fps,op=scene.durat
  const order=[];function visit(n){order.push(n.id);if(n.kind==='group')scene.nodes.filter(c=>c.parent===n.id).forEach(visit);}scene.nodes.filter(n=>n.parent===null).forEach(visit);
  function property(n,p,convert=x=>Array.isArray(x)?x:[x]){const t=tracksFor(n).find(t=>t.property===p);if(!t)return {a:0,k:convert(n[p])};const frames=t.frames;if(frames.every(f=>JSON.stringify(f[1])===JSON.stringify(frames[0][1])))return {a:0,k:convert(frames[0][1])};const key=x=>{const v=convert(x);return Array.isArray(v)?v:[v]};return {a:1,k:frames.map((f,index)=>{const last=index===frames.length-1,curve=last?null:curveFor(t.segmentEases?.[index]??t.ease);return {t:f[0]*fps,s:key(f[1]),...(!last?(curve?{e:key(frames[index+1][1]),o:{x:[curve[0]],y:[curve[1]]},i:{x:[curve[2]],y:[curve[3]]}}:{h:1,e:key(frames[index+1][1])}):{})}})};}
 
- const layers=scene.nodes.map((n,index)=>({ddd:0,ind:index+1,ty:n.kind==='group'?3:4,...(n.parent!==null?{parent:scene.nodes.findIndex(p=>p.id===n.parent)+1}:{}),nm:n.id,sr:1,ks:{o:property(n,'opacity',x=>x*100),r:property(n,'rotation',x=>x),p:property(n,'position',x=>[...x,0]),a:{a:0,k:[...n.anchor,0]},s:property(n,'scale',x=>[x[0]*100,x[1]*100,100])},ao:0,...(n.kind==='group'?{}:{shapes:shapeItems(n,p=>property(n,p,x=>x*100),n.trim_start!==0||n.trim_end!==1||tracksFor(n).some(t=>t.property==='trim_end'))}),ip:Math.max(0,(visibleWindows.get(n)?.[0]??0)*fps),op:Math.max((visibleWindows.get(n)?.[0]??0),(visibleWindows.get(n)?.[1]??scene.duration))*fps,st:0,bm:0})).sort((a,b)=>order.indexOf(b.nm)-order.indexOf(a.nm));
+ const layers=scene.nodes.map((n,index)=>({ddd:0,ind:index+1,ty:n.kind==='group'?3:4,...(n.parent!==null?{parent:scene.nodes.findIndex(p=>p.id===n.parent)+1}:{}),nm:n.id,sr:1,ks:{o:property(n,'opacity',x=>x*100),r:property(n,'rotation',x=>x),p:property(n,'position',x=>[...x,0]),a:{a:0,k:[...n.anchor,0]},s:property(n,'scale',x=>[x[0]*100,x[1]*100,100])},ao:0,...(n.kind==='group'?{}:{shapes:shapeItems(n,(p,convert)=>property(n,p,convert??(x=>x*100)),n.trim_start!==0||n.trim_end!==1||tracksFor(n).some(t=>t.property==='trim_end'),p=>tracksFor(n).some(t=>t.property===p))}),ip:Math.max(0,(visibleWindows.get(n)?.[0]??0)*fps),op:Math.max((visibleWindows.get(n)?.[0]??0),(visibleWindows.get(n)?.[1]??scene.duration))*fps,st:0,bm:0})).sort((a,b)=>order.indexOf(b.nm)-order.indexOf(a.nm));
  if(scene.background!=='transparent')layers.push({ddd:0,ind:layers.length+1,ty:1,nm:'Background',sw:scene.size[0],sh:scene.size[1],sc:scene.background,ks:{o:{a:0,k:100},r:{a:0,k:0},p:{a:0,k:[0,0,0]},a:{a:0,k:[0,0,0]},s:{a:0,k:[100,100,100]}},ip:0,op,st:0});
  return {v:'5.12.2',fr:fps,ip:0,op,w:scene.size[0],h:scene.size[1],nm:scene.name,ddd:0,assets:[],layers};
 }

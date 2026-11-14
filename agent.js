@@ -1,5 +1,5 @@
 import {canvasSize,timeSeconds,aspectPresets} from './motion.js';
-// Trolic Agent Syntax (TAS) v0.5. Bounded declarative expansion; no eval or scripts.
+// Trolic Agent Syntax (TAS) v0.6. Bounded declarative expansion; no eval or scripts.
 export const aliases={p:'position',s:'size',f:'fill',r:'rotation',z:'scale',o:'opacity',d:'path',g:'gradient',ink:'stroke',sw:'stroke_width',cap:'line_cap',join:'line_join',rule:'fill_rule',round:'radius',parent:'parent',t:'tracks',a:'anchor',fx:'effects',ts:'trim_start',te:'trim_end',in:'in_time',out:'out_time'};
 const reverse=Object.fromEntries(Object.entries(aliases).map(([a,b])=>[b,a]));
 const copy=x=>JSON.parse(JSON.stringify(x));
@@ -44,7 +44,7 @@ export function expandAgent(source){
  if(!canvas)agentError('Missing canvas',1);
  const output=[],map=[];const emit=(s,line)=>{output.push(s);map.push(line);};emit(`scene ${JSON.stringify(canvas.name)} {`,1);for(const key of ['size','duration','fps','background'])emit(`${key}: ${JSON.stringify(canvas[key])}`,1);
  for(const node of nodes){const line=node._line;emit(`${node.kind} ${JSON.stringify(node.id)} {`,line);for(const [key,value]of Object.entries(node)){if(['id','kind','_line','tracks'].includes(key))continue;let v=value;if(key==='gradient'&&Array.isArray(v)){if(v.length!==4)agentError('g=[l|r,from,to,stops]',line);v={type:({l:'linear',r:'radial'})[v[0]]||v[0],from:v[1],to:v[2],stops:v[3]};}emit(`${key}: ${JSON.stringify(v)}`,line);}
-  if(node.tracks!==undefined){if(!Array.isArray(node.tracks))agentError('t requires track tuples',line);for(const t of node.tracks){if(!Array.isArray(t)||t.length<2||t.length>4||!['p','z','r','o','te'].includes(t[0]))agentError('Track: [p|z|r|o,[[time,value],...],easing?]',line);emit(`track ${aliases[t[0]]} ${JSON.stringify({frames:t[1],ease:t[2]??'ease_in_out',...(t[3]!==undefined?{options:t[3]}:{})})}`,line);}}
+  if(node.tracks!==undefined){if(!Array.isArray(node.tracks))agentError('t requires track tuples',line);for(const t of node.tracks){if(!Array.isArray(t)||t.length<2||t.length>4||!['p','z','r','o','te','f','ink','sw','s','round','d'].includes(t[0]))agentError('Track: [p|z|r|o,[[time,value],...],easing?]',line);emit(`track ${aliases[t[0]]} ${JSON.stringify({frames:t[1],ease:t[2]??'ease_in_out',...(t[3]!==undefined?{options:t[3]}:{})})}`,line);}}
   emit('}',line);
  }emit('}',lines.length);const expanded=output.join('\n');if(expanded.length>1000000)agentError('Expanded source exceeds 1 million characters',lines.length);return {source:expanded,map};
 }

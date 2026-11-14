@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "network": "HTTP blocked",
+  "pageErrors": [],
+  "features": [
+    "3 new examples",
+    "both renderers",
+    "source undo/redo",
+    "Ctrl+Enter",
+    "inspector",
+    "real PNG download signature",
+    "mobile overflow"
+  ]
+}

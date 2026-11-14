@@ -1,0 +1,9 @@
+canvas portrait w=640 bg=#181b22 dur=6 name="Atelier / responsive geometry"
+rect outer p=[320,400] s=[510,640] round=28 f=#202630 ink=#3c4650 sw=1
+rect panel p=[320,335] s=[390,340] round=30 f=#a4beb1 t=[["s",[[0,[390,340]],[2,[340,340]],[4,[390,270]],[6,[390,340]]]],["round",[[0,30],[2,150],[4,70],[6,30]]],["f",[[0,"#a4beb1"],[2,"#b4a5bd"],[4,"#c7b58e"],[6,"#a4beb1"]]]]
+path glyph p=[320,335] d="M -66 20 L -20 66 L 80 -54" f=none ink=#263a36 sw=10 t=[["sw",[[0,10],[2,18],[4,5],[6,10]]],["ink",[[0,"#263a36"],[2,"#4a3658"],[4,"#615034"],[6,"#263a36"]]]]
+rect label p=[320,570] s=[200,9] round=4 f=#b2bfb8 fx=[["fade_in",0.7]]
+rect sublabel p=[320,598] s=[130,5] round=2 f=#66766f fx=[["fade_in",0.7,0.2]]
+def indicator circle s=[6,6] f=#6c7a76
+repeat indicator mark- 5 p=[280,662] step=[20,0]
+circle active p=[280,662] s=[6,6] f=#d2e3ca t=[["p",[[0,[280,662]],[2,[320,662]],[4,[360,662]],[6,[280,662]]],"step"]]

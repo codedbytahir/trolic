@@ -32,12 +32,21 @@ export function pathContours(text){
 export function pathData(text){const contours=pathContours(text);if(contours.length!==1)throw Error('Use pathContours for compound paths');return contours[0];}
 const rgb=c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16)/255);
 const constant=k=>({a:0,k});
-export function shapeItems(n,animatedProperty,trim=false){
+export function shapeItems(n,animatedProperty,trim=false,hasTrack=()=>false){
+ const property=(p,convert=x=>x)=>animatedProperty?animatedProperty(p,convert):constant(convert(n[p]));
  const rule=n.fill_rule==='evenodd'?2:1;
- const items=n.kind==='path'?pathContours(n.path).map(p=>({ty:'sh',ks:constant(p),d:1})):[{ty:n.kind==='circle'?'el':'rc',d:1,s:constant(n.size),p:constant([0,0]),...(n.kind==='rect'?{r:constant(n.radius)}:{})}];
+ const items=n.kind==='path'?pathContours(n.path).map(p=>({ty:'sh',ks:hasTrack('path')?property('path',text=>pathContours(text)[0]):constant(p),d:1})):[{ty:n.kind==='circle'?'el':'rc',d:1,s:property('size'),p:constant([0,0]),...(n.kind==='rect'?{r:property('radius')}:{})}];
  if(n.gradient){const g=n.gradient,colors=g.stops.flatMap(([offset,c])=>[offset,...rgb(c)]);if(g.stops.some(s=>s.length===3))colors.push(...g.stops.flatMap(s=>[s[0],s[2]??1]));items.push({ty:'gf',o:constant(100),r:rule,t:g.type==='radial'?2:1,s:constant(g.from),e:constant(g.to),h:constant(0),a:constant(0),g:{p:g.stops.length,k:constant(colors)}});}
- else if(n.fill!=='none')items.push({ty:'fl',c:constant([...rgb(n.fill),1]),o:constant(100),r:rule});
- if(n.stroke!=='none'&&n.stroke_width>0)items.splice(n.kind==='path'?items.filter(x=>x.ty==='sh').length:1,0,{ty:'st',c:constant([...rgb(n.stroke),1]),o:constant(100),w:constant(n.stroke_width),lc:{butt:1,round:2,square:3}[n.line_cap],lj:{miter:1,round:2,bevel:3}[n.line_join],ml:4});
+ else if(n.fill!=='none')items.push({ty:'fl',c:property('fill',x=>[...rgb(x),1]),o:constant(100),r:rule});
+ if(n.stroke!=='none'&&(n.stroke_width>0||hasTrack('stroke_width')))items.splice(n.kind==='path'?items.filter(x=>x.ty==='sh').length:1,0,{ty:'st',c:property('stroke',x=>[...rgb(x),1]),o:constant(100),w:property('stroke_width'),lc:{butt:1,round:2,square:3}[n.line_cap],lj:{miter:1,round:2,bevel:3}[n.line_join],ml:4});
  if(trim)items.push({ty:"tm",s:constant(n.trim_start*100),e:animatedProperty("trim_end"),o:constant(0),m:1});
  return items;
 }
+
+// Morphing interpolates corresponding normalized cubic vertices/handles, never guesses correspondence.
+export function contourSVG(shape){
+ const {v,i,o,c}=shape;let d=`M ${v[0].join(' ')}`;
+ const segment=(a,b)=>` C ${v[a].map((x,j)=>x+o[a][j]).join(' ')} ${v[b].map((x,j)=>x+i[b][j]).join(' ')} ${v[b].join(' ')}`;
+ for(let n=1;n<v.length;n++)d+=segment(n-1,n);if(c)d+=segment(v.length-1,0)+' Z';return d;
+}
+export function mixContour(a,b,t){return {v:a.v.map((p,j)=>p.map((x,k)=>x+(b.v[j][k]-x)*t)),i:a.i.map((p,j)=>p.map((x,k)=>x+(b.i[j][k]-x)*t)),o:a.o.map((p,j)=>p.map((x,k)=>x+(b.o[j][k]-x)*t)),c:a.c};}

@@ -1,0 +1,13 @@
+canvas square w=720 bg=#f3f0e8 dur=6 name="Chroma / material transitions"
+let soft "M 0 -150 C 83 -150 150 -83 150 0 C 150 83 83 150 0 150 C -83 150 -150 83 -150 0 C -150 -83 -83 -150 0 -150 Z"
+let diamond "M 0 -180 C 15 -110 110 -15 180 0 C 110 15 15 110 0 180 C -15 110 -110 15 -180 0 C -110 -15 -15 -110 0 -180 Z"
+let square "M -110 -110 C -45 -130 45 -130 110 -110 C 130 -45 130 45 110 110 C 45 130 -45 130 -110 110 C -130 45 -130 -45 -110 -110 Z"
+rect margin p=[360,360] s=[608,608] round=24 f=none ink=#d7d6ca sw=1
+circle orbit p=[360,360] s=[530,530] f=none ink=#cecfc1 sw=1
+path shadow p=[369,382] d=$soft f=#c4c6b6 o=0.3 t=[["d",[[0,"$soft"],[2,"$diamond"],[4,"$square"],[6,"$soft"]],"ease_in_out"]]
+path form p=[360,360] d=$soft f=#456c56 ink=#324d3f sw=1 t=[["d",[[0,"$soft"],[2,"$diamond"],[4,"$square"],[6,"$soft"]],"ease_in_out"],["f",[[0,"#456c56"],[2,"#b16b47"],[4,"#526e9c"],[6,"#456c56"]],"ease_in_out"],["ink",[[0,"#324d3f"],[2,"#864b31"],[4,"#384d75"],[6,"#324d3f"]]],["sw",[[0,1],[2,5],[4,1],[6,1]]]]
+circle aperture p=[360,360] s=[80,80] f=#f3f0e8 t=[["s",[[0,[80,80]],[2,[52,52]],[4,[110,110]],[6,[80,80]]]]]
+rect swatch-1 p=[302,622] s=[32,10] round=5 f=#456c56
+rect swatch-2 p=[360,622] s=[32,10] round=5 f=#b16b47
+rect swatch-3 p=[418,622] s=[32,10] round=5 f=#526e9c
+circle satellite p=[360,95] s=[12,12] f=#456c56 a=[0,265] fx=[["spin",6]]

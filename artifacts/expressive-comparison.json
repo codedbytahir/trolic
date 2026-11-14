@@ -1,0 +1,86 @@
+[
+  {
+    "pair": "expressive-atelier-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00968
+  },
+  {
+    "pair": "expressive-atelier-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.01295
+  },
+  {
+    "pair": "expressive-atelier-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.25662
+  },
+  {
+    "pair": "expressive-atelier-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.10069
+  },
+  {
+    "pair": "expressive-atelier-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.1618
+  },
+  {
+    "pair": "expressive-atelier-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.07879
+  },
+  {
+    "pair": "expressive-atelier-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.18088
+  },
+  {
+    "pair": "expressive-chroma-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.01926
+  },
+  {
+    "pair": "expressive-chroma-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.10261
+  },
+  {
+    "pair": "expressive-chroma-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.13427
+  },
+  {
+    "pair": "expressive-chroma-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.04594
+  },
+  {
+    "pair": "expressive-chroma-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.068
+  },
+  {
+    "pair": "expressive-chroma-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.10831
+  },
+  {
+    "pair": "expressive-chroma-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.02017
+  },
+  {
+    "pair": "expressive-lagoon-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00441
+  },
+  {
+    "pair": "expressive-lagoon-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00621
+  },
+  {
+    "pair": "expressive-lagoon-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00653
+  },
+  {
+    "pair": "expressive-lagoon-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.0076
+  },
+  {
+    "pair": "expressive-lagoon-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00692
+  },
+  {
+    "pair": "expressive-lagoon-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00778
+  },
+  {
+    "pair": "expressive-lagoon-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00661
+  }
+]

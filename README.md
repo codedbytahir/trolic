@@ -1,15 +1,15 @@
-# Trolic v0.5
+# Trolic v0.6 — Living vectors
 
-**New:** portable effects, stroke drawing, timeline controls, duration units, automatic duration, aspect presets, reframing, anchors, visibility and stagger. [v0.5 guide and validation](RELEASE-v0.5.md). Open `trolic-studio.html` offline. See [the human guide](HUMAN-GUIDE.md) for use cases, step-by-step instructions and integration.
+**New:** compatible path morphs, animated fill and stroke, stroke weight, shape dimensions and corner radius; PNG still export, source history, a scene inspector and three original studies. [v0.6 reference](RELEASE-v0.6.md) · [Human guide](HUMAN-GUIDE.md) · [Live studio](https://codedbytahir.github.io/trolic/studio.html).
 
 ## Editable vectors for people and agents
 
-**Current build:** [RELEASE-v0.5.md](RELEASE-v0.5.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
+**Current build:** [RELEASE-v0.6.md](RELEASE-v0.6.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
 
 - **Measured source-token reduction:** 51.12% across eight fixtures with o200k_base; 50.87% with cl100k_base. Lossless Lottie export equivalence checked. These are source-text counts, not full API costs.
 - **Definitions, styles, constants, bounded repeats and batch data** avoid repeating geometry and property blocks.
 - **Stateful agent host library:** small atomic edits, optimistic revisions, selected-field inspection and concise receipts; no embedded model or network service.
-- **187 automated tests** plus offline/browser checks. Model generation accuracy has not been benchmarked.
+- **249 automated tests** plus offline/browser checks. Model generation accuracy has not been benchmarked.
 - **Previous builds backed up:** ../trolic-releases/README.md and checksum manifest.
 
 ### Agent quick start
@@ -105,7 +105,7 @@ Supported tracks: position, scale, opacity, rotation. One track per property. Us
 
 ## Testing and research
 
-**187 unit/regression/CLI/agent/motion tests passed.** New v0.5 studies add 28 paired renderer frames (maximum whole-image mean RGB difference 0.37961/255). Historical v0.4 evidence follows: Eight scenes independently rendered with Lottie-web at four timestamps. Twenty-four paired screenshots compare Trolic SVG sampling against Lottie-web; the largest mean RGB pixel error is approximately 0.078/255 for these fixtures. No claim of all-player conformance. Offline import, retained preview after an error and renderer switching were also tested.
+**249 unit/regression/CLI/agent/motion tests passed.** New v0.5 studies add 28 paired renderer frames (maximum whole-image mean RGB difference 0.37961/255). Historical v0.4 evidence follows: Eight scenes independently rendered with Lottie-web at four timestamps. Twenty-four paired screenshots compare Trolic SVG sampling against Lottie-web; the largest mean RGB pixel error is approximately 0.078/255 for these fixtures. No claim of all-player conformance. Offline import, retained preview after an error and renderer switching were also tested.
 
 ```sh
 npm ci
@@ -120,7 +120,7 @@ python check-comparisons.py
 
 Browser tests default to http://127.0.0.1:8001; set TROLIC_URL to override. Test scripts run locally in Node; browser-facing code uses relative URLs, not localhost APIs.
 
-See **RELEASE-v0.4.md** for historical token measurements; **RELEASE-v0.5.md** covers current motion, tests and limitations; RELEASE-v0.3.md covers the illustration milestone. **RESEARCH.md** records the historical v0.2 feature study and measurements. `artifacts/` includes compiled examples, SVGs, rendered screenshots and JSON reports. Measured median compilation: approximately 2.5 ms for Orchard and 1.4 ms for Milo in this sandbox, not a general performance guarantee.
+See **RELEASE-v0.4.md** for historical token measurements; **RELEASE-v0.6.md** covers current motion, tests and limitations; RELEASE-v0.3.md covers the illustration milestone. **RESEARCH.md** records the historical v0.2 feature study and measurements. `artifacts/` includes compiled examples, SVGs, rendered screenshots and JSON reports. Measured median compilation: approximately 2.5 ms for Orchard and 1.4 ms for Milo in this sandbox, not a general performance guarantee.
 
 ## Build the standalone studio
 
@@ -132,7 +132,7 @@ python bundle.py
 
 ## Not yet implemented
 
-General SVG import, arcs, path morphing, masks, text shaping, general expression scripting, embedded AI generation, video export, dotLottie packaging and cloud API. A server can call the compiler today, but no production cloud service or untrusted-input isolation is included.
+General SVG import, arcs, arbitrary-topology morphing, masks, text shaping, general expression scripting, embedded AI generation, video export, dotLottie packaging and cloud API. A server can call the compiler today, but no production cloud service or untrusted-input isolation is included.
 
 Compiler errors have parser line numbers; semantic errors identify the node declaration line (not yet the specific property). The IR is experimental and not yet a formal stable schema. Only the Lottie-web SVG renderer has been exercised here; Android/iOS and other renderers remain untested.
 

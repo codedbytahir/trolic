@@ -9,3 +9,7 @@ Hallmark static lint: zero FAIL and zero REFLEX after fixes. Rendering through H
 Reviewed warnings: historical 51.12% source-token metric is backed by the included eight-fixture benchmark and labeled historical. Feature columns have no icon decoration; retained for readable product capabilities. Hero secondary action is outlined by CSS. Long reference copy is deliberately retained for humans, not removed to hit a word budget. No invented testimonials or customer counts.
 
 Source: https://github.com/Nutlope/hallmark/tree/main/skills/hallmark . No third-party skill files bundled with Trolic.
+
+## v0.6 refresh
+
+Retained the minimal design and original interaction hooks. Added three expressive studies and kept previous study entry points. Updated current-version data and documentation; historical token evidence remains labeled. Static Hallmark lint remains zero FAIL / zero REFLEX; independent Playwright checks cover desktop/mobile and scene loading.
