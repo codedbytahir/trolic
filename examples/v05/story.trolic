@@ -1,0 +1,17 @@
+canvas story w=540 bg=#e8ece3 dur=6 name="Affirm / vertical motion card"
+circle ambience p=[270,320] s=[680,680] g=["r",[0,-100],[340,0],[[0,"#faf9ed"],[1,"#dce4d8"]]]
+group card p=[270,460] in=200ms out=5800ms fx=[["spring_in","900ms","200ms"]]
+rect card-shadow parent=card p=[8,20] s=[404,530] round=34 f=#99afa2 o=0.18
+rect surface parent=card p=[0,0] s=[400,530] round=34 f=#fffdf5
+circle badge parent=card p=[0,-105] s=[148,148] g=["l",[-60,-60],[60,60],[[0,"#a1d9bf"],[1,"#448b78"]]] fx=[["pop","650ms","650ms"]]
+path check parent=card p=[0,-105] d="M -37 0 L -9 29 L 42 -31" f=none ink=#fffdf1 sw=11 fx=[["draw","650ms","1050ms"]]
+rect title-bar parent=card p=[0,25] s=[230,14] round=7 f=#365e52 fx=[["fade_in","500ms","1s"]]
+rect subline-1 parent=card p=[0,62] s=[268,6] round=3 f=#a5b9ad fx=[["fade_in","500ms","1200ms"]]
+rect subline-2 parent=card p=[0,81] s=[210,6] round=3 f=#c2cec1 fx=[["fade_in","500ms","1300ms"]]
+rect action parent=card p=[0,170] s=[280,54] round=15 f=#2e6655 fx=[["pop","600ms","1500ms"]]
+path arrow parent=card p=[0,170] d="M -15 0 H 15 M 6 -9 L 15 0 L 6 9" f=none ink=#d4e9cb sw=3
+style confetti f=#c4ad75
+def bit rect s=[7,17] round=2 @confetti fx=[["fade_in","200ms","900ms"],["float","1800ms","1s",2,[10,-30]],["spin","3s","1s",1,190]]
+repeat bit confetti- 8 p=[70,192] step=[57,0] turn=27 stagger=65ms
+circle dot-left p=[65,720] s=[11,11] f=#a4bfaa fx=[["pulse","2s",0,3,0.3]]
+circle dot-right p=[480,260] s=[8,8] f=#caad73 fx=[["float","2s",0,3,[0,-15]]]

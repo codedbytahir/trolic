@@ -1,0 +1,9 @@
+// Diagnostic fixture for hold easing, yoyo, anchors and inherited visibility.
+canvas 640 400 bg=#101b25 fps=30 dur=auto name="Timing / portable motion lab"
+group window p=[0,0] in=15f out=180f
+rect rail parent=window p=[320,150] s=[480,4] round=2 f=#365465
+circle shuttle parent=window p=[100,150] s=[42,42] f=#b9df9a t=[["p",[[0,[100,150]],["60f",[540,150]]],[0.3,0.05,0.7,0.95],{"repeat":2,"yoyo":true,"delay":"30f"}]]
+rect hand parent=window p=[320,290] a=[0,60] s=[12,120] round=6 f=#e1bb8b t=[["r",[[0,-40],["1s",40],["2s",-40]],"ease_in_out",{"repeat":3}]]
+circle pivot parent=window p=[320,290] s=[15,15] f=#fbf0d4
+circle stepped p=[80,70] s=[14,14] f=#9ee6d4 t=[["p",[[0,[80,70]],[1,[220,70]],[2,[360,70]],[3,[500,70]]],"step"]]
+path stroke p=[0,0] d="M 70 350 C 180 310 220 390 330 350 S 480 310 570 350" f=none ink=#a0d7d9 sw=3 ts=0.1 te=0.9 fx=[["draw","2s","500ms"]]

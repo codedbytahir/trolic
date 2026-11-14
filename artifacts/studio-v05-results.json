@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "errors": [],
+  "features": [
+    "4 new examples",
+    "reframe",
+    "retime",
+    "independent renderer",
+    "frame stepping",
+    "syntax conversions",
+    "mobile overflow"
+  ]
+}

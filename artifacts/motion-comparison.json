@@ -1,0 +1,114 @@
+[
+  {
+    "pair": "motion-neon-0-lottie",
+    "mean_absolute_rgb_error_0_255": 1e-05
+  },
+  {
+    "pair": "motion-neon-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00935
+  },
+  {
+    "pair": "motion-neon-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.03459
+  },
+  {
+    "pair": "motion-neon-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.07079
+  },
+  {
+    "pair": "motion-neon-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.05797
+  },
+  {
+    "pair": "motion-neon-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.05762
+  },
+  {
+    "pair": "motion-neon-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.05762
+  },
+  {
+    "pair": "motion-orbit-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.03932
+  },
+  {
+    "pair": "motion-orbit-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.10076
+  },
+  {
+    "pair": "motion-orbit-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.37961
+  },
+  {
+    "pair": "motion-orbit-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.27901
+  },
+  {
+    "pair": "motion-orbit-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.08648
+  },
+  {
+    "pair": "motion-orbit-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.08183
+  },
+  {
+    "pair": "motion-orbit-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.08356
+  },
+  {
+    "pair": "motion-story-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00208
+  },
+  {
+    "pair": "motion-story-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00532
+  },
+  {
+    "pair": "motion-story-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00778
+  },
+  {
+    "pair": "motion-story-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.03328
+  },
+  {
+    "pair": "motion-story-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.01353
+  },
+  {
+    "pair": "motion-story-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.01367
+  },
+  {
+    "pair": "motion-story-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.004
+  },
+  {
+    "pair": "motion-timing-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.0014
+  },
+  {
+    "pair": "motion-timing-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.0014
+  },
+  {
+    "pair": "motion-timing-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.01941
+  },
+  {
+    "pair": "motion-timing-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.02457
+  },
+  {
+    "pair": "motion-timing-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.01915
+  },
+  {
+    "pair": "motion-timing-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.02323
+  },
+  {
+    "pair": "motion-timing-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.0229
+  }
+]

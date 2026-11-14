@@ -1,0 +1,146 @@
+{
+  "renderer": "lottie-web 5.13.0 SVG",
+  "cases": [
+    {
+      "scene": "orbit",
+      "time": 0,
+      "bytes": 20059
+    },
+    {
+      "scene": "orbit",
+      "time": 0.25,
+      "bytes": 20059
+    },
+    {
+      "scene": "orbit",
+      "time": 0.75,
+      "bytes": 20059
+    },
+    {
+      "scene": "orbit",
+      "time": 1.5,
+      "bytes": 20059
+    },
+    {
+      "scene": "orbit",
+      "time": 2.75,
+      "bytes": 20059
+    },
+    {
+      "scene": "orbit",
+      "time": 4.25,
+      "bytes": 20059
+    },
+    {
+      "scene": "orbit",
+      "time": 5.9,
+      "bytes": 20059
+    },
+    {
+      "scene": "neon",
+      "time": 0,
+      "bytes": 11114
+    },
+    {
+      "scene": "neon",
+      "time": 0.25,
+      "bytes": 11114
+    },
+    {
+      "scene": "neon",
+      "time": 0.75,
+      "bytes": 11114
+    },
+    {
+      "scene": "neon",
+      "time": 1.5,
+      "bytes": 11114
+    },
+    {
+      "scene": "neon",
+      "time": 2.75,
+      "bytes": 11114
+    },
+    {
+      "scene": "neon",
+      "time": 3.9833333333333334,
+      "bytes": 11114
+    },
+    {
+      "scene": "neon",
+      "time": 3.9833333333333334,
+      "bytes": 11114
+    },
+    {
+      "scene": "story",
+      "time": 0,
+      "bytes": 20131
+    },
+    {
+      "scene": "story",
+      "time": 0.25,
+      "bytes": 20131
+    },
+    {
+      "scene": "story",
+      "time": 0.75,
+      "bytes": 20131
+    },
+    {
+      "scene": "story",
+      "time": 1.5,
+      "bytes": 20131
+    },
+    {
+      "scene": "story",
+      "time": 2.75,
+      "bytes": 20131
+    },
+    {
+      "scene": "story",
+      "time": 4.25,
+      "bytes": 20131
+    },
+    {
+      "scene": "story",
+      "time": 5.9,
+      "bytes": 20131
+    },
+    {
+      "scene": "timing",
+      "time": 0,
+      "bytes": 4183
+    },
+    {
+      "scene": "timing",
+      "time": 0.25,
+      "bytes": 4183
+    },
+    {
+      "scene": "timing",
+      "time": 0.75,
+      "bytes": 4183
+    },
+    {
+      "scene": "timing",
+      "time": 1.5,
+      "bytes": 4183
+    },
+    {
+      "scene": "timing",
+      "time": 2.75,
+      "bytes": 4183
+    },
+    {
+      "scene": "timing",
+      "time": 4.25,
+      "bytes": 4183
+    },
+    {
+      "scene": "timing",
+      "time": 5.9,
+      "bytes": 4183
+    }
+  ],
+  "pageErrors": []
+}

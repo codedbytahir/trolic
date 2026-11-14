@@ -7,3 +7,6 @@ __pycache__/
 artifacts/compare-*.png
 artifacts/cli-test-*/
 artifacts/launch-*.png
+
+# Local dependency symlinks
+/node_modules

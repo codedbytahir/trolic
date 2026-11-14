@@ -1,0 +1,47 @@
+canvas 800 680 bg=#f6ebdc dur=6 name="Milo — woodland explorer"
+let a #513a34
+style s0 ink=$a parent=milo sw=3.5
+style s1 ink=$a parent=milo sw=2
+style s2 parent=milo sw=3.5
+style s3 ink=$a parent=milo sw=2.5
+style s4 ink=$a parent=milo sw=3
+def a0 path f=#bd984e d="M 0 -10 Q 1 -1 9 0 Q 1 1 0 10 Q -1 1 -9 0 Q -1 -1 0 -10 Z"
+circle backdrop p=[400,320] s=[520,520] g=["r",[0,-130],[250,80],[[0,"#fff9e9"],[1,"#e8d5bd"]]]
+circle ground p=[405,601] s=[325,46] g=["r",[0,0],[165,0],[[0,"#5e6657",0.19],[1,"#5e6657",0]]]
+group milo p=[390,342] t=[["r",[[0,-2],[1.5,1],[3,-2],[4.5,1],[6,-2]]]]
+path tail p=[0,0] d="M 62 129 C 171 142 204 83 187 22 C 243 82 229 179 165 199 Q 97 217 54 182 Z" g=["l",[95,130],[209,140],[[0,"#e1873f"],[1,"#c86632"]]] @s0
+path tail-tip p=[0,0] f=#fff0d1 d="M 187 22 C 211 49 225 81 224 112 Q 199 99 182 113 Q 203 79 187 22 Z" @s0
+rect left-boot p=[-47,222] s=[68,48] f=#4c5a50 round=17 @s0
+rect right-boot p=[47,222] s=[68,48] f=#4c5a50 round=17 @s0
+rect backpack p=[47,104] s=[127,157] f=#bda85e round=28 @s0
+path left-arm p=[0,0] f=#e99850 d="M -60 56 C -100 64 -105 113 -91 149 Q -74 164 -64 147 L -43 94 Z" @s0
+path jacket p=[0,0] d="M -51 49 Q 0 30 53 49 Q 81 100 68 190 Q 0 214 -69 188 Q -78 102 -51 49 Z" g=["l",[-60,60],[70,170],[[0,"#86b5a0"],[1,"#507c6d"]]] @s0
+path jacket-seam p=[0,0] f=none d="M 0 68 L 0 196 M -56 144 Q -38 153 -18 144 M 18 144 Q 40 153 57 144" ink=#335d51 sw=2 parent=milo
+path badge-ring p=[-37,108] f=#ebd5a1 d="M -13 0 C -13 -17 13 -17 13 0 C 13 17 -13 17 -13 0 Z M -7 0 C -7 -9 7 -9 7 0 C 7 9 -7 9 -7 0 Z" sw=3.5 rule=evenodd parent=milo
+path scarf p=[0,0] f=#d8aa56 d="M -63 32 Q 0 58 62 32 L 57 63 Q 0 90 -61 64 Z" @s0
+path scarf-end p=[0,0] f=#e3bd6a d="M 20 67 L 51 70 L 59 117 L 42 110 L 26 120 Z" @s0
+group wave p=[66,62] parent=milo t=[["r",[[0,12],[1,0],[2,12],[3,0],[4,12],[5,0],[6,12]]]]
+path wave-arm p=[0,0] f=#e99850 d="M -11 15 C 12 20 32 -9 31 -36 Q 40 -60 56 -48 C 75 -22 57 31 26 48 Q -1 61 -19 42 Z" ink=$a sw=3.5 parent=wave
+path wave-paw p=[0,0] f=#5b4239 d="M 31 -36 Q 23 -56 34 -66 Q 40 -72 45 -59 Q 48 -79 58 -73 Q 66 -70 60 -57 Q 78 -66 79 -53 Q 79 -42 64 -33 L 56 -22 Z" ink=$a sw=3 parent=wave
+path ear-left p=[0,0] f=#d77c3c d="M -91 -93 Q -126 -142 -111 -214 Q -55 -194 -35 -148 Z" @s0
+path ear-left-inner p=[0,0] f=#66423d d="M -88 -131 Q -107 -165 -103 -192 Q -70 -175 -56 -148 Z" @s1
+path ear-right p=[0,0] f=#d77c3c d="M 41 -149 Q 72 -200 113 -211 Q 126 -151 93 -98 Z" @s0
+path ear-right-inner p=[0,0] f=#66423d d="M 64 -148 Q 80 -177 104 -190 Q 108 -158 89 -130 Z" @s1
+path head p=[0,0] d="M 0 -172 C -70 -174 -102 -135 -111 -88 L -132 -64 L -104 -57 L -111 -36 Q -57 19 0 35 Q 65 19 112 -36 L 103 -56 L 131 -64 L 111 -87 C 102 -136 64 -174 0 -172 Z" g=["l",[-55,-125],[92,-15],[[0,"#efad62"],[1,"#d77a3c"]]] @s0
+path muzzle-left p=[0,0] f=#fff0d2 d="M -106 -61 Q -81 -96 -55 -67 Q -31 -34 0 -25 L 0 29 Q -60 11 -106 -36 L -91 -42 Z" @s2
+path muzzle-right p=[0,0] f=#fff0d2 d="M 106 -61 Q 81 -96 55 -67 Q 31 -34 0 -25 L 0 29 Q 60 11 106 -36 L 91 -42 Z" @s2
+circle eye-white--1 p=[-43,-88] s=[35,42] f=#fff8e7 @s3
+circle pupil--1 p=[-40,-84] s=[18,25] f=#4b3733 @s2
+circle eye-shine--1 p=[-37,-91] s=[7,8] f=#ffffff @s2
+path brow--1 p=[0,0] f=none d="M -60 -119 Q -43 -130 -28 -120" @s4
+circle cheek--1 p=[-75,-38] s=[22,11] f=#dd8863 o=0.45 @s2
+circle eye-white-1 p=[43,-88] s=[35,42] f=#fff8e7 @s3
+circle pupil-1 p=[46,-84] s=[18,25] f=#4b3733 @s2
+circle eye-shine-1 p=[49,-91] s=[7,8] f=#ffffff @s2
+path brow-1 p=[0,0] f=none d="M 26 -119 Q 43 -130 58 -120" @s4
+circle cheek-1 p=[75,-38] s=[22,11] f=#dd8863 o=0.45 @s2
+path nose p=[0,0] f=$a d="M -17 -32 Q 0 -44 17 -32 Q 12 -15 0 -14 Q -12 -15 -17 -32 Z" @s1
+path nose-glint p=[0,0] f=none d="M -8 -31 Q -1 -35 5 -31" ink=#b9957f sw=2 parent=milo
+path smile p=[0,0] f=none d="M 0 -14 L 0 -4 Q -14 5 -24 -5 M 0 -4 Q 14 5 24 -5" @s3
+path hair p=[0,0] f=#efad62 d="M -22 -167 L -9 -190 L 1 -174 L 17 -188 L 19 -166" @s4
+batch a0 star- cols=["p"] data=[[[150,240]],[[642,167]],[[681,368]],[[142,490]],[[620,552]]]

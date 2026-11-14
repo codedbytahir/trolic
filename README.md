@@ -1,138 +1,141 @@
-# Trolic ✳
+# Trolic v0.5
 
-### Less context. More creation.
+**New:** portable effects, stroke drawing, timeline controls, duration units, automatic duration, aspect presets, reframing, anchors, visibility and stagger. [v0.5 guide and validation](RELEASE-v0.5.md). Open `trolic-studio.html` offline. See [the human guide](HUMAN-GUIDE.md) for use cases, step-by-step instructions and integration.
 
-An experimental, local-first vector motion language for people and AI agents. Original illustrations, editable text source, a dependency-free JavaScript compiler, and a self-contained offline studio.
+## Editable vectors for people and agents
 
-**[Explore the website](https://codedbytahir.github.io/trolic/)** · **[Launch the studio](https://codedbytahir.github.io/trolic/studio.html)** · **[Download v0.4](https://github.com/codedbytahir/trolic/releases/tag/v0.4.0)** · **[Project report](PROJECT-REPORT.md)**
+**Current build:** [RELEASE-v0.5.md](RELEASE-v0.5.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
 
-![An original Trolic botanical vector illustration](docs/assets/aurelia.svg)
+- **Measured source-token reduction:** 51.12% across eight fixtures with o200k_base; 50.87% with cl100k_base. Lossless Lottie export equivalence checked. These are source-text counts, not full API costs.
+- **Definitions, styles, constants, bounded repeats and batch data** avoid repeating geometry and property blocks.
+- **Stateful agent host library:** small atomic edits, optimistic revisions, selected-field inspection and concise receipts; no embedded model or network service.
+- **187 automated tests** plus offline/browser checks. Model generation accuracy has not been benchmarked.
+- **Previous builds backed up:** ../trolic-releases/README.md and checksum manifest.
 
-## What works today
-
-- Readable syntax **and** compact agent syntax compile through the same validated scene model.
-- Vector paths, compound contours, fills, strokes, transparent gradient shading, and transform groups.
-- Multi-keyframe position, rotation, scale and opacity animation with four easing curves.
-- Reusable constants, styles and single-node definitions; bounded repeats and column-based batches.
-- Atomic, revision-checked agent edits with selected-field inspection and concise receipts.
-- Lottie JSON, static SVG-frame and experimental IR exports.
-- An offline HTML studio with independent Lottie-web playback and Trolic SVG sampling.
-
-## Token savings—with the scope made explicit
-
-Exact source-text counts across the eight existing fixtures, using tiktoken 0.14.0:
-
-| Encoding | Original source | Compact source | Reduction |
-|---|---:|---:|---:|
-| `o200k_base` | 25,869 | 12,644 | **51.12%** |
-| `cl100k_base` | 25,825 | 12,689 | **50.87%** |
-
-Every distributed conversion produces byte-for-byte identical Lottie JSON. No coordinates were rounded or visual details removed. Against whitespace-trimmed legacy source, the o200k reduction is 46.23%.
-
-These are **not total API-cost savings**. They exclude chat wrappers, tool schemas, reasoning and retries. The short agent guide adds 446 tokens. Small one-off scenes may not benefit after guide overhead. Actual model-generation success rates and other providers' tokenizers have not been benchmarked.
-
-[Read the methodology](RELEASE-v0.4.md) · [Inspect the measured data](artifacts/token-benchmark.json) · [Read the agent card](AGENT-CARD.md)
-
-## Try it locally
-
-Requires Node 20+. The compiler/CLI need no npm packages.
+### Agent quick start
 
 ```sh
-git clone https://github.com/codedbytahir/trolic.git
-cd trolic
-
-node cli.mjs examples/agent/milo.trolic --check
-node cli.mjs examples/agent/milo.trolic --target svg --time 3 --output milo.svg
 node cli.mjs examples/orchard.trolic --target agent --output orchard.agent.trolic
+node cli.mjs examples/agent/milo.trolic --check
+node cli.mjs examples/agent/milo.trolic --target readable --output milo.readable.trolic
+pip install -r requirements-token.txt
+python token-optimize.py examples/orchard.trolic --encoding o200k_base --output orchard.optimized.trolic
 npm test
 ```
 
-Open `trolic-studio.html` directly in a browser for the offline studio. Or serve this directory to use the modular `index.html` developer playground:
+Open **trolic-studio.html** offline. Use the Agent/Readable buttons to switch formats. The browser packer is heuristic; the optional Python optimizer measures candidate profiles with the selected tokenizer. The token benchmark and guide overhead are documented in RELEASE-v0.4.md. [AGENT-CARD.md](AGENT-CARD.md) is the short agent contract.
+
+## Readable syntax and illustration features (carried forward)
+
+Original, local-first vector-motion language and compiler. The v0.3 illustration feature set is retained. RELEASE-v0.3.md records its historical evidence and limitations. No Frolic code or artwork is included.
+
+## Open immediately
+
+Open **trolic-studio.html** in your browser. It embeds the compiler, eight examples and Lottie-web; no web server, npm installation, network, account or AI key required. The modular development version is `index.html` and requires an HTTP server.
+
+The studio supports editing source, compiling, pausing/scrubbing playback, changing examples, switching between Lottie-web and the Trolic SVG sampler, and downloading JSON/SVG/source. File downloads may be restricted by an embedded preview sandbox; use the downloaded HTML in a regular browser if needed.
+
+## Local CLI — Node 20+
+
+Compiler and CLI have no npm dependencies:
 
 ```sh
-python3 -m http.server 8001
+node cli.mjs examples/orchard.trolic --check
+node cli.mjs examples/aurelia.trolic --target lottie --output aurelia.json
+node cli.mjs examples/tidal.trolic --target svg --time 3 --output tidal.svg
+node cli.mjs examples/solstice.trolic --target ir --output solstice.ir.json
+npm test
 ```
 
-The public launch site is in `docs/`. Its embedded studio is a publication copy with a same-origin source-loading bridge. Core development uses the root studio and compiler.
+Serve the modular playground:
 
-## A small scene
+```sh
+python3 -m http.server 8001 --bind 0.0.0.0
+```
+
+## Illustration capabilities
+
+- **Paths:** M, L, H, V, C, S, Q, T, Z commands in both cases; multiple contours and even-odd fill rules. Cubic and quadratic curves export to Lottie Bézier geometry.
+- **Strokes:** color, width, round/butt/square caps, round joins; `fill: "none"` supported.
+- **Linear/radial gradients:** local coordinates and 2–16 ordered RGB stops with optional opacity.
+- **Transform groups:** `group` nodes and `parent` references; nested position, rotation and scale.
+- **Independent preview:** bundled Lottie-web 5.13.0, with original upstream MIT license in `vendor/`.
+- **Corrected scalar keyframes and stroke paint ordering**, plus structured diagnostics, duplicate-property detection and safer CLI options.
+- **Five original detailed compositions:** Orchard pear study, Milo cartoon fox, Aurelia botanical bloom, Tidal koi pond, Solstice paper landscape. Three basic motion fixtures are also included.
+- **Standalone offline HTML** with embedded examples and player.
+
+## Example syntax
+
+Each statement/property occupies a separate line; property values are JSON. Groups and shapes use flat declarations with explicit parent IDs rather than nested source blocks.
 
 ```text
-canvas 640 480 bg=#10131d dur=3 name="Agent demo"
-circle orb p=[100,200] s=[80,80] f=#c4f76b
-def dot circle s=[12,12] f=#edcc88
-repeat dot dot- 5 p=[200,350] step=[35,0]
-edit orb r=5
+scene "Leaf" {
+  size: [640, 480]
+  duration: 3
+  fps: 60
+  background: "#10242b"
+  group "plant" {
+    position: [320, 300]
+    animate rotation -10 -> 10 over 3s ease_in_out
+  }
+  path "leaf" {
+    parent: "plant"
+    position: [0, 0]
+    path: "M 0 0 C -90 -80 -40 -180 0 -200 C 80 -140 80 -40 0 0 Z"
+    gradient: {"type":"linear","from":[0,0],"to":[0,-200],"stops":[[0,"#24766c"],[1,"#d4f0a2"]]}
+    stroke: "#a3d5ac"
+    stroke_width: 1
+  }
+}
 ```
 
-For a real agent integration, the host can keep scene state and accept small edits:
+Scene: size, fps, duration, background. Nodes: `circle`, `rect`, `path`, `group`.
 
-```js
-import { AgentSession } from './agent-tools.js';
+Common properties: parent, position, scale, rotation, opacity. Shape appearance: fill, stroke, stroke_width, line_cap, gradient. Geometry: size for ellipse/rect; radius for rect; path for paths. `circle` accepts two diameters and therefore also draws ellipses.
 
-const session = new AgentSession(source);
-session.inspect(['orb'], { fields: ['p', 'r'] });
-session.edit('edit orb r=5', { revision: 0 });
-// { ok: true, revision: 1, edited: 1, nodes: ... }
+Units: position/size in pixels; rotation degrees; scale 1 = 100%; opacity 0..1; duration seconds. Colors: quoted #RRGGBB. Gradient overrides solid fill. Optional gradient stop opacity: [offset, "#RRGGBB", opacity]. Gradients are not animated. `line_join` supports miter/round/bevel; `fill_rule` supports nonzero/evenodd. Group opacity must remain 1 because null-parent opacity is not portable to Lottie; animate child opacity instead.
+
+Animation:
+
+```text
+animate position [100, 200] -> [400, 200] over 1s delay 0.2s ease_out
 ```
 
-This is an in-memory library—not an authenticated/persistent cloud API or MCP server.
+Supported tracks: position, scale, opacity, rotation. One track per property. Use `keyframes rotation [[0,0],[1,15],[2,0]] ease_in_out` for multi-keyframe sequences (2..256 keys). Easing: linear, ease_in, ease_out, ease_in_out. Before/after track bounds, values hold at the first/last value. Looping in the playground restarts the timeline; it does not guarantee seamless animation. Source limits: 1 million characters, 500 nodes, 8,192 vertices and 128 contours per path, 32 hierarchy levels, 120 seconds, 120 fps, 8192px canvas dimensions. Path coordinates are limited to ±10,000,000. These are not a complete security sandbox.
 
-## Original artwork
+## Testing and research
 
-| Fixture | Study |
-|---|---|
-| Orchard | Naturalistic pear, translucent shading, leaf veins and skin details |
-| Milo | Cartoon fox explorer, clear outlines and a waving arm |
-| Aurelia | Layered botanical bloom with reusable geometry |
-| Tidal | Koi fish, lily pads and water rings |
-| Solstice | Paper-style mountains, river, trees and sun |
-| Sunwheel | Compact procedural repeat recipe |
-
-Sources are in `examples/`; compact equivalents are in `examples/agent/`. Gallery images are actual SVG exports, not raster mockups.
-
-## Testing and development
-
-**123 automated tests** pass locally: parser/export regressions, geometry, validation, CLI behavior, compact conversion, bounded expansion and agent-session transactions. Eight original scenes have been exercised in Lottie-web at four timestamps; 24 paired snapshots compared it with Trolic SVG sampling. Those tests are evidence for these fixtures, not full cross-platform conformance.
+**187 unit/regression/CLI/agent/motion tests passed.** New v0.5 studies add 28 paired renderer frames (maximum whole-image mean RGB difference 0.37961/255). Historical v0.4 evidence follows: Eight scenes independently rendered with Lottie-web at four timestamps. Twenty-four paired screenshots compare Trolic SVG sampling against Lottie-web; the largest mean RGB pixel error is approximately 0.078/255 for these fixtures. No claim of all-player conformance. Offline import, retained preview after an error and renderer switching were also tested.
 
 ```sh
 npm ci
-npm test
 npx playwright install --with-deps chromium
+# Start the HTTP server in another terminal, then:
+npm run test:browser
+npm run test:compare
 npm run test:offline
-npm run test:agent-browser
-
-# Optional exact-token profile selection and measurement
-pip install -r requirements-token.txt
-python token-optimize.py examples/orchard.trolic --encoding o200k_base --output orchard.optimized.trolic
-python token-benchmark.py
+pip install Pillow
+python check-comparisons.py
 ```
 
-First-time dependency/encoding acquisition requires network access. Normal compilation does not call an AI API.
+Browser tests default to http://127.0.0.1:8001; set TROLIC_URL to override. Test scripts run locally in Node; browser-facing code uses relative URLs, not localhost APIs.
 
-## Documentation
+See **RELEASE-v0.4.md** for historical token measurements; **RELEASE-v0.5.md** covers current motion, tests and limitations; RELEASE-v0.3.md covers the illustration milestone. **RESEARCH.md** records the historical v0.2 feature study and measurements. `artifacts/` includes compiled examples, SVGs, rendered screenshots and JSON reports. Measured median compilation: approximately 2.5 ms for Orchard and 1.4 ms for Milo in this sandbox, not a general performance guarantee.
 
-- [Language/setup reference](LANGUAGE.md)
-- [Short agent contract](AGENT-CARD.md)
-- [Agent authoring guide](AI-AUTHORING.md)
-- [v0.4 methodology and limitations](RELEASE-v0.4.md)
-- [v0.3 illustration milestone](RELEASE-v0.3.md)
-- [Historical feature research](RESEARCH.md)
-- [Project report](PROJECT-REPORT.md)
-- [Archived-version checksums](releases/previous-versions.json)
+## Build the standalone studio
 
-## Status and limitations
+```sh
+python bundle.py
+```
 
-Trolic is **experimental**, not a production-certified renderer or photorealistic engine. It does not include a model, cloud API, arbitrary scripting, general SVG import, arcs, text shaping, masks, filters, springs, trim paths, dotLottie packaging or video export. The IR is not a stable public interchange contract. Only the Lottie-web SVG renderer has been exercised here; test your real target player before shipping.
+`make-examples.py` regenerates the v0.2 scenes; `illustrations.py` regenerates Orchard and Milo using Python's standard library. It is a developer authoring tool, not a Trolic procedural-language feature.
 
-Source compression does not reduce expanded layer count or guarantee faster playback. Compiler budgets are safeguards, not a security sandbox. Host untrusted compilation in isolated workers with input, memory and time limits.
+## Not yet implemented
 
-## History and backups
+General SVG import, arcs, path morphing, masks, text shaping, general expression scripting, embedded AI generation, video export, dotLottie packaging and cloud API. A server can call the compiler today, but no production cloud service or untrusted-input isolation is included.
 
-v0.1 introduced the compiler; v0.2 added vector geometry and independent playback; v0.3 expanded illustration and stability; v0.4 adds compact agent authoring and measured token profiling. Original v0.1–v0.3 ZIP archives are attached to the v0.4 release as historical backups. Their checksums are recorded in `releases/previous-versions.json`. The v0.4 release tag does not imply those old archives share the current source tree.
+Compiler errors have parser line numbers; semantic errors identify the node declaration line (not yet the specific property). The IR is experimental and not yet a formal stable schema. Only the Lottie-web SVG renderer has been exercised here; Android/iOS and other renderers remain untested.
 
-## License and independence
+## License
 
-Original Trolic code and artwork: [MIT](LICENSE). Bundled Lottie-web retains its upstream license in `vendor/LOTTIE-LICENSE.md`. This repository contains no Frolic source code or downloaded Frolic animation assets. Public examples informed broad feature research; Trolic is an independent implementation, not an official LottieFiles product or a claim of feature parity. Name/trademark clearance has not been established.
-
-A project published by [codedbytahir](https://github.com/codedbytahir).
+Original Trolic code and artwork: MIT (LICENSE). Bundled Lottie-web: upstream MIT license retained in vendor/LOTTIE-LICENSE.md. No Frolic source is distributed in this package. Trolic name/trademark availability has not been checked.

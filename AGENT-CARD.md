@@ -16,3 +16,6 @@ batch DEF PREFIX cols=["p","s"] data=[[[10,20],[5,5]],[[30,40],[6,6]]]
 Batch IDs are PREFIX0, PREFIX1...; optional ids=["a","b"].
 edit ID key=value ...
 Stable IDs. Group opacity stays 1. Paths: M L H V C S Q T Z, relative/absolute, compound allowed; no arcs. No text/masks/filters. 500 expanded nodes max. Validate, render, inspect. Reuse definitions; batch irregular detail; repeat regular patterns. Do not round coordinates unless visual loss is acceptable. For session edits, send only edit lines with expected revision; request a receipt, not the whole scene.
+
+## v0.5 motion additions
+Canvas: `canvas story w=540 dur=auto` or `canvas 16:9 w=960`. Times: numeric seconds or `500ms`, `2s`, `30f` strings (inside JSON, quote units). Node aliases: `a` pivot, `in`/`out` global visibility, `ts`/`te` trim range, `fx` effects. Effects: `[name,duration,delay?,repeat?,amount?]`. Names: fade_in, fade_out, pop, spring_in, pulse, float, shake, spin, draw. Float amount is `[dx,dy]`; draw requires unfilled single-contour stroke. No duplicate animated properties across fx/tracks. Tracks: `["p",[[0,[0,0]],["2s",[100,0]]],"ease_out",{"repeat":2,"yoyo":true}]`. Custom easing `[x1,y1,x2,y2]` and `step` supported. `repeat ... stagger=80ms` offsets definition motion. Read RELEASE-v0.5.md for limits and defaults.

@@ -1,0 +1,26 @@
+// Original widescreen vector launch study. Effects lower to ordinary keyframes.
+canvas 16:9 w=960 bg=#101a2c dur=auto name="Orbital / launch study"
+let mint #9ee6d4
+circle halo p=[650,280] s=[400,400] g=["r",[0,0],[200,0],[[0,"#263a52"],[1,"#142137"]]]
+circle halo-ring p=[650,280] s=[440,440] f=none ink=#2d465d sw=1
+circle orbit p=[650,280] s=[520,250] f=none ink=#7bc7c4 sw=2 r=-28 fx=[["draw","2s","200ms"]]
+path trail p=[0,0] d="M 40 420 C 250 550 320 220 540 210" f=none ink=#75cfca sw=3 fx=[["draw","1800ms","200ms"]]
+style star f=#b8dfde
+path star-1 p=[92,90] d="M 0 -6 L 2 0 L 0 6 L -2 0 Z" @star fx=[["pulse","1500ms",0,4,0.3]]
+path star-2 p=[350,150] d="M 0 -4 L 1 0 L 0 4 L -1 0 Z" @star
+path star-3 p=[880,460] d="M 0 -7 L 2 0 L 0 7 L -2 0 Z" @star
+path star-4 p=[470,450] d="M 0 -4 L 1 0 L 0 4 L -1 0 Z" @star
+circle planet p=[650,280] s=[205,205] g=["l",[-80,-80],[80,80],[[0,"#9de5d6"],[0.5,"#4faeae"],[1,"#28667d"]]] fx=[["pop","800ms","200ms"]]
+path planet-band p=[650,280] d="M -96 -34 Q 0 0 96 -34 M -93 44 Q 0 76 93 44" f=none ink=#b5eee1 sw=2 o=0.28
+circle moon p=[825,145] s=[38,38] f=#e7c695 fx=[["float","3s",0,2,[0,-12]]]
+group rocket p=[290,280] r=27 fx=[["spring_in","1200ms","200ms"],["float","2800ms","400ms",2,[0,-18]]]
+path exhaust parent=rocket p=[0,0] d="M -22 57 Q 0 145 22 57 Z" g=["l",[0,50],[0,130],[[0,"#f0d690"],[1,"#e38a67",0]]] fx=[["pulse","600ms",0,10,0.16]]
+path fin-left parent=rocket p=[0,0] d="M -22 12 Q -62 26 -47 75 L -18 48 Z" f=#e8b891
+path fin-right parent=rocket p=[0,0] d="M 22 12 Q 62 26 47 75 L 18 48 Z" f=#e8b891
+path hull parent=rocket p=[0,0] d="M 0 -94 C -54 -51 -33 29 -24 57 Q 0 68 24 57 C 33 29 54 -51 0 -94 Z" g=["l",[-28,0],[32,0],[[0,"#cfe5df"],[0.45,"#fff8df"],[1,"#9bbeba"]]]
+path nose parent=rocket p=[0,0] d="M 0 -94 Q -23 -74 -28 -47 Q 0 -39 28 -47 Q 23 -74 0 -94 Z" f=#e7b78d
+circle window-rim parent=rocket p=[0,-16] s=[48,48] f=#426b78
+circle window parent=rocket p=[0,-16] s=[35,35] g=["l",[-10,-12],[12,12],[[0,"#a1e4df"],[1,"#24576f"]]]
+path glint parent=rocket p=[0,0] d="M -11 -22 Q -6 -31 4 -29" f=none ink=#ddf5e6 sw=3
+rect caption-line p=[165,80] s=[240,8] round=4 f=#a9c7c5 fx=[["fade_in","800ms"]]
+rect caption-line-2 p=[124,101] s=[158,4] round=2 f=#486375 fx=[["fade_in","800ms","200ms"]]

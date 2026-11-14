@@ -1,0 +1,11 @@
+canvas square w=640 bg=#121023 dur=4 name="Prism / draw-on study"
+let curve "M -180 0 C -120 -200 120 -200 180 0 C 120 200 -120 200 -180 0"
+circle halo p=[320,320] s=[530,530] g=["r",[0,0],[265,0],[[0,"#2f214f"],[1,"#121023"]]]
+group prism p=[320,320] fx=[["spin","4s",0,1,180]]
+def glow path parent=prism p=[0,0] d=$curve f=none ink=#9d83ec sw=20 o=0.12 fx=[["draw","1500ms","200ms"]]
+repeat glow haze- 3 turn=60
+def line path parent=prism p=[0,0] d=$curve f=none ink=#b7a2ff sw=3 fx=[["draw","1500ms","200ms"]]
+repeat line line- 3 turn=60
+circle core parent=prism p=[0,0] s=[36,36] f=#e6dbff fx=[["pulse","1s",0,4,0.2],["fade_in","400ms"]]
+def bead circle parent=prism s=[7,7] f=#e4b5d4 fx=[["fade_in","300ms","400ms"]]
+repeat bead points- 9 p=[-160,200] step=[40,0] stagger=60ms

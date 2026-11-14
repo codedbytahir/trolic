@@ -10,28 +10,28 @@
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1388
+          "length": 1386
         },
         {
           "seconds": 0.5,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1401
+          "length": 1399
         },
         {
           "seconds": 1.5,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1354
+          "length": 1352
         },
         {
           "seconds": 3,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1354
+          "length": 1352
         }
       ]
     },
@@ -44,28 +44,28 @@
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1599
+          "length": 1597
         },
         {
           "seconds": 0.5,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1595
+          "length": 1593
         },
         {
           "seconds": 1.5,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1453
+          "length": 1451
         },
         {
           "seconds": 3,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1453
+          "length": 1451
         }
       ]
     },
@@ -78,28 +78,28 @@
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1271
+          "length": 1269
         },
         {
           "seconds": 0.5,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1300
+          "length": 1298
         },
         {
           "seconds": 1.5,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1300
+          "length": 1298
         },
         {
           "seconds": 3,
           "paths": 2,
           "gradients": 0,
           "invalid": false,
-          "length": 1271
+          "length": 1269
         }
       ]
     },
@@ -214,28 +214,28 @@
           "paths": 123,
           "gradients": 10,
           "invalid": false,
-          "length": 71382
+          "length": 71366
         },
         {
           "seconds": 0.5,
           "paths": 123,
           "gradients": 10,
           "invalid": false,
-          "length": 71382
+          "length": 71366
         },
         {
           "seconds": 1.5,
           "paths": 123,
           "gradients": 10,
           "invalid": false,
-          "length": 71382
+          "length": 71366
         },
         {
           "seconds": 3,
           "paths": 123,
           "gradients": 10,
           "invalid": false,
-          "length": 71382
+          "length": 71366
         }
       ]
     },
