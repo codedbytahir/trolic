@@ -1,6 +1,6 @@
 # Trolic v0.5 — portable motion
 
-The v0.5 source and offline studio are included in this revision. See HUMAN-GUIDE.md for authoring and integration. Release assets and the live site require publication of this revision.
+The v0.5 source and offline studio are included in this revision. See HUMAN-GUIDE.md for authoring and integration. The launch page explains human workflows and uses a minimal Hallmark-informed design. See https://github.com/codedbytahir/trolic/releases/tag/v0.5.0 for release downloads.
 
 ## New capabilities
 
