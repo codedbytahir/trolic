@@ -1,6 +1,6 @@
-> **Local v0.9 SDK preview:** the public website and release remain v0.8.
-> See [API.md](API.md) and [DELIVERY.md](DELIVERY.md) for the new package, player and preflight APIs.
-> v0.9 has not been published to GitHub Releases or npm.
+> **v0.9 release candidate:** typed SDK, browser player and delivery preflight.
+> See [API.md](API.md), [DELIVERY.md](DELIVERY.md), and [RELEASE-v0.9.md](RELEASE-v0.9.md).
+> Publication is pending repository authentication; not available on npm.
 
 # Trolic v0.8 — Timeline studio
 

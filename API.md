@@ -1,4 +1,4 @@
-# Trolic SDK · v0.9 local preview
+# Trolic SDK · v0.9
 
 Dependency-free ESM runtime; Node 20+ or a modern browser. No npm release yet.
 The package is named `@codedbytahir/trolic`. Use `npm pack` in this checkout,
