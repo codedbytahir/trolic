@@ -10,7 +10,7 @@ with zipfile.ZipFile(args.output,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
   rel=p.relative_to(r)
   if not p.is_file() or p.resolve()==args.output.resolve():continue
   if any(x in {'.git','node_modules','__pycache__','.cache','.hallmark'} for x in rel.parts):continue
-  if rel.parts[0]=='artifacts' and p.suffix=='.png' and not p.name.startswith('studio-v'+version.replace('.','')):continue
+  if rel.parts[0]=='artifacts' and p.suffix=='.png' and not (p.name.startswith('studio-v'+version.replace('.','')) or p.name in {'studio-v07-workspace.png','studio-v08-timeline.png'}):continue
   if p.name=='.env' or p.name.startswith('.env.'):continue
   z.write(p,Path('trolic')/rel)
 print(args.output,args.output.stat().st_size,'bytes')

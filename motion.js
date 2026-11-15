@@ -13,7 +13,8 @@ export function lowerTrack(track,fps){
  if(!Array.isArray(raw)||raw.length<2||raw.length>256)throw Error('A track requires 2..256 keyframes');
  const frames=raw.map(f=>{if(!Array.isArray(f)||f.length!==2)throw Error('Keyframe must be [time,value]');return [timeSeconds(f[0],fps),f[1]];});let last=-1;
  for(const f of frames){if(f[0]<0||f[0]<=last)throw Error('Keyframe times must be nonnegative and strictly increasing');last=f[0];}
- const options=track.options??{};if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>!['repeat','yoyo','delay'].includes(k)))throw Error('Track options: repeat, yoyo, delay');
+ const options=track.options??{};if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>!['repeat','yoyo','delay','easings'].includes(k)))throw Error('Track options: repeat, yoyo, delay, easings');
+ const segmentCurves=options.easings??Array(frames.length-1).fill(easing);if(!Array.isArray(segmentCurves)||segmentCurves.length!==frames.length-1)throw Error('easings must match the number of keyframe segments');for(const curve of segmentCurves)curveFor(curve);
  const count=options.repeat??1,reverse=options.yoyo??false,delay=timeSeconds(options.delay??track.delay??0,fps);
  if(!Number.isInteger(count)||count<1||count>16||typeof reverse!=='boolean'||delay<0)throw Error('Repeat must be 1..16, yoyo boolean, delay nonnegative');
  const start=frames[0][0],span=frames.at(-1)[0]-start,result=[];
@@ -25,7 +26,7 @@ export function lowerTrack(track,fps){
  }
  if(result.length>256)throw Error('Expanded track exceeds 256 keyframes');
  // Reversed asymmetric easing must be mirrored to truly reverse a segment. Store per-key curves.
- const segmentEases=[];for(let i=0;i<count;i++){const backwards=reverse&&i%2===1,c=curveFor(easing),e=backwards&&c?[1-c[2],1-c[3],1-c[0],1-c[1]]:easing;for(let j=0;j<frames.length-1;j++)segmentEases.push(e);}
+ const segmentEases=[];for(let i=0;i<count;i++){const backwards=reverse&&i%2===1;for(let j=0;j<frames.length-1;j++){const original=segmentCurves[backwards?frames.length-2-j:j],c=curveFor(original);segmentEases.push(backwards&&c?[1-c[2],1-c[3],1-c[0],1-c[1]]:original);}}
  return {property:track.property,frames:result,ease:easing,segmentEases};
 }
 export function lowerEffects(node,fps){

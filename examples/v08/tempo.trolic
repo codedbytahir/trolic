@@ -1,0 +1,13 @@
+// Trolic v0.8: editable tracks with independent outgoing segment easings.
+canvas 960 540 bg=#101b24 dur=6 name="Tempo / timing study"
+rect stage p=[480,270] s=[840,370] round=28 f=#1a2b35 ink=#354853 sw=1
+path rail p=[0,0] d="M 165 270 H 795" f=none ink=#45605f sw=1 o=0.5
+rect voice-1 p=[320,270] s=[52,70] round=26 f=#83b8a5 t=[["s",[[0,[52,70]],[1.0,[52,200]],[3,[52,90]],[4.5,[52,160]],[6,[52,70]]],"linear",{"easings":["ease_in","ease_out","ease_in_out","linear"]}],["f",[[0,"#83b8a5"],[3,"#dae2c8"],[6,"#83b8a5"]],"linear",{"easings":["ease_out","ease_in"]}]]
+rect voice-2 p=[400,270] s=[52,70] round=26 f=#a6cbb6 t=[["s",[[0,[52,70]],[1.18,[52,186]],[3,[52,90]],[4.5,[52,168]],[6,[52,70]]],"linear",{"easings":["ease_in","ease_out","ease_in_out","linear"]}],["f",[[0,"#a6cbb6"],[3,"#dae2c8"],[6,"#a6cbb6"]],"linear",{"easings":["ease_out","ease_in"]}]]
+rect voice-3 p=[480,270] s=[52,70] round=26 f=#d6dbb5 t=[["s",[[0,[52,70]],[1.3599999999999999,[52,172]],[3,[52,90]],[4.5,[52,176]],[6,[52,70]]],"linear",{"easings":["ease_in","ease_out","ease_in_out","linear"]}],["f",[[0,"#d6dbb5"],[3,"#dae2c8"],[6,"#d6dbb5"]],"linear",{"easings":["ease_out","ease_in"]}]]
+rect voice-4 p=[560,270] s=[52,70] round=26 f=#c3b791 t=[["s",[[0,[52,70]],[1.54,[52,158]],[3,[52,90]],[4.5,[52,184]],[6,[52,70]]],"linear",{"easings":["ease_in","ease_out","ease_in_out","linear"]}],["f",[[0,"#c3b791"],[3,"#dae2c8"],[6,"#c3b791"]],"linear",{"easings":["ease_out","ease_in"]}]]
+rect voice-5 p=[640,270] s=[52,70] round=26 f=#9eaeb4 t=[["s",[[0,[52,70]],[1.72,[52,144]],[3,[52,90]],[4.5,[52,192]],[6,[52,70]]],"linear",{"easings":["ease_in","ease_out","ease_in_out","linear"]}],["f",[[0,"#9eaeb4"],[3,"#dae2c8"],[6,"#9eaeb4"]],"linear",{"easings":["ease_out","ease_in"]}]]
+group orbit p=[480,270] t=[["r",[[0,0],[6,360]],"linear"]]
+circle satellite parent=orbit p=[0,-145] s=[12,12] f=#dbc391
+circle ring p=[480,270] s=[290,290] f=none ink=#8ba99b sw=1 o=0.25
+path accent p=[0,0] d="M 165 445 H 795" f=none ink=#8ba99b sw=1 o=0.4 t=[["te",[[0,0.15],[3,1],[6,0.15]],"ease_in_out"]]

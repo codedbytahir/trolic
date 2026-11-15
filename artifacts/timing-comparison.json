@@ -1,0 +1,58 @@
+[
+  {
+    "pair": "timing-curves-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00585
+  },
+  {
+    "pair": "timing-curves-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00596
+  },
+  {
+    "pair": "timing-curves-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.006
+  },
+  {
+    "pair": "timing-curves-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00607
+  },
+  {
+    "pair": "timing-curves-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00628
+  },
+  {
+    "pair": "timing-curves-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00597
+  },
+  {
+    "pair": "timing-curves-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.00597
+  },
+  {
+    "pair": "timing-tempo-0-lottie",
+    "mean_absolute_rgb_error_0_255": 0.02665
+  },
+  {
+    "pair": "timing-tempo-0.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.04344
+  },
+  {
+    "pair": "timing-tempo-0.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.06927
+  },
+  {
+    "pair": "timing-tempo-1.5-lottie",
+    "mean_absolute_rgb_error_0_255": 0.07717
+  },
+  {
+    "pair": "timing-tempo-2.75-lottie",
+    "mean_absolute_rgb_error_0_255": 0.05391
+  },
+  {
+    "pair": "timing-tempo-4.25-lottie",
+    "mean_absolute_rgb_error_0_255": 0.05912
+  },
+  {
+    "pair": "timing-tempo-5.9-lottie",
+    "mean_absolute_rgb_error_0_255": 0.03585
+  }
+]

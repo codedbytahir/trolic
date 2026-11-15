@@ -1,5 +1,9 @@
 # Trolic project report
 
+## v0.8 local timeline update
+
+The local build adds visible property lanes, key editing/retiming, per-segment easing, explicit recipe-to-keyframe conversion, track creation/removal and layer windows through shared history. It is not published. Validation: 378 tests; 25 previous fixtures keep byte-identical export; 14 new paired renderer frames have maximum mean RGB difference 0.07717/255. The public site remains v0.7. See RELEASE-v0.8.md for semantics and deliberate limits.
+
 ## v0.7 studio update
 
 The tested v0.7 build adds preview selection, searchable hierarchical layers, guarded source-preserving base-property editing, parent-local drag outlines, 50-snapshot atomic undo/redo, local draft recovery and reported-line navigation. It adds no animation primitives. Validation: 312 automated tests; 24 previous fixtures retain byte-identical Lottie export compared with preserved v0.6 modules. Offline tests cover both renderers, storage denial, unfinished-draft recovery and mobile overflow. The publication includes updated Pages documentation and offline downloads. See RELEASE-v0.7.md.

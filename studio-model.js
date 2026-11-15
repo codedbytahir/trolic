@@ -1,8 +1,10 @@
 // Trolic v0.7 editor model: validated, atomic source edits; no renderer or DOM dependency.
 import {parse,compile,sample} from './compiler.js';
+import {aliases} from './agent.js';
+import {timeSeconds} from './motion.js';
 export const editableProperties=['position','size','rotation','scale','anchor','opacity','fill','stroke','stroke_width','radius'];
 const studioAliases={position:'p',size:'s',rotation:'r',scale:'z',anchor:'a',opacity:'o',fill:'f',stroke:'ink',stroke_width:'sw',radius:'round'};
-const effectProperties={fade_in:'opacity',fade_out:'opacity',pop:'scale',spring_in:'scale',pulse:'scale',float:'position',shake:'position',spin:'rotation',draw:'trim_end'};
+export const effectProperties={fade_in:'opacity',fade_out:'opacity',pop:'scale',spring_in:'scale',pulse:'scale',float:'position',shake:'position',spin:'rotation',draw:'trim_end'};
 export function propertyState(node,property){
  if(!editableProperties.includes(property))return {editable:false,reason:'Not a visual-edit property'};
  if(node.tracks.some(t=>t.property===property)||node.effects.some(f=>effectProperties[f[0]]===property))return {editable:false,reason:'Controlled by animation. Edit its track or effect in Source.'};
@@ -16,18 +18,23 @@ export function patchNodeSource(source,id,changes){
  const scene=parse(source),node=scene.nodes.find(n=>n.id===id);if(!node)throw Error('Unknown selected node');
  if(!changes||typeof changes!=='object'||Array.isArray(changes)||!Object.keys(changes).length||Object.keys(changes).length>10)throw Error('Provide 1..10 property changes');
  for(const [key,value]of Object.entries(changes)){const state=propertyState(node,key);if(!state.editable)throw Error(key+': '+state.reason);if(value===undefined||JSON.stringify(value)===undefined)throw Error('Missing property value');}
- let candidate;
+ return studioWriteFields(source,id,changes,scene);
+}
+function studioTrackTuple(t,fps){const alias=Object.entries(aliases).find(([a,p])=>p===t.property)?.[0];if(!alias)throw Error('Unknown animation property');const frames=Object.hasOwn(t,'frames')?t.frames:[[0,t.from],[timeSeconds(t.duration,fps),t.to]],options={...(t.options??{})};if(t.delay!==undefined&&options.delay===undefined)options.delay=t.delay;return [alias,frames,t.ease??'ease_in_out',...(Object.keys(options).length?[options]:[])];}
+function studioWriteFields(source,id,changes,scene){ let candidate;
  if(/^\s*(?:\/\/[^\n]*\n\s*)*canvas\s/.test(source)){
-  candidate=source.replace(/\s*$/,'')+'\nedit '+JSON.stringify(id)+' '+Object.entries(changes).map(([k,v])=>studioAliases[k]+'='+JSON.stringify(v)).join(' ')+'\n';
+  candidate=source.replace(/\s*$/,'')+'\nedit '+JSON.stringify(id)+' '+Object.entries(changes).map(([k,v])=>({...studioAliases,tracks:'t',effects:'fx',in_time:'in',out_time:'out'})[k]+'='+JSON.stringify(k==='tracks'?v.map(t=>studioTrackTuple(t,scene.fps)):v)).join(' ')+'\n';
  }else{
   const lines=source.split('\n');let start=-1,end=-1;
   for(let i=0;i<lines.length;i++){const m=lines[i].trim().match(/^(circle|rect|path|group)\s+("(?:[^"\\]|\\.)*")\s*\{$/);if(m&&JSON.parse(m[2])===id){start=i;break;}}
   if(start<0)throw Error('Cannot locate source declaration');for(let i=start+1;i<lines.length;i++)if(lines[i].trim()==='}'){end=i;break;}if(end<0)throw Error('Cannot locate source block end');
-  const inserts=[];for(const [key,value]of Object.entries(changes)){const index=lines.findIndex((line,i)=>i>start&&i<end&&line.trim().startsWith(key+':'));if(index>=0){const indent=lines[index].match(/^\s*/)[0];lines[index]=indent+key+': '+JSON.stringify(value);}else inserts.push('  '+key+': '+JSON.stringify(value));}
+  const inserts=[];if(Object.hasOwn(changes,'tracks')){const kept=lines.slice(start+1,end).filter(line=>!/^\s*(?:track|animate|keyframes)\s/.test(line));lines.splice(start+1,end-start-1,...kept);end=start+1+kept.length;for(const t of changes.tracks){const tuple=studioTrackTuple(t,scene.fps);inserts.push('  track '+t.property+' '+JSON.stringify({frames:tuple[1],ease:tuple[2],...(tuple[3]?{options:tuple[3]}:{})}));}}for(const [key,value]of Object.entries(changes)){if(key==='tracks')continue;const index=lines.findIndex((line,i)=>i>start&&i<end&&line.trim().startsWith(key+':'));if(index>=0){const indent=lines[index].match(/^\s*/)[0];lines[index]=indent+key+': '+JSON.stringify(value);}else inserts.push('  '+key+': '+JSON.stringify(value));}
   lines.splice(end,0,...inserts);candidate=lines.join('\n');
  }
  compile(candidate);return candidate;
 }
+export function patchAnimationSource(source,id,changes){const scene=parse(source);if(!scene.nodes.some(n=>n.id===id))throw Error('Unknown selected node');if(!changes||typeof changes!=='object'||Array.isArray(changes)||!Object.keys(changes).length||Object.keys(changes).some(k=>!['tracks','effects','in_time','out_time'].includes(k)))throw Error('Animation changes: tracks, effects, in_time, out_time');if(changes.tracks!==undefined&&(!Array.isArray(changes.tracks)||changes.tracks.length>16))throw Error('At most 16 source tracks');if(changes.effects!==undefined&&(!Array.isArray(changes.effects)||changes.effects.length>8))throw Error('At most 8 effects');return studioWriteFields(source,id,changes,scene);}
+
 export class StudioDocument{
  #entries;#at=0;#revision=0;#limit;
  constructor(source,{limit=50}={}){if(!Number.isInteger(limit)||limit<2||limit>100)throw Error('History limit must be 2..100');compile(source);this.#entries=[source];this.#limit=limit;}

@@ -1,0 +1,76 @@
+{
+  "renderer": "lottie-web 5.13.0 SVG",
+  "cases": [
+    {
+      "scene": "tempo",
+      "time": 0,
+      "bytes": 8998
+    },
+    {
+      "scene": "tempo",
+      "time": 0.25,
+      "bytes": 8998
+    },
+    {
+      "scene": "tempo",
+      "time": 0.75,
+      "bytes": 8998
+    },
+    {
+      "scene": "tempo",
+      "time": 1.5,
+      "bytes": 8998
+    },
+    {
+      "scene": "tempo",
+      "time": 2.75,
+      "bytes": 8998
+    },
+    {
+      "scene": "tempo",
+      "time": 4.25,
+      "bytes": 8998
+    },
+    {
+      "scene": "tempo",
+      "time": 5.9,
+      "bytes": 8998
+    },
+    {
+      "scene": "curves",
+      "time": 0,
+      "bytes": 3924
+    },
+    {
+      "scene": "curves",
+      "time": 0.25,
+      "bytes": 3924
+    },
+    {
+      "scene": "curves",
+      "time": 0.75,
+      "bytes": 3924
+    },
+    {
+      "scene": "curves",
+      "time": 1.5,
+      "bytes": 3924
+    },
+    {
+      "scene": "curves",
+      "time": 2.75,
+      "bytes": 3924
+    },
+    {
+      "scene": "curves",
+      "time": 4.25,
+      "bytes": 3924
+    },
+    {
+      "scene": "curves",
+      "time": 5.9,
+      "bytes": 3924
+    }
+  ],
+  "pageErrors": []
+}

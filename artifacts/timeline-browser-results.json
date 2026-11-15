@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "network": "HTTP blocked",
+  "pageErrors": [],
+  "checks": [
+    "time/value/segment easing edit",
+    "atomic undo redo",
+    "key insertion and deletion",
+    "pointer retiming",
+    "keyboard frame nudge",
+    "invalid edit rollback",
+    "generated effect conversion exact export",
+    "new track and removal",
+    "visibility window",
+    "dirty source guard",
+    "horizontal zoom",
+    "desktop/mobile overflow"
+  ]
+}

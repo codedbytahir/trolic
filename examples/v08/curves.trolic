@@ -1,0 +1,9 @@
+// Three distinct timing profiles. Select keys to inspect each outgoing curve.
+canvas 960 540 bg=#f1efe7 dur=6 name="Curves / easing lab"
+rect border p=[480,270] s=[840,390] round=24 f=none ink=#d3d4c7 sw=1
+path rail-ease p=[0,0] d="M 150 180 H 810" f=none ink=#c7ccbf sw=1
+circle ease p=[150,180] s=[38,38] f=#4d7862 t=[["p",[[0,[150,180]],[3,[810,180]],[6,[150,180]]],"linear",{"easings":["ease_in","ease_out"]}]]
+path rail-hold p=[0,0] d="M 150 270 H 810" f=none ink=#c7ccbf sw=1
+circle hold p=[150,270] s=[38,38] f=#b17d55 t=[["p",[[0,[150,270]],[3,[810,270]],[6,[150,270]]],"linear",{"easings":["linear","step"]}]]
+path rail-overshoot p=[0,0] d="M 150 360 H 810" f=none ink=#c7ccbf sw=1
+circle overshoot p=[150,360] s=[38,38] f=#647b98 t=[["p",[[0,[150,360]],[3,[810,360]],[6,[150,360]]],"linear",{"easings":[[0.3,1.2,0.6,1.1],[0.3,-0.1,0.7,1.1]]}]]

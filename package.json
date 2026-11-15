@@ -1,9 +1,9 @@
 {
   "name": "trolic-prototype",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "type": "module",
   "scripts": {
-    "test": "node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs && node motion-test.mjs && node expressive-test.mjs && node studio-model-test.mjs",
+    "test": "node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs && node motion-test.mjs && node expressive-test.mjs && node studio-model-test.mjs && node timeline-test.mjs",
     "build": "node cli.mjs examples/bounce.trolic --target lottie --output artifacts/bounce.json",
     "test:browser": "node browser-test.mjs",
     "test:compare": "node compare-renderers.mjs",
@@ -13,7 +13,9 @@
     "test:motion-render": "node motion-render-test.mjs",
     "build:site": "python3 tools/build_site.py",
     "test:expressive-render": "node expressive-render-test.mjs",
-    "test:usable-studio": "node usable-studio-test.mjs"
+    "test:usable-studio": "node usable-studio-test.mjs",
+    "test:timeline-browser": "node timeline-browser-test.mjs",
+    "test:timing-render": "node timing-render-test.mjs"
   },
   "license": "MIT",
   "devDependencies": {

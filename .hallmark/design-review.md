@@ -17,3 +17,7 @@ Retained the minimal design and original interaction hooks. Added three expressi
 ## v0.7 local preview
 
 Retained the minimal launch layout, added an actual workspace capture and a short visual-edit workflow. Current local test count is 312. The launch preview is not deployed; public Pages remains v0.6. Static lint reports zero FAIL; word-count and structural warnings remain deliberate, documented tradeoffs. The studio preserves its existing dark workbench style rather than claiming a fresh Hallmark design pass.
+
+## v0.8 local preview
+
+Public v0.7 was verified after publication. The next local preview adds an actual timeline capture and a focused workflow description while preserving existing gallery and studio wiring. This v0.8 preview is not pushed. Studio styling remains the dark workbench system; no separate Hallmark certification is claimed.

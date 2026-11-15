@@ -25,3 +25,6 @@ Additional `t` properties: `d` path string, `f` solid color, `ink` stroke color,
 
 ## v0.7 editor utilities
 The animation grammar is unchanged. `studio-model.js` adds validated source-preserving base-property patches and a revision-aware `StudioDocument`. Animated/effect-controlled fields are guarded; edit their tracks explicitly. Agent syntax patches append instance `edit` overrides without rewriting definitions or comments. This does not replace AgentSession or imply hosted isolation.
+
+## v0.8 segment timing
+Track options may include `easings`, an array with exactly one named/step/Bézier easing per original keyframe segment. Repeats reuse it; yoyo reverses and mirrors cubic curves. `timeline-model.js` offers validated key/track edits returning candidate source; commit through StudioDocument with a revision check. Generated effect/repeat motion requires explicit conversion before timeline edits. Existing portability constraints still apply.
