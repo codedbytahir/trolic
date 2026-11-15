@@ -1,0 +1,433 @@
+
+> @codedbytahir/trolic@1.0.0 test:release
+> npm test && npm run test:types && npm run test:package && python3 bundle.py && python3 tools/build_site.py && npm run test:offline && npm run test:agent-browser && npm run test:usable-studio && npm run test:timeline-browser && npm run test:delivery-browser
+
+
+> @codedbytahir/trolic@1.0.0 test
+> node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs && node motion-test.mjs && node expressive-test.mjs && node studio-model-test.mjs && node timeline-test.mjs && node sdk-test.mjs && node player-test.mjs && node compatibility-test.mjs
+
+PASS parse original example
+PASS deterministic compilation
+PASS position endpoint
+PASS position start
+PASS lottie scene dimensions
+PASS SVG export
+PASS unknown property rejected
+PASS invalid color rejected
+PASS unclosed scene rejected
+PASS time budget enforced
+PASS duplicate IDs rejected
+PASS constant tracks folded
+PASS unknown target rejected
+13 tests passed
+PASS cubic tangent conversion
+PASS quadratic converts exactly to cubic
+PASS unsupported arc rejected
+PASS relative paths normalized
+PASS multiple contours rejected
+PASS malformed number rejected
+PASS incomplete path rejected
+PASS SVG path safely emitted
+PASS Lottie path exported
+PASS stroke and no fill exported
+PASS radial gradient exported
+PASS SVG gradient exported
+PASS unsorted gradient rejected
+PASS bad gradient radius rejected
+PASS parent index exported
+PASS SVG hierarchy exported
+PASS unknown parent rejected
+PASS parent cycle rejected
+PASS nonportable group opacity rejected
+PASS aurelia deterministic compilation
+PASS tidal deterministic compilation
+PASS solstice deterministic compilation
+PASS animated scalar keyframes use arrays
+23 vector tests passed
+PASS relative H/V and implicit lines
+PASS smooth cubic reflected handle
+PASS smooth quadratic reflection
+PASS closed endpoint deduplicated preserving tangent
+PASS compound contours export
+PASS relative moveto after close
+PASS stray numeric after close rejected
+PASS empty contour rejected
+PASS gradient alpha encoded
+PASS invalid alpha rejected
+PASS multi keyframe sampling
+PASS multi keyframe Lottie export
+PASS non-increasing frame time rejected
+PASS missing frame pair rejected
+PASS wrong keyframe value type rejected
+PASS out of bounds keyframes rejected
+PASS duplicate property line reported
+PASS semantic error reports node line
+PASS malformed scene string yields structured error
+PASS invalid node ID yields structured error
+PASS invalid IR track rejected explicitly
+PASS invalid root IR rejected explicitly
+PASS source length bounded
+PASS oversized path coordinate rejected
+PASS unknown line join rejected
+PASS old examples still compile
+PASS new illustrations compile deterministically
+PASS bounded generated corpus is deterministic
+PASS stroke remains above fill in export paint order
+PASS invalid source corpus yields only structured diagnostics
+30 stability tests passed
+PASS check mode structured success
+PASS check mode no file side effect
+PASS unknown CLI options rejected
+PASS missing flag value rejected
+PASS source overwrite blocked
+PASS invalid timestamp rejected
+PASS SVG output written
+PASS bad source check reports failure
+PASS help succeeds
+9 CLI tests passed
+PASS agent syntax compiles
+PASS JSON strings and arrays lexed as single fields
+PASS JSON object fields accepted
+PASS compact gradient shorthand
+PASS constants resolved
+PASS styles resolved
+PASS definition overrides
+PASS bounded repeat transforms
+PASS batches expand stable IDs
+PASS batch explicit IDs
+PASS edits affect node only
+PASS unknown field rejected
+PASS prototype key rejected
+PASS inherited property name rejected
+PASS unknown constants rejected
+PASS duplicate constants rejected
+PASS duplicate fields rejected
+PASS duplicate IDs rejected
+PASS negative repeat rejected
+PASS repeat expansion bounded
+PASS malformed batch rejected
+PASS unknown edit rejected
+PASS JSON nesting limited
+PASS reference growth limited
+PASS mapped source line on semantic failure
+PASS session atomic edits
+PASS session small receipt
+PASS stale revision rejected
+PASS session prevents instruction injection
+PASS inspection bounded
+PASS dollar scene name preserved
+PASS lossless packing aurelia.trolic
+PASS lossless packing bounce.trolic
+PASS lossless packing milo.trolic
+PASS lossless packing orbit.trolic
+PASS lossless packing orchard.trolic
+PASS lossless packing reveal.trolic
+PASS lossless packing solstice.trolic
+PASS lossless packing tidal.trolic
+PASS distributed compact fixtures preserve exact export
+PASS agent export target roundtrips
+PASS readable export target roundtrips
+PASS repeat recipe produces bounded scene
+PASS numeric IDs survive batch conversion
+PASS quoted parent IDs survive style factoring
+PASS dollar parent IDs remain literal
+PASS inspection returns only requested fields
+PASS inspection rejects unknown fields
+48 agent tests passed
+PASS time 500ms
+PASS time 2s
+PASS time 30f
+PASS reject time -2s
+PASS reject time NaN
+PASS reject time 1min
+PASS aspect square w=600
+PASS aspect story w=540
+PASS aspect 16:9 w=960
+PASS aspect portrait h=1000
+PASS aspect cinema
+PASS invalid aspect
+PASS conflicting aspect dimensions
+PASS effect fade_in
+PASS effect fade_out
+PASS effect pop
+PASS effect spring_in
+PASS effect pulse
+PASS effect float
+PASS effect shake
+PASS effect spin
+PASS draw trim modifier
+PASS trim rejects fill
+PASS trim rejects compound path
+PASS repeated effect closed seam
+PASS effect conflict
+PASS unsafe effect
+PASS yoyo end
+PASS asymmetric yoyo mirrored
+PASS repeat discontinuity rejected
+PASS step sampling
+PASS step Lottie hold
+PASS cubic overshoot allowed for scale
+PASS opacity overshoot rejected
+PASS bad bezier X rejected
+PASS duration units
+PASS explicit scene duration protects track
+PASS visibility half-open
+PASS parent visibility inherits
+PASS empty intersection exports empty layer
+PASS anchor exports
+PASS stagger auto duration
+PASS stagger requires motion
+PASS bounded expanded keyframes
+PASS orbit compact lossless
+PASS orbit readable lossless
+PASS orbit deterministic
+PASS orbit retime
+PASS neon compact lossless
+PASS neon readable lossless
+PASS neon deterministic
+PASS neon retime
+PASS story compact lossless
+PASS story readable lossless
+PASS story deterministic
+PASS story retime
+PASS timing compact lossless
+PASS timing readable lossless
+PASS timing deterministic
+PASS timing retime
+PASS reframe contain
+PASS reframe cover
+PASS retime keyframes
+PASS frozen renderer
+64 motion tests passed
+PASS sample fill
+PASS sample stroke
+PASS sample stroke_width
+PASS sample size
+PASS sample radius
+PASS Lottie f animated property
+PASS Lottie ink animated property
+PASS Lottie sw animated property
+PASS Lottie s animated property
+PASS Lottie round animated property
+PASS morph midpoint normalized geometry
+PASS morph Lottie shape key arrays
+PASS morph endpoints
+PASS normalized SVG preserves closed handles
+PASS normalized SVG preserves open handles
+PASS mix contour endpoint
+PASS reject color alpha
+PASS reject color none
+PASS reject stroke negative
+PASS reject size zero
+PASS reject size scalar
+PASS reject radius circle
+PASS reject morph circle
+PASS reject unknown property
+PASS reject negative radius
+PASS reject fill group
+PASS reject stroke none
+PASS reject fill none
+PASS reject path size
+PASS reject mismatch vertices
+PASS reject mismatch closure
+PASS reject compound morph
+PASS reject constrained overshoot f
+PASS reject constrained overshoot ink
+PASS reject constrained overshoot sw
+PASS reject constrained overshoot s
+PASS reject constrained overshoot round
+PASS reject constrained overshoot d
+PASS fill under gradient rejected
+PASS constant morph folded
+PASS constant fill folded
+PASS step color keeps exact values
+PASS yoyo colors
+PASS lagoon deterministic
+PASS lagoon compact exact
+PASS lagoon readable exact
+PASS lagoon retiming
+PASS lagoon reframing
+PASS lagoon sampler finite
+PASS chroma deterministic
+PASS chroma compact exact
+PASS chroma readable exact
+PASS chroma retiming
+PASS chroma reframing
+PASS chroma sampler finite
+PASS atelier deterministic
+PASS atelier compact exact
+PASS atelier readable exact
+PASS atelier retiming
+PASS atelier reframing
+PASS atelier sampler finite
+PASS structured morph diagnostics
+62 expressive tests passed
+PASS agent comments and definitions preserved
+PASS repeated visual edits preserve effective values
+PASS patch position
+PASS patch size
+PASS patch rotation
+PASS patch scale
+PASS patch anchor
+PASS patch opacity
+PASS patch fill
+PASS patch stroke
+PASS patch stroke_width
+PASS patch radius
+PASS multiple changes atomic
+PASS readable source stays readable
+PASS readable untouched node preserved
+PASS readable missing property inserted
+PASS repeated node edited independently
+PASS quoted ID remains data
+PASS dollar ID remains literal
+PASS reject unknown node
+PASS reject unknown field
+PASS reject invalid vector
+PASS reject NaN
+PASS reject color injection
+PASS reject empty patch
+PASS reject prototype field
+PASS reject negative size
+PASS lock pulse
+PASS lock float
+PASS lock spin
+PASS lock fade_in
+PASS lock explicit track
+PASS lock gradient
+PASS group excludes size
+PASS group excludes fill
+PASS group excludes opacity
+PASS group excludes radius
+PASS group transforms editable
+PASS path size not editable
+PASS document commit undo redo
+PASS document invalid commit atomic
+PASS document invalid patch atomic
+PASS document rejects stale revision
+PASS no-op commit preserves redo
+PASS edit after undo branches history
+PASS history bounded
+PASS invalid history limit rejected
+PASS parent matrix root identity
+PASS rotated scaled parent delta
+PASS translation and anchor not applied to delta
+PASS collapsed transform rejected
+PASS nonfinite drag rejected
+PASS animated parent sampled at playhead
+PASS draft exact roundtrip
+PASS invalid-source draft allowed for recovery
+PASS draft unsupported version rejected
+PASS corrupt draft rejected
+PASS oversized draft rejected
+PASS draft selection type rejected
+PASS draft timestamp rejected
+PASS lagoon original expressive export retained
+PASS chroma original expressive export retained
+PASS atelier original expressive export retained
+63 studio-model tests passed
+PASS timeline rows are global seconds
+PASS bake fade_in exact Lottie
+PASS bake fade_out exact Lottie
+PASS bake pop exact Lottie
+PASS bake spring_in exact Lottie
+PASS bake pulse exact Lottie
+PASS bake float exact Lottie
+PASS bake shake exact Lottie
+PASS bake spin exact Lottie
+PASS bake draw exact Lottie
+PASS bake repeat delay asymmetric yoyo exact
+PASS bake mirrored easings stay distinct
+PASS generated edits require explicit conversion
+PASS generated key addition guarded
+PASS generated track removal guarded
+PASS per-segment sampling
+PASS per-segment Lottie hold
+PASS per-segment wrong count rejected
+PASS per-segment invalid curve rejected
+PASS per-segment appearance overshoot rejected
+PASS reverse segment order and mirror
+PASS edit time preserves neighbors
+PASS edit vector value
+PASS edit outgoing segment only
+PASS custom easing
+PASS reject negative time
+PASS reject beyond duration
+PASS reject cross previous
+PASS reject cross next
+PASS reject nonfinite
+PASS reject invalid vector
+PASS reject last easing
+PASS reject unknown key
+PASS reject unknown change
+PASS add sampled key
+PASS duplicate key rejected
+PASS delete middle key
+PASS delete first key
+PASS delete last key
+PASS minimum two keys
+PASS remove track restores base
+PASS new position track
+PASS new scale track
+PASS new rotation track
+PASS new opacity track
+PASS new fill track
+PASS new size track
+PASS new radius track
+PASS existing track not duplicated
+PASS unsupported track guarded
+PASS group properties filtered
+PASS gradient fill filtered
+PASS visibility window edited
+PASS automatic out point
+PASS invalid visibility rejected
+PASS out beyond scene rejected
+PASS snap to fps
+PASS snap lower clamp
+PASS snap upper clamp
+PASS invalid fps
+PASS readable track syntax retained
+PASS legacy delayed animation survives neighboring edit
+PASS bake readable effect exact
+PASS other node text preserved
+PASS timeline transactions undo redo
+PASS invalid timeline edit never commits
+66 timeline tests passed
+46 SDK checks passed
+30 player lifecycle checks passed
+PASS 27 exports byte-identical to v0.9.0-local
+
+> @codedbytahir/trolic@1.0.0 test:types
+> tsc --noEmit --strict --lib ES2022,DOM --module NodeNext --moduleResolution NodeNext index.d.ts editor.d.ts player.d.ts agent-tools.d.ts
+
+
+> @codedbytahir/trolic@1.0.0 test:package
+> node package-test.mjs
+
+PASS packed consumer: four imports, CLI, TypeScript positive/negative fixtures; 38931 bytes, 23 files
+Built launch site: /home/user/trolic-publication/repo/docs/index.html
+
+> @codedbytahir/trolic@1.0.0 test:offline
+> node offline-test.mjs
+
+PASS: offline illustration rendering, retained valid preview after error, renderer switch, and project import
+
+> @codedbytahir/trolic@1.0.0 test:agent-browser
+> node agent-browser-test.mjs
+
+PASS: offline agent source, readable/compact conversion, repeat recipe
+
+> @codedbytahir/trolic@1.0.0 test:usable-studio
+> node usable-studio-test.mjs
+
+PASS v0.7 usable studio end-to-end and local recovery
+
+> @codedbytahir/trolic@1.0.0 test:timeline-browser
+> node timeline-browser-test.mjs
+
+PASS v0.8 offline timeline end-to-end
+
+> @codedbytahir/trolic@1.0.0 test:delivery-browser
+> node delivery-browser-test.mjs
+
+PASS offline delivery UI: allowed/blocked profiles, budgets, checked export, invalid source retention, mobile

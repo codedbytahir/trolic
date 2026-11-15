@@ -1,4 +1,4 @@
-# Trolic SDK · v0.9
+# Trolic SDK · v1.0
 
 Dependency-free ESM runtime; Node 20+ or a modern browser. No npm release yet.
 The package is named `@codedbytahir/trolic`. Use `npm pack` in this checkout,
@@ -41,6 +41,6 @@ that preference. Seek intentionally allows choosing a static frame. No network
 or CDN is loaded by this helper. It is a browser helper, not an SSR renderer.
 
 The experimental parsed IR keeps schema version 0.8 because language syntax is
-unchanged. Package/API version 0.9 identifies these new integration facilities.
+unchanged. Package/API version 1.0 identifies these new integration facilities.
 Types are authoring aids; runtime validation remains authoritative. Not a sandbox
 for hostile inputs, not a performance or universal-player guarantee.

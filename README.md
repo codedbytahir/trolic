@@ -1,10 +1,6 @@
-> **v0.9 release candidate:** typed SDK, browser player and delivery preflight.
-> See [API.md](API.md), [DELIVERY.md](DELIVERY.md), and [RELEASE-v0.9.md](RELEASE-v0.9.md).
-> Publication is pending repository authentication; not available on npm.
+# Trolic v1.0 — Integration and delivery
 
-# Trolic v0.8 — Timeline studio
-
-**Current release:** property lanes, draggable keys, time/value/segment-easing edits, explicit effect-to-keyframe conversion, visibility windows, frame nudges and shared undo/redo. [v0.8 guide](RELEASE-v0.8.md). Open `trolic-studio.html` offline. [Live studio](https://codedbytahir.github.io/trolic/studio.html).
+**Local v1 release candidate. Not published yet.** Typed dependency-free SDK, optional browser player, Studio delivery preflight, checked exports and reproducible package-consumer tests. See [release guide](RELEASE-v1.0.md), [API](API.md), [delivery policies](DELIVERY.md) and [compatibility policy](STABILITY.md). Prior versions remain archived. No npm registry release is claimed.
 
 ## Editable vectors for people and agents
 

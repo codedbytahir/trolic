@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "status": "local-release-candidate",
+  "published": false,
+  "publicationBlocker": "Fresh repository authentication required; prior temporary credential was deleted",
+  "unitModelSdkPlayerCliChecks": 465,
+  "byteIdenticalPriorSceneExports": 27,
+  "passed": [
+    "strict TypeScript declarations",
+    "packed isolated consumer with four ESM entry points",
+    "positive and negative consumer TypeScript fixtures",
+    "installed CLI version",
+    "offline Studio import and error retention",
+    "agent authoring browser regression",
+    "visual editing and draft recovery",
+    "timeline browser regression",
+    "offline delivery UI, profiles, budgets and checked download",
+    "actual Lottie-web SVG player integration",
+    "vanilla browser integration example",
+    "desktop and mobile website interactions",
+    "clean extracted archive npm ci, tests, types and bundle/site rebuild",
+    "archive credential-prefix and excluded-path scan"
+  ],
+  "notCertified": ["universal player compatibility", "Firefox/Safari", "security sandboxing", "runtime performance", "accessibility conformance"]
+}

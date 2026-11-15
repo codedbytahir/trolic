@@ -4,7 +4,7 @@ import {VERSION,compile,analyzeDelivery,compileForProfile,TrolicDeliveryError} f
 import * as editor from './editor.js';
 let checks=0;const check=f=>{f();checks++;};
 const basic='canvas 100 100 dur=2\ncircle dot p=[50,50] s=[20,20] f=#abcdef\n';
-check(()=>assert.equal(VERSION,'0.9.0'));
+check(()=>assert.equal(VERSION,'1.0.0'));
 check(()=>assert.equal(analyzeDelivery(basic,{profile:'portable-basic'}).ok,true));
 check(()=>assert.equal(compileForProfile(basic).output,compile(basic).output));
 check(()=>assert.equal(analyzeDelivery(basic).stats.jsonBytes,Buffer.byteLength(compile(basic).output)));

@@ -1,0 +1,2 @@
+import {readFileSync} from 'node:fs';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';import {compile} from './api.js';
+const baseline=JSON.parse(readFileSync('artifacts/v09-output-baseline.json','utf8'));for(const [file,expected] of Object.entries(baseline.outputs))assert.equal(createHash('sha256').update(compile(readFileSync(file,'utf8')).output).digest('hex'),expected,file);console.log(`PASS ${Object.keys(baseline.outputs).length} exports byte-identical to ${baseline.reference}`);

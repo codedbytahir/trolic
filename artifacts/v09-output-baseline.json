@@ -1,0 +1,33 @@
+{
+  "reference": "v0.9.0-local",
+  "target": "lottie",
+  "outputs": {
+    "examples/agent/aurelia.trolic": "b25967ffda36a8c2d398da707c797a52c5b01f5111357133572babeb345e01cc",
+    "examples/agent/bounce.trolic": "f3cb8f99e846fe94d279dfde2e1a5b168dcbf91ab9dac871b9756da1a4300e79",
+    "examples/agent/milo.trolic": "b5b14d54eea7eecc2984f6aff0fb367fdf7a288f817b48197af7aa308affcf6d",
+    "examples/agent/orbit.trolic": "eba4fa964130baabc4c81b4e9695659de178f7c9a57ff946852ede042c5ed430",
+    "examples/agent/orchard.trolic": "d08723d7839ff5c1ebf3d6fbf65bab6538bd50206c090f10e958039e9f3ac47a",
+    "examples/agent/reveal.trolic": "d69751e5d60d425158511b26d0f386ae7be690c6236bac7fc0512404b524c6c4",
+    "examples/agent/solstice.trolic": "b6f264b8f671f6dfcb408035f8d7bb6e541322e0ce65813680384569ca6be518",
+    "examples/agent/sunwheel.trolic": "01b803b7bc9376fd87b26519ed3a9d929d2bca97302d4f5cca073e4403b0a902",
+    "examples/agent/tidal.trolic": "dcea24e501f6424e2a1cb0d64ece205ba65da4f6593d7de1ba034e06725f2cb2",
+    "examples/aurelia.trolic": "b25967ffda36a8c2d398da707c797a52c5b01f5111357133572babeb345e01cc",
+    "examples/bounce.trolic": "f3cb8f99e846fe94d279dfde2e1a5b168dcbf91ab9dac871b9756da1a4300e79",
+    "examples/milo.trolic": "b5b14d54eea7eecc2984f6aff0fb367fdf7a288f817b48197af7aa308affcf6d",
+    "examples/orbit.trolic": "eba4fa964130baabc4c81b4e9695659de178f7c9a57ff946852ede042c5ed430",
+    "examples/orchard.trolic": "d08723d7839ff5c1ebf3d6fbf65bab6538bd50206c090f10e958039e9f3ac47a",
+    "examples/reveal.trolic": "d69751e5d60d425158511b26d0f386ae7be690c6236bac7fc0512404b524c6c4",
+    "examples/solstice.trolic": "b6f264b8f671f6dfcb408035f8d7bb6e541322e0ce65813680384569ca6be518",
+    "examples/tidal.trolic": "dcea24e501f6424e2a1cb0d64ece205ba65da4f6593d7de1ba034e06725f2cb2",
+    "examples/v05/neon.trolic": "951aac9a48b4de65033d257a07b2fe0e915b032c757a1e7ff8ba8945d51784d2",
+    "examples/v05/orbit.trolic": "49be0eaf3d3aa5ae52a629f047025dd28adbf6e7052d14e8666d406251d43603",
+    "examples/v05/story.trolic": "9e6c2a87f9fa2507e3ecb655d7b0ec94ebd0a1b2d0b9666d11494c27d1c4e203",
+    "examples/v05/timing.trolic": "39c9dd19a865738b5a1f7a5fb247ebdb2c77ce7ba9bbf41ee7a68bb0ff4f88fa",
+    "examples/v06/atelier.trolic": "81face1c8120065acbe95bbf2de990b1ece4a50ddb5917b6867e186a21294724",
+    "examples/v06/chroma.trolic": "e8b8f05b3c290e0be53558b773ac7e1b6b817ef0374255b379209912224bef53",
+    "examples/v06/lagoon.trolic": "c1986acf011f9c4415740bae4af663da7ab69a46b7ad64a5f57e7f300e23eac1",
+    "examples/v07/workbench.trolic": "ed2a184a4e3ac48c4a69950127f5e9173ad7a44642c215616b64a6ad7bd8ee26",
+    "examples/v08/curves.trolic": "fc35c1a16a9b052c3f89489e70b82e8a08e198258495d552e8c47bb8a9fbcf91",
+    "examples/v08/tempo.trolic": "4de395832d3b5a94f6a2b94e81e9ff0d2f71d58088b92077f63762fce0c4c071"
+  }
+}

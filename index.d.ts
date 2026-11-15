@@ -1,5 +1,5 @@
-export declare const VERSION: '0.9.0';
-export declare const API_VERSION: '0.9';
+export declare const VERSION: '1.0.0';
+export declare const API_VERSION: '1.0';
 export type Vec2 = [number, number];
 /** Runtime validation enforces six hex digits; this template only enforces the prefix. */
 export type HexColor = `#${string}`;

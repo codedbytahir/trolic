@@ -6,10 +6,11 @@ geometry=(r/'geometry.js').read_text().replace('export ','').replace('const rgb=
 motion=(r/'motion.js').read_text().replace('export ','')
 agent='\n'.join(line for line in (r/'agent.js').read_text().splitlines() if not line.startswith('import ')).replace('export ','')
 compiler='\n'.join(line for line in (r/'compiler.js').read_text().splitlines() if not line.startswith('import ')).replace('export ','')
+delivery='\n'.join(line for line in (r/'delivery.js').read_text().splitlines() if not line.startswith('import ')).replace('export ','')
 editor='\n'.join('\n'.join(line for line in (r/name).read_text().splitlines() if not line.startswith('import ')).replace('export ','') for name in ['studio-model.js','timeline-model.js','studio-ui.js','timeline-ui.js'])
 examples={str(p.relative_to(r/'examples').with_suffix('')):p.read_text() for p in (r/'examples').rglob('*.trolic')}
 html=(r/'index.html').read_text().replace('<script src="vendor/lottie_light.min.js"></script>','<script>'+(r/'vendor/lottie_light.min.js').read_text().replace('</script','<\\/script')+'</script>')
-html=html.replace("import {compile,svg,compact,readable,createRenderer,reframe,retime} from './compiler.js';",motion+'\n'+geometry+'\n'+agent+'\n'+compiler+'\n'+editor+'\nconst embeddedExamples='+json.dumps(examples).replace('</','<\\/')+';')
-html=html.replace("import {mountEditor} from './studio-ui.js';",'').replace("import {mountTimeline} from './timeline-ui.js';",'')
+html=html.replace("import {compile,svg,compact,readable,createRenderer,reframe,retime} from './compiler.js';",motion+'\n'+geometry+'\n'+agent+'\n'+compiler+'\n'+delivery+'\n'+editor+'\nconst embeddedExamples='+json.dumps(examples).replace('</','<\\/')+';')
+html=html.replace("import {mountEditor} from './studio-ui.js';",'').replace("import {mountTimeline} from './timeline-ui.js';",'').replace("import {analyzeDelivery,compileForProfile} from './delivery.js';",'')
 html=html.replace("const r=await fetch(`examples/${$('example').value}.trolic`);$('editor').value=await r.text();", "$('editor').value=embeddedExamples[$('example').value];")
 (r/'trolic-studio.html').write_text(html)

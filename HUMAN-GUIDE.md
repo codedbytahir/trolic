@@ -2,6 +2,10 @@
 
 Trolic is a small, experimental text-based language for vector illustration and motion. You do not need an AI account to use it. It is not an automatic prompt-to-video service.
 
+## v1 integration and checked delivery
+
+The local v1 Studio includes **Delivery preflight**. Choose a profile, optionally enter a maximum JSON KB budget, then Check delivery. **Export checked Lottie** refuses blocking issues; **Download report** saves the current source assessment. Ordinary Lottie export remains available without a profile. Policies are not universal-player certification. For apps see [API.md](API.md); for limits see [STABILITY.md](STABILITY.md).
+
 ## Try it in five minutes
 
 v0.7 adds visual editing and draft recovery in the offline and published studios.

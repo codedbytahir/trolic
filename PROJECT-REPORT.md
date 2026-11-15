@@ -1,5 +1,9 @@
 # Trolic project report
 
+## v1 local integration candidate
+
+Typed SDK, optional player lifecycle, Studio delivery policies/budgets/reports, clean package-consumer tests and compatibility policy. 27 saved scene exports match the v0.9 baseline byte-for-byte. Full offline release suite passes; publication requires repository authentication. No npm registry or universal-player certification claimed.
+
 ## v0.8 timeline update
 
 The v0.8 build adds visible property lanes, key editing/retiming, per-segment easing, explicit recipe-to-keyframe conversion, track creation/removal and layer windows through shared history. The publication includes updated source and Pages. Validation: 378 tests; 25 previous fixtures keep byte-identical export; 14 new paired renderer frames have maximum mean RGB difference 0.07717/255. The public studio includes the timeline. See RELEASE-v0.8.md for semantics and deliberate limits.

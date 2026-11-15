@@ -16,6 +16,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - run: npm run test:types
+      - run: npm run test:package
       - run: python3 bundle.py
       - run: npx playwright install --with-deps chromium
       - run: npm run test:offline
@@ -23,6 +25,14 @@ jobs:
       - run: node expressive-browser-test.mjs
       - run: npm run test:usable-studio
       - run: npm run test:timeline-browser
+      - run: npm run test:delivery-browser
+      - name: Test browser SDK and example
+        run: |
+          python3 -m http.server 8004 --bind 0.0.0.0 &
+          SERVER=$!
+          trap 'kill $SERVER' EXIT
+          node player-browser-test.mjs
+          node integration-browser-test.mjs
       - name: Test launch website
         run: |
           python3 -m http.server 8002 --bind 0.0.0.0 --directory docs &

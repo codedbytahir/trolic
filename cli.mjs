@@ -21,5 +21,6 @@ try{
  const time=Number(options.time);if(!Number.isFinite(time)||time<0)throw Error('--time must be a nonnegative finite number');
  const result=options.profile?compileForProfile(source,deliveryOptions):compile(source,options.target,time);const out=options.output||(options.target==='svg'?'animation.svg':['agent','readable'].includes(options.target)?'scene.trolic':'animation.json');
  if(resolve(out)===resolve(file))throw Error('Refusing to overwrite the source file');
+ try{const [inputStat,outputStat]=await Promise.all([stat(file),stat(out)]);if(inputStat.dev===outputStat.dev&&inputStat.ino===outputStat.ino)throw Error('Refusing to overwrite the source file through a link');}catch(error){if(error.code!=='ENOENT')throw error;}
  await mkdir(dirname(out),{recursive:true});await writeFile(out,result.output);console.log(JSON.stringify({output:out,...result.stats}));
 }catch(e){console.error(JSON.stringify({code:e.code||'TROLIC_CLI_ERROR',line:e.line||1,message:e.message,...(e.report?{issues:e.report.issues}:{})}));process.exit(1);}

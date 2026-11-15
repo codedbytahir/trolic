@@ -1,9 +1,9 @@
 {
   "name": "@codedbytahir/trolic",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs && node motion-test.mjs && node expressive-test.mjs && node studio-model-test.mjs && node timeline-test.mjs && node sdk-test.mjs && node player-test.mjs",
+    "test": "node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs && node motion-test.mjs && node expressive-test.mjs && node studio-model-test.mjs && node timeline-test.mjs && node sdk-test.mjs && node player-test.mjs && node compatibility-test.mjs && node cli-delivery-test.mjs",
     "build": "node cli.mjs examples/bounce.trolic --target lottie --output artifacts/bounce.json",
     "test:browser": "node browser-test.mjs",
     "test:compare": "node compare-renderers.mjs",
@@ -17,7 +17,10 @@
     "test:timeline-browser": "node timeline-browser-test.mjs",
     "test:timing-render": "node timing-render-test.mjs",
     "test:types": "tsc --noEmit --strict --lib ES2022,DOM --module NodeNext --moduleResolution NodeNext index.d.ts editor.d.ts player.d.ts agent-tools.d.ts",
-    "test:player-browser": "node player-browser-test.mjs"
+    "test:player-browser": "node player-browser-test.mjs",
+    "test:package": "node package-test.mjs",
+    "test:delivery-browser": "node delivery-browser-test.mjs",
+    "test:release": "npm test && npm run test:types && npm run test:package && python3 bundle.py && python3 tools/build_site.py && npm run test:offline && npm run test:agent-browser && npm run test:usable-studio && npm run test:timeline-browser && npm run test:delivery-browser"
   },
   "license": "MIT",
   "devDependencies": {
@@ -74,7 +77,9 @@
     "README.md",
     "API.md",
     "DELIVERY.md",
-    "LICENSE"
+    "LICENSE",
+    "STABILITY.md",
+    "RELEASE-v1.0.md"
   ],
   "repository": {
     "type": "git",
