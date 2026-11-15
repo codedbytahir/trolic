@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {readFileSync,readdirSync} from 'node:fs';
+import {VERSION,compile,analyzeDelivery,compileForProfile,TrolicDeliveryError} from './api.js';
+import * as editor from './editor.js';
+let checks=0;const check=f=>{f();checks++;};
+const basic='canvas 100 100 dur=2\ncircle dot p=[50,50] s=[20,20] f=#abcdef\n';
+check(()=>assert.equal(VERSION,'0.9.0'));
+check(()=>assert.equal(analyzeDelivery(basic,{profile:'portable-basic'}).ok,true));
+check(()=>assert.equal(compileForProfile(basic).output,compile(basic).output));
+check(()=>assert.equal(analyzeDelivery(basic).stats.jsonBytes,Buffer.byteLength(compile(basic).output)));
+check(()=>assert.equal(analyzeDelivery('bad source').ok,false));
+for(const options of [{profile:'unknown'},{budgets:{wat:2}},{budgets:{maxNodes:0}},{budgets:{maxBytes:NaN}},{budgets:{maxNodes:1.5}},{extra:1}])check(()=>assert.throws(()=>analyzeDelivery(basic,options)));
+const two=basic+'circle other p=[20,20] s=[10,10] f=#abcdef\n';
+check(()=>assert.throws(()=>compileForProfile(two,{budgets:{maxNodes:1}}),TrolicDeliveryError));
+check(()=>assert.equal(analyzeDelivery(two,{budgets:{maxNodes:1}}).issues[0].severity,'error'));
+const long=basic.replace('dur=2','dur=31');check(()=>assert.equal(analyzeDelivery(long).issues.find(i=>i.metric==='duration').severity,'warning'));
+check(()=>assert.equal(analyzeDelivery(long).ok,true));
+const rich=readFileSync('examples/v08/tempo.trolic','utf8');check(()=>assert.equal(analyzeDelivery(rich,{profile:'portable-basic'}).ok,false));
+check(()=>assert.equal(analyzeDelivery(rich).ok,true));
+check(()=>assert.equal(editor.timelineData(rich).rows.length,compile(rich).stats.tracks));
+check(()=>assert.equal(typeof editor.StudioDocument,'function'));
+for(const folder of ['examples','examples/agent','examples/v05','examples/v06','examples/v07','examples/v08'])for(const file of readdirSync(folder).filter(f=>f.endsWith('.trolic'))){const source=readFileSync(folder+'/'+file,'utf8');check(()=>assert.equal(compileForProfile(source).output,compile(source).output,file));}
+console.log(`${checks} SDK checks passed`);

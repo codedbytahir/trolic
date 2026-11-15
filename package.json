@@ -1,9 +1,9 @@
 {
-  "name": "trolic-prototype",
-  "version": "0.8.0",
+  "name": "@codedbytahir/trolic",
+  "version": "0.9.0",
   "type": "module",
   "scripts": {
-    "test": "node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs && node motion-test.mjs && node expressive-test.mjs && node studio-model-test.mjs && node timeline-test.mjs",
+    "test": "node test.mjs && node vector-test.mjs && node stability-test.mjs && node cli-test.mjs && node agent-test.mjs && node motion-test.mjs && node expressive-test.mjs && node studio-model-test.mjs && node timeline-test.mjs && node sdk-test.mjs && node player-test.mjs",
     "build": "node cli.mjs examples/bounce.trolic --target lottie --output artifacts/bounce.json",
     "test:browser": "node browser-test.mjs",
     "test:compare": "node compare-renderers.mjs",
@@ -15,11 +15,73 @@
     "test:expressive-render": "node expressive-render-test.mjs",
     "test:usable-studio": "node usable-studio-test.mjs",
     "test:timeline-browser": "node timeline-browser-test.mjs",
-    "test:timing-render": "node timing-render-test.mjs"
+    "test:timing-render": "node timing-render-test.mjs",
+    "test:types": "tsc --noEmit --strict --lib ES2022,DOM --module NodeNext --moduleResolution NodeNext index.d.ts editor.d.ts player.d.ts agent-tools.d.ts",
+    "test:player-browser": "node player-browser-test.mjs"
   },
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.65.0",
-    "lottie-web": "^5.13.0"
+    "lottie-web": "^5.13.0",
+    "typescript": "5.8.3"
+  },
+  "description": "Experimental local-first vector motion compiler, typed editor APIs and delivery preflight.",
+  "main": "./api.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./api.js"
+    },
+    "./editor": {
+      "types": "./editor.d.ts",
+      "import": "./editor.js"
+    },
+    "./player": {
+      "types": "./player.d.ts",
+      "import": "./player.js"
+    },
+    "./agent": {
+      "types": "./agent-tools.d.ts",
+      "import": "./agent-tools.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "trolic": "./cli.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "files": [
+    "api.js",
+    "index.d.ts",
+    "compiler.js",
+    "geometry.js",
+    "motion.js",
+    "agent.js",
+    "agent-tools.js",
+    "agent-tools.d.ts",
+    "studio-model.js",
+    "timeline-model.js",
+    "editor.js",
+    "editor.d.ts",
+    "delivery.js",
+    "player.js",
+    "player.d.ts",
+    "cli.mjs",
+    "README.md",
+    "API.md",
+    "DELIVERY.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedbytahir/trolic.git"
+  },
+  "homepage": "https://codedbytahir.github.io/trolic/",
+  "bugs": {
+    "url": "https://github.com/codedbytahir/trolic/issues"
   }
 }

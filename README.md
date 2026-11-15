@@ -1,3 +1,7 @@
+> **Local v0.9 SDK preview:** the public website and release remain v0.8.
+> See [API.md](API.md) and [DELIVERY.md](DELIVERY.md) for the new package, player and preflight APIs.
+> v0.9 has not been published to GitHub Releases or npm.
+
 # Trolic v0.8 — Timeline studio
 
 **Current release:** property lanes, draggable keys, time/value/segment-easing edits, explicit effect-to-keyframe conversion, visibility windows, frame nudges and shared undo/redo. [v0.8 guide](RELEASE-v0.8.md). Open `trolic-studio.html` offline. [Live studio](https://codedbytahir.github.io/trolic/studio.html).

@@ -2,9 +2,9 @@
 import {parse,compile,sample} from './compiler.js';
 import {aliases} from './agent.js';
 import {timeSeconds} from './motion.js';
-export const editableProperties=['position','size','rotation','scale','anchor','opacity','fill','stroke','stroke_width','radius'];
+export const editableProperties=Object.freeze(['position','size','rotation','scale','anchor','opacity','fill','stroke','stroke_width','radius']);
 const studioAliases={position:'p',size:'s',rotation:'r',scale:'z',anchor:'a',opacity:'o',fill:'f',stroke:'ink',stroke_width:'sw',radius:'round'};
-export const effectProperties={fade_in:'opacity',fade_out:'opacity',pop:'scale',spring_in:'scale',pulse:'scale',float:'position',shake:'position',spin:'rotation',draw:'trim_end'};
+export const effectProperties=Object.freeze({fade_in:'opacity',fade_out:'opacity',pop:'scale',spring_in:'scale',pulse:'scale',float:'position',shake:'position',spin:'rotation',draw:'trim_end'});
 export function propertyState(node,property){
  if(!editableProperties.includes(property))return {editable:false,reason:'Not a visual-edit property'};
  if(node.tracks.some(t=>t.property===property)||node.effects.some(f=>effectProperties[f[0]]===property))return {editable:false,reason:'Controlled by animation. Edit its track or effect in Source.'};
