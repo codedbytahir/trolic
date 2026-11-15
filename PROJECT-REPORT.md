@@ -1,8 +1,8 @@
 # Trolic project report
 
-## v0.7 local studio update
+## v0.7 studio update
 
-The tested local v0.7 build adds preview selection, searchable hierarchical layers, guarded source-preserving base-property editing, parent-local drag outlines, 50-snapshot atomic undo/redo, local draft recovery and reported-line navigation. It adds no animation primitives. Validation: 312 automated tests; 24 previous fixtures retain byte-identical Lottie export compared with preserved v0.6 modules. Offline tests cover both renderers, storage denial, unfinished-draft recovery and mobile overflow. Public deployment remains v0.6 until separately updated. See RELEASE-v0.7.md.
+The tested v0.7 build adds preview selection, searchable hierarchical layers, guarded source-preserving base-property editing, parent-local drag outlines, 50-snapshot atomic undo/redo, local draft recovery and reported-line navigation. It adds no animation primitives. Validation: 312 automated tests; 24 previous fixtures retain byte-identical Lottie export compared with preserved v0.6 modules. Offline tests cover both renderers, storage denial, unfinished-draft recovery and mobile overflow. The publication includes updated Pages documentation and offline downloads. See RELEASE-v0.7.md.
 
 ## v0.6 update
 

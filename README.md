@@ -1,10 +1,10 @@
 # Trolic v0.7 — Usable studio
 
-**Local build, not yet published:** click-to-select in both players, searchable layers, source-preserving property edits, parent-local drag positioning, atomic undo/redo, actionable diagnostics and local draft recovery. [v0.7 guide](RELEASE-v0.7.md). Open `trolic-studio.html` offline. The public website remains v0.6 until a separate publication.
+**Current release:** click-to-select in both players, searchable layers, source-preserving property edits, parent-local drag positioning, atomic undo/redo, actionable diagnostics and local draft recovery. [v0.7 guide](RELEASE-v0.7.md). Open `trolic-studio.html` offline. [Live studio](https://codedbytahir.github.io/trolic/studio.html).
 
 ## Editable vectors for people and agents
 
-**Current local build:** [RELEASE-v0.7.md](RELEASE-v0.7.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
+**Current build:** [RELEASE-v0.7.md](RELEASE-v0.7.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
 
 - **Measured source-token reduction:** 51.12% across eight fixtures with o200k_base; 50.87% with cl100k_base. Lossless Lottie export equivalence checked. These are source-text counts, not full API costs.
 - **Definitions, styles, constants, bounded repeats and batch data** avoid repeating geometry and property blocks.

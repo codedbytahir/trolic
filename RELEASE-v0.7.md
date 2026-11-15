@@ -2,7 +2,7 @@
 
 v0.7 focuses on selecting, changing and recovering editable work. It adds no new animation primitives. Existing v0.6 animation exports remain unchanged for the tested corpus.
 
-**Publication status:** this is a local, tested build. The public GitHub Pages deployment remains v0.6 until this revision is separately published. No new GitHub release has been created for v0.7.
+**Publication:** v0.7 source and the offline studio are included in this revision. Release downloads: https://github.com/codedbytahir/trolic/releases/tag/v0.7.0 .
 
 ## What ships
 
