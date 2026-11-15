@@ -1,8 +1,7 @@
 # Trolic v1.0 · integration and delivery
 
-Local release candidate. Publication has not occurred; GitHub authentication is
-required. Public stable version remains v0.8 until the separate v0.9 publication
-is completed. No npm registry publication is claimed.
+GitHub release and local-first Studio. No npm registry publication is claimed.
+Earlier release archives are preserved; v0.9 remains an archived development snapshot.
 
 ## Included scope
 

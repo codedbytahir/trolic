@@ -1,8 +1,8 @@
 # Trolic project report
 
-## v1 local integration candidate
+## v1 integration and delivery release
 
-Typed SDK, optional player lifecycle, Studio delivery policies/budgets/reports, clean package-consumer tests and compatibility policy. 27 saved scene exports match the v0.9 baseline byte-for-byte. Full offline release suite passes; publication requires repository authentication. No npm registry or universal-player certification claimed.
+Typed SDK, optional player lifecycle, Studio delivery policies/budgets/reports, clean package-consumer tests and compatibility policy. 27 saved scene exports match the v0.9 baseline byte-for-byte. Full offline release suite passes; GitHub publication includes the source, offline Studio, release archive and launch film. No npm registry or universal-player certification claimed.
 
 ## v0.8 timeline update
 

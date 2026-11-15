@@ -1,8 +1,6 @@
 {
   "version": "1.0.0",
-  "status": "local-release-candidate",
-  "published": false,
-  "publicationBlocker": "Fresh repository authentication required; prior temporary credential was deleted",
+  "status": "release-validation-passed",
   "unitModelSdkPlayerCliChecks": 465,
   "byteIdenticalPriorSceneExports": 27,
   "passed": [
@@ -21,5 +19,11 @@
     "clean extracted archive npm ci, tests, types and bundle/site rebuild",
     "archive credential-prefix and excluded-path scan"
   ],
-  "notCertified": ["universal player compatibility", "Firefox/Safari", "security sandboxing", "runtime performance", "accessibility conformance"]
+  "notCertified": [
+    "universal player compatibility",
+    "Firefox/Safari",
+    "security sandboxing",
+    "runtime performance",
+    "accessibility conformance"
+  ]
 }

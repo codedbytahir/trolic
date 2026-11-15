@@ -1,10 +1,10 @@
 # Trolic v1.0 — Integration and delivery
 
-**Local v1 release candidate. Not published yet.** Typed dependency-free SDK, optional browser player, Studio delivery preflight, checked exports and reproducible package-consumer tests. See [release guide](RELEASE-v1.0.md), [API](API.md), [delivery policies](DELIVERY.md) and [compatibility policy](STABILITY.md). Prior versions remain archived. No npm registry release is claimed.
+**v1.0 release.** Typed dependency-free SDK, optional browser player, Studio delivery preflight, checked exports and reproducible package-consumer tests. See [release guide](RELEASE-v1.0.md), [API](API.md), [delivery policies](DELIVERY.md) and [compatibility policy](STABILITY.md). Prior versions remain archived. No npm registry release is claimed.
 
 ## Editable vectors for people and agents
 
-**Current build:** [RELEASE-v0.8.md](RELEASE-v0.8.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
+**Current build:** [RELEASE-v1.0.md](RELEASE-v1.0.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
 
 - **Measured source-token reduction:** 51.12% across eight fixtures with o200k_base; 50.87% with cl100k_base. Lossless Lottie export equivalence checked. These are source-text counts, not full API costs.
 - **Definitions, styles, constants, bounded repeats and batch data** avoid repeating geometry and property blocks.
