@@ -1,10 +1,10 @@
 # Trolic v0.8 — Timeline studio
 
-**Local build, not published:** property lanes, draggable keys, time/value/segment-easing edits, explicit effect-to-keyframe conversion, visibility windows, frame nudges and shared undo/redo. [v0.8 guide](RELEASE-v0.8.md). Open `trolic-studio.html` offline. The public site is v0.7.
+**Current release:** property lanes, draggable keys, time/value/segment-easing edits, explicit effect-to-keyframe conversion, visibility windows, frame nudges and shared undo/redo. [v0.8 guide](RELEASE-v0.8.md). Open `trolic-studio.html` offline. [Live studio](https://codedbytahir.github.io/trolic/studio.html).
 
 ## Editable vectors for people and agents
 
-**Current local build:** [RELEASE-v0.8.md](RELEASE-v0.8.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
+**Current build:** [RELEASE-v0.8.md](RELEASE-v0.8.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
 
 - **Measured source-token reduction:** 51.12% across eight fixtures with o200k_base; 50.87% with cl100k_base. Lossless Lottie export equivalence checked. These are source-text counts, not full API costs.
 - **Definitions, styles, constants, bounded repeats and batch data** avoid repeating geometry and property blocks.

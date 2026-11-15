@@ -1,8 +1,8 @@
 # Trolic project report
 
-## v0.8 local timeline update
+## v0.8 timeline update
 
-The local build adds visible property lanes, key editing/retiming, per-segment easing, explicit recipe-to-keyframe conversion, track creation/removal and layer windows through shared history. It is not published. Validation: 378 tests; 25 previous fixtures keep byte-identical export; 14 new paired renderer frames have maximum mean RGB difference 0.07717/255. The public site remains v0.7. See RELEASE-v0.8.md for semantics and deliberate limits.
+The v0.8 build adds visible property lanes, key editing/retiming, per-segment easing, explicit recipe-to-keyframe conversion, track creation/removal and layer windows through shared history. The publication includes updated source and Pages. Validation: 378 tests; 25 previous fixtures keep byte-identical export; 14 new paired renderer frames have maximum mean RGB difference 0.07717/255. The public studio includes the timeline. See RELEASE-v0.8.md for semantics and deliberate limits.
 
 ## v0.7 studio update
 

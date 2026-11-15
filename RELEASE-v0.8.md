@@ -1,6 +1,6 @@
 # Trolic v0.8 — Timeline studio
 
-**Status:** tested local build. v0.7 is published; v0.8 has not been pushed or released on GitHub. Use this build's standalone studio for the new per-segment easing syntax.
+**Publication:** source, studio and downloads are included in this revision. Release assets: https://github.com/codedbytahir/trolic/releases/tag/v0.8.0 .
 
 ## A working timeline
 
@@ -89,4 +89,4 @@ No new end-to-end API-cost, agent-generation reliability, performance or all-pla
 
 No multi-key drag, key clipboard, snapping to other keys, graphical Bézier handles, automatic curve-preserving subdivision, arbitrary key reordering, markers, audio tracks, frame caching or video export. Track values use JSON, not specialized path/gradient editors. Per-track keys remain bounded at 256; source/node/duration safeguards still apply. Timeline controls do not bypass morph topology, group opacity or renderer portability restrictions.
 
-v0.1–v0.7 archives remain preserved with checksums. The public site remains v0.7 until a separate v0.8 publication.
+v0.1–v0.7 archives remain preserved with checksums. The publication includes the timeline-enabled Pages studio.

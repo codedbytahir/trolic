@@ -13,9 +13,9 @@ v0.7 adds visual editing and draft recovery in the offline and published studios
 5. Choose a canvas preset, select **Contain artwork** or **Cover canvas**, and click **Apply frame**. Merely editing the canvas declaration does not reposition existing art.
 6. Download **Lottie JSON**, **SVG frame**, **PNG frame**, and **Source**. Keep source for later edits.
 
-## v0.8 local timeline workflow
+## v0.8 timeline workflow
 
-The public studio is v0.7; open the v0.8 offline build for these controls. Select a layer or key, edit its time/value/outgoing easing, and Apply key changes. Drag keys within their neighbors; Arrow keys nudge a frame. Generated effects/repeats require Convert to editable keyframes first. Seek into a gap before adding a sampled key. New tracks begin with identical values; edit a key to animate. Visibility is global-time clipping, not a track-time offset. All accepted changes use shared undo/redo.
+These controls are available in v0.8 online and offline. Select a layer or key, edit its time/value/outgoing easing, and Apply key changes. Drag keys within their neighbors; Arrow keys nudge a frame. Generated effects/repeats require Convert to editable keyframes first. Seek into a gap before adding a sampled key. New tracks begin with identical values; edit a key to animate. Visibility is global-time clipping, not a track-time offset. All accepted changes use shared undo/redo.
 
 See [the v0.8 guide](RELEASE-v0.8.md) for conversion, easing syntax and limits.
 
