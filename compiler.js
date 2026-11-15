@@ -1,13 +1,13 @@
 import {timeSeconds,curveFor,motionProgress,lowerTrack,lowerEffects} from './motion.js';
 import {expandAgent,packScene} from './agent.js';
 import {pathContours,shapeItems,contourSVG,mixContour} from './geometry.js';
-// Trolic v0.6: independent, dependency-free compiler shared by browser and Node.
+// Trolic v0.7: independent, dependency-free compiler shared by browser and Node.
 export class TrolicError extends Error { constructor(message,line=1){super(message);this.line=line;this.code='TROLIC_INVALID_SOURCE';} }
 const locations=new WeakMap(),preparedTracks=new WeakMap(),visibleWindows=new WeakMap();
 const tracksFor=n=>preparedTracks.get(n)||n.tracks;
 function parseLegacy(source){
  if(typeof source!=='string'||source.length>1000000)throw new TrolicError('Source exceeds 1 million character budget');
- const lines=source.split(/\r?\n/), scene={version:'0.6',name:'Untitled',size:[512,512],fps:60,duration:2,background:'transparent',nodes:[]};let current=null,depth=0,header=false;
+ const lines=source.split(/\r?\n/), scene={version:'0.7',name:'Untitled',size:[512,512],fps:60,duration:2,background:'transparent',nodes:[]};let current=null,depth=0,header=false;
  for(let i=0;i<lines.length;i++){
   const s=lines[i].trim();if(!s||s.startsWith('//'))continue;
   const fail=m=>{throw new TrolicError(m,i+1)};

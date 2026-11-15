@@ -1,5 +1,9 @@
 # Trolic project report
 
+## v0.7 local studio update
+
+The tested local v0.7 build adds preview selection, searchable hierarchical layers, guarded source-preserving base-property editing, parent-local drag outlines, 50-snapshot atomic undo/redo, local draft recovery and reported-line navigation. It adds no animation primitives. Validation: 312 automated tests; 24 previous fixtures retain byte-identical Lottie export compared with preserved v0.6 modules. Offline tests cover both renderers, storage denial, unfinished-draft recovery and mobile overflow. Public deployment remains v0.6 until separately updated. See RELEASE-v0.7.md.
+
 ## v0.6 update
 
 The current milestone adds compatible path morphing, solid fill/stroke color animation, stroke width, geometry dimensions and corner radius. The studio adds PNG stills, source history and a node-motion inspector. Validation: 249 automated tests, byte-identical Lottie export for 21 preserved earlier fixtures and 21 paired new renderer frames (maximum whole-image mean RGB difference 0.25662/255). See RELEASE-v0.6.md for contracts, research and limits. These are local test results, not production certification.

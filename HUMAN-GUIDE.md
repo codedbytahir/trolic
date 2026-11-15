@@ -4,12 +4,22 @@ Trolic is a small, experimental text-based language for vector illustration and 
 
 ## Try it in five minutes
 
+The local v0.7 build adds visual editing and draft recovery. The published web studio remains v0.6 until a separate update.
+
 1. Open the [web studio](https://codedbytahir.github.io/trolic/studio.html), or download `trolic-studio.html` from this repository and open it in a browser. The downloaded studio works offline.
 2. Choose an example. Lagoon, Chroma and Atelier show v0.6 path, color and geometry motion. Orbital shows a rocket entrance; Prism demonstrates stroke drawing; Affirm is a vertical interface card.
 3. Pause, scrub, then change a color such as `#9ee6d4`. Click **Compile scene**. The preview retains the last valid scene if an edit is invalid.
 4. Change an effect duration, for example `"700ms"` to `"1200ms"`. Use **Duration → Retime motion** to scale the entire timeline instead.
 5. Choose a canvas preset, select **Contain artwork** or **Cover canvas**, and click **Apply frame**. Merely editing the canvas declaration does not reposition existing art.
 6. Download **Lottie JSON**, **SVG frame**, **PNG frame**, and **Source**. Keep source for later edits.
+
+## v0.7 visual workflow
+
+Open the local offline studio and choose Signal / Editable starter. Click the artwork or a layer, change a base property, and Apply properties. Drag an outline and release to position it; Escape cancels. Animation-driven fields explain why they are read-only. Compile or undo uncompiled Source changes before visual edits.
+
+Undo/redo keeps 50 valid snapshots in memory. Local autosave also keeps unfinished source; on reopening, explicitly Restore draft or Use current scene. Clear saved draft pauses autosave for the current page. These are browser-local conveniences, not durable backups: export Source. A reported-line button helps locate errors while the last valid preview remains available. Respect reduced-motion preferences; v0.7 starts paused when that preference is enabled.
+
+See [the v0.7 guide](RELEASE-v0.7.md) for the exact scope and limits.
 
 ## A first scene
 

@@ -13,9 +13,11 @@ for name in ['orbit','neon','story']:
 for name in ['lagoon','chroma','atelier']:
     svg=(src/'artifacts'/f'v06-{name}.svg').read_bytes()
     template=template.replace('@@EXPRESSIVE_'+name.upper()+'@@','data:image/svg+xml;base64,'+base64.b64encode(svg).decode())
+template=template.replace('@@STUDIO_V07@@','data:image/png;base64,'+base64.b64encode((src/'artifacts'/'studio-v07-workspace.png').read_bytes()).decode())
 examples={name:(src/'examples'/'agent'/f'{name}.trolic').read_text() for name in ['aurelia','orchard','milo','solstice','tidal','sunwheel']}
 examples.update({'v05/'+name:(src/'examples'/'v05'/f'{name}.trolic').read_text() for name in ['orbit','neon','story']})
 examples.update({'v06/'+name:(src/'examples'/'v06'/f'{name}.trolic').read_text() for name in ['lagoon','chroma','atelier']})
+examples['v07/workbench']=(src/'examples'/'v07'/'workbench.trolic').read_text()
 syntax={'readable':(src/'examples'/'bounce.trolic').read_text(),'agent':(src/'examples'/'agent'/'bounce.trolic').read_text()}
 report=json.loads((src/'artifacts/token-benchmark.json').read_text())
 data=json.dumps({'examples':examples,'syntax':syntax,'report':report}).replace('</','<\\/')

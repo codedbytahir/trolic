@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "network": "HTTP blocked for main offline test",
+  "pageErrors": [],
+  "checks": [
+    "selection in both renderers",
+    "layer search",
+    "source-preserving property edit",
+    "atomic undo redo",
+    "parent-local drag in both renderers",
+    "invalid property rollback",
+    "escape cancels drag",
+    "animated field locks",
+    "dirty source guard",
+    "reported-line navigation",
+    "invalid and valid draft recovery",
+    "selection recovery",
+    "clear draft",
+    "blocked storage fallback",
+    "desktop/mobile overflow",
+    "reduced-motion playback default",
+    "safe node-label text"
+  ]
+}

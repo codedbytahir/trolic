@@ -1,0 +1,101 @@
+{
+  "reference": "preserved trolic-v0.6.zip compiler modules",
+  "cases": [
+    {
+      "source": "examples/aurelia.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/bounce.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/milo.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/orbit.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/orchard.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/reveal.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/solstice.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/tidal.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/aurelia.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/bounce.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/milo.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/orbit.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/orchard.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/reveal.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/solstice.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/sunwheel.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/agent/tidal.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/v05/neon.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/v05/orbit.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/v05/story.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/v05/timing.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/v06/atelier.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/v06/chroma.trolic",
+      "lottieByteIdentical": true
+    },
+    {
+      "source": "examples/v06/lagoon.trolic",
+      "lottieByteIdentical": true
+    }
+  ]
+}

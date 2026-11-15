@@ -22,3 +22,6 @@ Canvas: `canvas story w=540 dur=auto` or `canvas 16:9 w=960`. Times: numeric sec
 
 ## v0.6 expressive tracks
 Additional `t` properties: `d` path string, `f` solid color, `ink` stroke color, `sw` stroke width, `s` shape dimensions, `round` rectangle radius. Morphs require a single contour and matching normalized vertices/closure. Color values are #RRGGBB; no fill=none or gradient fill animation. Positive shape dimensions; nonnegative width/radius. New appearance tracks reject overshooting easing. See RELEASE-v0.6.md.
+
+## v0.7 editor utilities
+The animation grammar is unchanged. `studio-model.js` adds validated source-preserving base-property patches and a revision-aware `StudioDocument`. Animated/effect-controlled fields are guarded; edit their tracks explicitly. Agent syntax patches append instance `edit` overrides without rewriting definitions or comments. This does not replace AgentSession or imply hosted isolation.

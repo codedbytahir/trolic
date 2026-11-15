@@ -1,15 +1,15 @@
-# Trolic v0.6 — Living vectors
+# Trolic v0.7 — Usable studio
 
-**New:** compatible path morphs, animated fill and stroke, stroke weight, shape dimensions and corner radius; PNG still export, source history, a scene inspector and three original studies. [v0.6 reference](RELEASE-v0.6.md) · [Human guide](HUMAN-GUIDE.md) · [Live studio](https://codedbytahir.github.io/trolic/studio.html).
+**Local build, not yet published:** click-to-select in both players, searchable layers, source-preserving property edits, parent-local drag positioning, atomic undo/redo, actionable diagnostics and local draft recovery. [v0.7 guide](RELEASE-v0.7.md). Open `trolic-studio.html` offline. The public website remains v0.6 until a separate publication.
 
 ## Editable vectors for people and agents
 
-**Current build:** [RELEASE-v0.6.md](RELEASE-v0.6.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
+**Current local build:** [RELEASE-v0.7.md](RELEASE-v0.7.md). Readable v0.1–v0.3 source remains supported; new compact agent syntax is optional.
 
 - **Measured source-token reduction:** 51.12% across eight fixtures with o200k_base; 50.87% with cl100k_base. Lossless Lottie export equivalence checked. These are source-text counts, not full API costs.
 - **Definitions, styles, constants, bounded repeats and batch data** avoid repeating geometry and property blocks.
 - **Stateful agent host library:** small atomic edits, optimistic revisions, selected-field inspection and concise receipts; no embedded model or network service.
-- **249 automated tests** plus offline/browser checks. Model generation accuracy has not been benchmarked.
+- **312 automated tests** plus offline/browser checks. Model generation accuracy has not been benchmarked.
 - **Previous builds backed up:** ../trolic-releases/README.md and checksum manifest.
 
 ### Agent quick start
@@ -105,7 +105,7 @@ Supported tracks: position, scale, opacity, rotation. One track per property. Us
 
 ## Testing and research
 
-**249 unit/regression/CLI/agent/motion tests passed.** New v0.5 studies add 28 paired renderer frames (maximum whole-image mean RGB difference 0.37961/255). Historical v0.4 evidence follows: Eight scenes independently rendered with Lottie-web at four timestamps. Twenty-four paired screenshots compare Trolic SVG sampling against Lottie-web; the largest mean RGB pixel error is approximately 0.078/255 for these fixtures. No claim of all-player conformance. Offline import, retained preview after an error and renderer switching were also tested.
+**312 unit/regression/CLI/agent/motion/editor-model tests passed.** New v0.5 studies add 28 paired renderer frames (maximum whole-image mean RGB difference 0.37961/255). Historical v0.4 evidence follows: Eight scenes independently rendered with Lottie-web at four timestamps. Twenty-four paired screenshots compare Trolic SVG sampling against Lottie-web; the largest mean RGB pixel error is approximately 0.078/255 for these fixtures. No claim of all-player conformance. Offline import, retained preview after an error and renderer switching were also tested.
 
 ```sh
 npm ci

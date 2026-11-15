@@ -1,0 +1,15 @@
+// Trolic v0.7 visual-edit starter. Select tile, change its fill, then Apply properties.
+canvas 960 640 bg=#121e26 dur=4 name="Signal / editable starter"
+circle halo p=[480,300] s=[640,640] g=["r",[0,0],[320,0],[[0,"#25404a"],[1,"#121e26"]]]
+rect frame p=[480,320] s=[780,500] round=28 f=none ink=#39535c sw=1
+group card p=[480,304] r=-6
+rect shadow parent=card p=[10,20] s=[360,340] round=30 f=#0b1820 o=0.4
+rect tile parent=card p=[0,0] s=[360,340] round=30 f=#b7d6c5
+circle badge parent=card p=[0,-40] s=[124,124] f=#315e52
+path check parent=card p=[0,-40] d="M -30 0 L -6 24 L 34 -28" f=none ink=#e2efdb sw=8
+rect title parent=card p=[0,64] s=[172,10] round=5 f=#315e52
+rect caption parent=card p=[0,88] s=[114,5] round=2 f=#789b89
+circle beacon p=[785,140] s=[18,18] f=#c6df9f fx=[["pulse",2,0,2,0.3]]
+path accent p=[180,200] d="M -20 0 H 20 M 0 -20 V 20" f=none ink=#c6df9f sw=2 r=15
+circle dot-1 p=[200,470] s=[5,5] f=#6c9692
+circle dot-2 p=[765,470] s=[5,5] f=#6c9692
